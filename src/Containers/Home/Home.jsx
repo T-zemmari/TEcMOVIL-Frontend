@@ -3,8 +3,8 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import tablet from '../../img/Tablet.jpg';
 import accesorios from '../../img/accesories.png';
-import smartphone from '../../img/Smartphones.jpg';
-import repuestos from '../../img/reparar.png';
+import smartphone from '../../img/smarts.jpeg';
+import repuestos from '../../img/flex.png';
 import './Home.scss';
 
 
@@ -55,6 +55,7 @@ const Home =(props)=>{
            mas te gusta, a un precio de chollo.</p>
            </div>
         </div>
+        <div className="separador"></div>
         
 
         <div className="footer"><Footer/></div>
