@@ -31,15 +31,39 @@ li{
     list-style:none;
     margin-top: 5px;
     margin-right:10px;
+    font-size: 16px;
     color: blanchedalmond;
     font-family: sans-serif;
+    transition: 0.5s;
 }
+li:hover{
+    
+    list-style:none;
+    margin-top: 5px;
+    margin-right:10px;
+    font-size: 18px;
+    color: rgb(124, 161, 240);
+    font-family: sans-serif;
+    transition: 0.5s;
+}
+
 
 .vista-login{
     width: 100px;
     height: 25px;
     border: 1px solid rgb(26, 25, 25);
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: rgb(34, 32, 32);
     color: rgb(238, 229, 218);
+    transition: 0.5s;
+}
+
+.vista-login:hover{
+    width: 105px;
+    height: 27px;
+    border: 1px solid rgb(161, 153, 153);
+    border-radius: 6px;
+    background-color: rgb(134, 167, 240);
+    color: rgb(15, 15, 15);
+    transition: 0.5s;
 }
