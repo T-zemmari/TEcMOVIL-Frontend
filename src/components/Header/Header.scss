@@ -1,0 +1,35 @@
+.header-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    border: 1px solid rgb(211, 201, 201);
+    
+}
+
+.vista-logo{
+   
+    width: 150px;
+    height: 40px;
+    border: 1px solid rgb(112, 107, 107);
+}
+
+.vista-nav{
+
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+
+}
+li{
+    list-style:none;
+    margin-right:10px;
+}
+
+.vista-login{
+    width: 100px;
+    height: 25px;
+    border: 1px solid rgb(26, 25, 25);
+    border-radius: 8px;
+}
