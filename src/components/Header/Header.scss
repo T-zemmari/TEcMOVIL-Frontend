@@ -3,16 +3,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 75px;
-    border: 1px solid rgb(211, 201, 201);
-    
+    height: 55px;
+   // border: 1px solid rgb(78, 73, 73);
+    background-color: rgba(28, 28, 29,0);
 }
 
 .vista-logo{
    
     width: 150px;
-    height: 40px;
-    border: 1px solid rgb(112, 107, 107);
+    height: 30px;
+    //border: 1px solid rgb(32, 28, 28);
+    font-size: 25px;
+    color:cornsilk;
+    font-weight: 800;
+    font-style:italic;
+    margin-top: -7px;
 }
 
 .vista-nav{
@@ -24,7 +29,10 @@
 }
 li{
     list-style:none;
+    margin-top: 5px;
     margin-right:10px;
+    color: blanchedalmond;
+    font-family: sans-serif;
 }
 
 .vista-login{
@@ -32,4 +40,6 @@ li{
     height: 25px;
     border: 1px solid rgb(26, 25, 25);
     border-radius: 8px;
+    background-color: rgb(34, 32, 32);
+    color: rgb(238, 229, 218);
 }

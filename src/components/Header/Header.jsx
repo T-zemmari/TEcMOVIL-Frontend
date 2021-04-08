@@ -14,8 +14,10 @@ const Header =(props)=>{
         <div className="vista-nav">
             <li>Inicio</li>
             <li>Tienda</li>
+            <li>Respuestos</li>
             <li>Presupuestos</li>
-            <div className='vista-login'>¿Eres Cliente?</div>
+            <li>Contactenos</li>
+            <div className='vista-login'>Entrar</div>
         </div>
     </div>
    )
