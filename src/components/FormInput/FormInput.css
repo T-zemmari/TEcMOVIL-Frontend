@@ -1,0 +1,38 @@
+.formInput {
+    position: relative;
+}
+
+.formInput label {
+    padding: 1.2em 1em;
+    font-size: 14px;
+    font-weight:500;
+    color: #999;
+    pointer-events: none;
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translate(0, -50%);
+    z-index: 999;
+    transform-origin: top left;
+    transition: all 0.2s ease-out;
+}
+
+.formInput:focus-within label, .formInput label.Active {
+    top: 0;
+    padding: 0.6em 1.1rem;
+    transform: scale(0.8);
+}
+
+.formInput .ant-input-suffix{
+    transform: translate(0, -0.4em) scale(1.2);
+}
+
+.ant-input, .ant-input-affix-wrapper {
+    padding: 1.7em 1em 0.7em 1em;
+    font-size: 14px;
+    cursor: text;
+}
+
+.ant-input-affix-wrapper {
+    box-sizing: border-box;
+}

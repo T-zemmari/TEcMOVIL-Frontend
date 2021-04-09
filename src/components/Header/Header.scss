@@ -8,6 +8,18 @@
     background-color: rgba(28, 28, 29,0);
 }
 
+.header-container-not-home{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 55px;
+   // border: 1px solid rgb(78, 73, 73);
+    background-color: rgba(28, 28, 29);
+}
+
 .vista-logo{
    
     width: 150px;
@@ -25,9 +37,10 @@
     display: flex;
     flex-direction: row;
     margin-right: 20px;
+    justify-content: space-evenly;
 
 }
-li{
+.li-home{
     list-style:none;
     margin-top: 5px;
     margin-right:10px;
@@ -36,7 +49,7 @@ li{
     font-family: sans-serif;
     transition: 0.5s;
 }
-li:hover{
+.li-home:hover{
     
     list-style:none;
     margin-top: 5px;
@@ -47,6 +60,36 @@ li:hover{
     transition: 0.5s;
 }
 
+.li-not-home{
+    list-style:none;
+    margin-top: 5px;
+    margin-right:35px;
+    font-size: 16px;
+    color: blanchedalmond;
+    font-family: sans-serif;
+    transition: 0.5s;
+}
+.li-not-home:hover{
+    
+    list-style:none;
+    margin-top: 5px;
+    margin-right:35px;
+    font-size: 16px;
+    color: rgb(124, 161, 240);
+    font-family: sans-serif;
+    transition: 0.5s;
+}
+.select-not-home{
+
+    all: unset;
+    width: 150px;
+    color:rgb(255, 255, 255);
+    margin-top: 2px;
+    
+}
+.option-not-home{
+    color: rgb(20, 20, 20);
+}
 
 .vista-login{
     width: 100px;

@@ -1,0 +1,54 @@
+.CTAButton {
+    display:inline-block;
+    border-radius: 50em;
+    padding: 0.4em 1.5em 0.6em 1.5em;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    transition: background-color .3s ease;
+}
+
+.CTA {
+    background-color: $pink;
+    color: #FFF;
+}
+
+.CTA:hover {
+    background-color: $pink-dark;
+}
+
+.time:hover {
+    background-color: $pink-dark;
+    color: #FFF;
+    border-color: #FFF;
+}
+
+.time {
+    padding: 0.3em 1.2em 0.4em 1.2em;
+    min-width: 4.9em;
+}
+
+.alt, .time {
+    background-color: #FFF;
+    color: #666;
+    border: 1px solid $light-grey;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.alt:hover {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+}
+
+button {
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button:focus {
+    outline: none;
+}

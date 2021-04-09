@@ -22,7 +22,7 @@ const Home =(props)=>{
         <div className="vista-portada-uno">
            
             <img className="vista-portada-uno" src={tablet} alt="tab"/>
-            <div className="header"><Header/></div>
+            <div className="header"><Header style='home'/></div>
         </div>
         <div className='separador'></div>
 
