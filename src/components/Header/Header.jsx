@@ -1,14 +1,15 @@
 import React from 'react';
 import './Header.scss';
 import {useHistory} from 'react-router-dom';
+import LoginRender from '../Modal/Login-render';
 
 const Header =(props)=>{
 
   let history = useHistory();
-  const goto=(props)=>{
+  const goto =(go)=>{
     
-    history.push('/register')
-    
+    history.push(go)
+
   }
 if(props.style === 'home'){
    return(
@@ -29,7 +30,10 @@ if(props.style === 'home'){
             <li className='li-home'>Repuestos</li>
             <li className='li-home'>Presupuestos</li>
             <li className='li-home'>Contactenos</li>
-            <div className='vista-login' onClick={()=>goto()}>Entrar</div>
+            <LoginRender>
+                <div className='vista-login' >Entrar</div>
+            </LoginRender>
+            
         </div>
     </div>
    )
@@ -38,9 +42,9 @@ if(props.style === 'home'){
 
     
                 <div className="header-container-not-home">
-                    <div className="vista-logo" onClick={()=>history.push('/')}>TEcMovil</div>
+                    <div className="vista-logo" onClick={(go)=>goto('/')}>TEcMovil</div>
                     <div className="vista-nav">
-                        <li className='li-not-home' onClick={()=>history.push('/')}>Inicio</li>
+                        <li className='li-not-home' onClick={(go)=>goto('/')}>Inicio</li>
                         <li className='li-not-home'>Tienda</li>
                            
                         <select  className='select-not-home' name="Tienda" id="">

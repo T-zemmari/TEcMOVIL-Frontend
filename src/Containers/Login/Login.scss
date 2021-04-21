@@ -1,0 +1,69 @@
+
+.login-render-container{
+    display:flex;
+    flex-direction: column;
+    color: blanchedalmond;
+    background-color: rgb(126, 143, 161);
+    border-radius: 15px;
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+}
+.login-render-h2{
+    color:rgb(24, 23, 23);
+    font-weight: 400;
+    font-size: 32px
+}
+
+.input-login{
+    
+    height: 40px;
+    border-radius: 2px;
+}
+
+.vista-login{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 25px;
+    border: 1px solid rgb(26, 25, 25);
+    border-radius: 6px;
+    background-color: rgb(34, 32, 32);
+    color: rgb(238, 229, 218);
+    transition: 0.5s;
+}
+
+.vista-login:hover{
+    width: 105px;
+    height: 27px;
+    border: 1px solid rgb(161, 153, 153);
+    border-radius: 6px;
+    background-color: rgb(134, 167, 240);
+    color: rgb(15, 15, 15);
+    transition: 0.5s;
+}
+.vista-register-login{
+
+    color: rgb(31, 29, 29);
+    margin: 10px;
+}
+.vista-register-login:hover{
+
+    color: rgb(101, 76, 214);
+    margin: 10px;
+}
+.button-login {
+
+    width: 100px;
+    color: rgb(15, 15, 15);
+    font-size: 20px;
+
+}
+.goggleRegister{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+

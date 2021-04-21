@@ -1,0 +1,56 @@
+/*contenedor*/
+
+.registerContainer{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    h2 {
+        font-weight: normal;
+    }
+    
+    p {
+        color: #666;
+    }
+
+    .buttonContainer {
+        display:flex;
+        justify-content: flex-end;
+    }
+
+    .registerForm {
+        text-align: left;
+        max-width: 100%;
+        width:48em;
+        box-sizing: border-box;
+        padding:1em;
+    }
+
+    /* Formulario */
+    .inputContainer {
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .ant-row {
+            width:100%;
+        }
+    }
+
+    .inputContainer.twocols {
+        .ant-row {
+            width:48%;
+        }
+
+        @media (max-width:575px) {
+            .ant-row {
+                width:100%;
+            }
+        }
+    }
+
+}

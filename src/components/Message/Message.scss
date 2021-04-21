@@ -1,0 +1,47 @@
+.messageContainer {
+  position: absolute;
+  height:100%;
+  top:0;
+  width: 90%;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: .5em 0;
+  float: left;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.message {
+  position: sticky;
+  top: 1em;
+  min-width: 34%;
+  max-width: 1320px;
+  margin: .5em auto;
+  padding:.5em 1em;
+  background-color: white;
+  border-radius:.5em;
+  box-shadow: 0 .2em .3em rgba(0,0,0,0.1);
+  transform-origin: top left;
+  transition: transform 1s ease;
+  transform: translateY(-10em);
+}
+
+.error .message {
+  color: $error-color;
+  border: 2px solid $error-border-color;
+}
+
+.success .message {
+  color: $success-color;
+  border: 2px solid $success-border-color;
+}
+
+.visible {
+  transform: none;
+}
