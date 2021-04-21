@@ -1,16 +1,39 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import './Header.scss';
 import {useHistory} from 'react-router-dom';
 import LoginRender from '../Modal/Login-render';
+import Loading from '../Loading/Loading';
 
 const Header =(props)=>{
 
+  const [loading, setLoading] = useState(false);
   let history = useHistory();
-  const goto =(go)=>{
-    
-    history.push(go)
 
+  const goto =(go)=>{
+   history.push(go)
   }
+
+  let credentials = JSON.parse(localStorage.getItem('credentials'));
+  console.log(credentials)
+
+  const Logout=()=>{
+    
+    let confirm = window.confirm('Seguro que quieres salir ??');
+
+    if(confirm){
+
+        setTimeout(() => {
+            localStorage.removeItem('credentials');
+            setLoading(true);
+            history.push('/');
+          }, 1000);
+    }
+      
+  }
+   
+
+
+
 if(props.style === 'home'){
    return(
 
@@ -37,14 +60,14 @@ if(props.style === 'home'){
         </div>
     </div>
    )
-        }else{
+        }if(props.style === 'register'){
             return(
 
     
                 <div className="header-container-not-home">
                     <div className="vista-logo" onClick={(go)=>goto('/')}>TEcMovil</div>
                     <div className="vista-nav">
-                        <li className='li-not-home' onClick={(go)=>goto('/')}>Inicio</li>
+                        
                         <li className='li-not-home'>Tienda</li>
                            
                         <select  className='select-not-home' name="Tienda" id="">
@@ -60,8 +83,32 @@ if(props.style === 'home'){
                     </div>
                 </div>
                )
-        }
-        
+        }if(props.style === 'logged'){
+            return(
+                
+                <><Loading/>
+                <div className="header-container-home-user-logged">
+                    <div className="vista-logo" onClick={()=>Logout()}>TEcMovil</div>
+                    <div className="vista-nav">
+                        
+                        <li className='li-not-home'>Tienda</li>
+                           
+                        <select  className='select-not-home' name="Tienda" id="">
+                        <option  className='option-not-home' value="Smartphones">Smartphones</option>
+                        <option  className='option-not-home'value="Tablets">Tablets</option>
+                        <option  className='option-not-home'value="Accesorios">Accesorios</option>
+                        </select>
+                        
+                        <li className='li-not-home'>Repuestos</li>
+                        <li className='li-not-home'>Presupuestos</li>
+                        <li className='li-not-home'>Contactenos</li>
+                        </div>
+                       
+                </div>
+                </>
+               )
+               
+            }
 }
 
 export default Header;

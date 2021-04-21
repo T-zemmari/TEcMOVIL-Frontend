@@ -1,89 +1,105 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import validate from '../../tools/validate';
+import CTAButton from '../../components/CTAButton/CTAButton';
 import FormInput from '../../components/FormInput/FormInput';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-
+import Loading from '../../components/Loading/Loading';
+import validate from '../../tools/validate';
 import { Form } from 'antd';
 import axios from 'axios';
+import Message from '../../components/Message/Message';
 import './Login.scss';
+
+
+
 
 
 const Login = (props) => {
 
-    let history = useHistory();
-   
-
-    const [credentials, setCredentials] = useState({ email: '', password: '' });
-    const [messaje, setMessage] = useState('');
+    const history = useHistory();
+    
+    const [credentials, setCredentials] = useState({email:'',password:''});
     const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState([]);
 
+    const updateCredentials = (key,value) => {
+        setCredentials({...credentials, [key]: value});
+        if (Object.keys(errors).length > 0) setErrors(validate({...credentials, [key]: value},'login'));
+    }
 
-  
-   
-
-    const handler = (e) => {
-        setCredentials({ ...credentials, [e.target.name]: e.target.value });
-    };
-
-    const sendData = async () => {
-
-        setMessage('');
-
-        let notValidated = validate(credentials)
-        setMessage(notValidated);
-
-        if (notValidated) {
-            return;
-        }
-        
-        let credentialsData = {
-            email: credentials.email,
-            password: credentials.password
-        };
-
-        let response = await axios.post('http://localhost:3002/users/login', credentialsData);
-
-        if (response) {
-            console.log(response);
-
-            localStorage.setItem('token', response.data.jwt.jwt)
-            localStorage.setItem('user', JSON.stringify(response.data.jwt.user));
-
-            let token = localStorage.getItem('token');
-            let user = JSON.parse(localStorage.getItem('user'));
-
-            console.log(user);
-            console.log(token);
-
-            //props.dispatch({ type: LOGIN, payload: response.data });
-
-            setTimeout(() => {
-                history.push('/home')
-            }, 1000);
-
+    const handleResponse = (response) => {
+        if (response.status == 200) {
+            localStorage.setItem('credentials',JSON.stringify(response.data));
+            console.log(response.data)
+            if (response.data.user.admin) history.push('/admin');
+            else history.push('/myspace');
         } else {
-            setMessage('Sus credenciales son erroneos, comprueba su email o contraseña');
-            setMessage('');
-            alert('Sus credenciales son erroneos, comprueba su email o contraseña');
+            setLoading(false);
+            newMessage(response.data.message);
         }
     }
 
+    const newMessage = (msg, style = 'error') => {
+        const key = (~(Math.random()*99999));
+        setMessage([...message,<Message key={key} text={msg} style={style}></Message>]);
+    }
+
+    const sendData = async () => {
+        
+        const errs = validate(credentials,'login');
+        setErrors(errs);
+
+        if (Object.keys(errs).length === 0) {
+            setLoading(true);
+            setTimeout(()=>{
+                axios.post('http://localhost:3002/login',credentials)
+                .then(handleResponse)
+                .catch((err)=>{handleResponse({data:{message:'Error de conexión.'}})});
+            },500);
+        }
+    }
+
+    
+
+    useEffect(() => {
+        const listener = event => {
+          if (event.code === "Enter" || event.code === "NumpadEnter") {
+            sendData();
+          }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+          document.removeEventListener("keydown", listener);
+        };
+    }, [credentials]);
+
     return (
         <div>
-
+                <Loading visible={loading}></Loading>
                 <div className="login-render-container">
                     <h2 className="login-render-h2">Login</h2><br/>
                     
-                    <input  className="input-login" tipo="text" placeholder="Escribe tu Email" label="email" name="email" onChange={handler} /><br/><br/>
+                    {/*<input  className="input-login" tipo="text" placeholder="Escribe tu Email" label="email" name="email" onChange={handler} /><br/><br/>
+                    <input tipo="password" className="input-login" placeholder="Escribe tu Contraseña" label="password" name="password" onChange={handler} /><br/><br/>*/}
+                       <div className="inputContainer">
+                    <Form.Item validateStatus={errors.email?.status} help={errors.email?.help}>
+                        <FormInput label="Correo Electrónico" name="email" onChange={updateCredentials} maxLength="50"></FormInput>
+                    </Form.Item>
+                </div>
+                <div className="inputContainer">
+                    <Form.Item validateStatus={errors.password?.status} help={errors.password?.help}>
+                        <FormInput type="Password" label="Contraseña" name="password" onChange={updateCredentials} maxLength="99"></FormInput>
+                    </Form.Item>
+                </div>
+               
+
                 
                   
-                    <input tipo="password" className="input-login" placeholder="Escribe tu Contraseña" label="password" name="password" onChange={handler} /><br/><br/>
-                
-                   {messaje}
                    
-                   <div className='vista-login' onClick={()=>sendData()}>Entrar</div>
+                   <div className='vista-login'onClick={()=>sendData()} >Entrar</div>
                    <div className="goggleRegister">
                    <div className="button-login button-login-facebook">
                             <FontAwesomeIcon icon={faGoogle} className='button-login-icon' />

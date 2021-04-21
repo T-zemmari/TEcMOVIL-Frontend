@@ -102,7 +102,7 @@ const Register = (props) => {
       
       <Loading visible={loading}></Loading>
       <div className="registerContainer">
-        <Header></Header>
+        <Header style ='register'></Header>
         {message}
         <div className="registerForm">
             <h2>Regístrate gratis en TecMovil</h2>
