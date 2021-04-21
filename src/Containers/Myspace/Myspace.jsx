@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import {useHistory} from 'react-router-dom';
@@ -7,13 +7,18 @@ import accesorios from '../../img/accesories.png';
 import smartphone from '../../img/smarts.jpeg';
 import repuestos from '../../img/flex.png';
 import './Myspace.scss';
+import Product from '../../components/Products/Product';
 
 
 
 
 const MySpace =(props)=>{
 
-let history = useHistory();
+
+
+   const [destacado,setDestacado] = useState('');
+
+   let history = useHistory();
    const goto =(go)=>{
     
      history.push(go)
@@ -28,11 +33,15 @@ let history = useHistory();
 
         <div className="vista-portada-uno">
            
-           {/*<img className="vista-portada-uno" src={tablet} alt="tab"/>*/}
+          
             <img className="vista-portada-uno" src={Android} alt="tab"/>
             <div className="header"><Header style='logged'/></div>
         </div>
         <div className='separador'></div>
+
+        <div className="destacados-style">
+           <Product/>
+        </div>
 
         <h2>CATEGORIAS</h2>
         <div className="home-categorias"></div>
