@@ -11,6 +11,7 @@ import { Form } from 'antd';
 import axios from 'axios';
 import Message from '../../components/Message/Message';
 import './Login.scss';
+import Button from '@material-ui/core/Button'
 
 
 
@@ -98,8 +99,10 @@ const Login = (props) => {
 
                 
                   
+                   <Button variant="contained" color="secondary" onClick={()=>sendData()}>
+                   Entrar
+                   </Button>
                    
-                   <div className='vista-login'onClick={()=>sendData()} >Entrar</div>
                    <div className="goggleRegister">
                    <div className="button-login button-login-facebook">
                             <FontAwesomeIcon icon={faGoogle} className='button-login-icon' />

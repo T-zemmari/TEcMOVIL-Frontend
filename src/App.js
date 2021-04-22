@@ -6,6 +6,8 @@ import './App.css';
 import Login from './Containers/Login/Login';
 import MySpace from './Containers/Myspace/Myspace';
 import Profile from './Containers/Profile/Profile';
+import Presupuestos from './Containers/Presupuestos/Presupuestos';
+import Repuestos from './Containers/Repuestos/Repuestos';
 
 
 function App() {
@@ -21,8 +23,9 @@ function App() {
          <Route path='/register' exact component={Register}/>
          <Route path='/login' exact component={Login}/>
          <Route path='/myspace' exact component={MySpace}/>
-         <Route path="'/prpfile" exact component={Profile}/>
-         
+         <Route path='/profile' exact component={Profile}/>
+         <Route path='/presupuestos' exact component={Presupuestos}/>
+         <Route path='/repuestos' exact component={Repuestos}/>
 
         </Switch>
       

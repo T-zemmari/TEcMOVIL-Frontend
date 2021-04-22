@@ -6,6 +6,7 @@ import Android from '../../img/48369.jpg';
 import accesorios from '../../img/accesories.png';
 import smartphone from '../../img/smarts.jpeg';
 import repuestos from '../../img/flex.png';
+import Loading from '../../components/Loading/Loading';
 import './Myspace.scss';
 import Product from '../../components/Products/Product';
 import axios from 'axios';
