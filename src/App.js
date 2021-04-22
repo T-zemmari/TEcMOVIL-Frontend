@@ -5,6 +5,7 @@ import Register from './Containers/Register/Register';
 import './App.css';
 import Login from './Containers/Login/Login';
 import MySpace from './Containers/Myspace/Myspace';
+import Profile from './Containers/Profile/Profile';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
          <Route path='/register' exact component={Register}/>
          <Route path='/login' exact component={Login}/>
          <Route path='/myspace' exact component={MySpace}/>
+         <Route path="'/prpfile" exact component={Profile}/>
          
 
         </Switch>

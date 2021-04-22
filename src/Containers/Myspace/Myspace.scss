@@ -18,9 +18,23 @@
 
     width: 1000px;
     margin-top: 40px;
-    margin-left: 170px;
+    margin-left: 280px;
    // border: 0.01px solid rgb(61, 59, 59) ;
     border: 0.01px solid rgb(182, 177, 177) ;
+}
+.parrafo{
+    padding: 15px;
+    font-size: 30px;
+    font-weight: 300;
+    color: rgb(12, 12, 46);
+}
+
+.destacados-style{
+
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .vista-contenedor-rep-smart-acces{

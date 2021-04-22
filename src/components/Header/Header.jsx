@@ -3,6 +3,8 @@ import './Header.scss';
 import {useHistory} from 'react-router-dom';
 import LoginRender from '../Modal/Login-render';
 import Loading from '../Loading/Loading';
+//import Avatar from '@material-ui/core/Avatar';
+import {Avatar} from '@material-ui/core';
 
 const Header =(props)=>{
 
@@ -90,9 +92,7 @@ if(props.style === 'home'){
                 <div className="header-container-home-user-logged">
                     <div className="vista-logo" onClick={()=>Logout()}>TEcMovil</div>
                     <div className="vista-nav">
-                        
-                        <li className='li-not-home'>Tienda</li>
-                           
+     
                         <select  className='select-not-home' name="Tienda" id="">
                         <option  className='option-not-home' value="Smartphones">Smartphones</option>
                         <option  className='option-not-home'value="Tablets">Tablets</option>
@@ -101,8 +101,20 @@ if(props.style === 'home'){
                         
                         <li className='li-not-home'>Repuestos</li>
                         <li className='li-not-home'>Presupuestos</li>
-                        <li className='li-not-home'>Contactenos</li>
+                       
+                        
                         </div>
+                        <div className="vista-user-logged">
+                          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" >
+                        {credentials.user?.name[0]}</Avatar>
+                        
+                        <h4 className="h4-vista-logged">Hola {credentials.user?.name}</h4>
+                        </div>
+                        
+                        
+                        
+                         
+                   
                        
                 </div>
                 </>
