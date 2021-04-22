@@ -51,6 +51,8 @@ let history = useHistory();
 
         <div className='separador'></div>
 
+        
+
         <h2>Productos destacados</h2>
            <div className="destacados-style">
                {destacados?.map(destacados => <Product  key={destacados._id}  {...destacados} />)}
