@@ -19,7 +19,7 @@ const MySpace =(props)=>{
    //------------credenciales del usuario logueado.............//
 
    let credentiales = JSON.parse(localStorage.getItem('credentials'));
-    console.log(credentiales.user?.name)
+   console.log(credentiales.user?.name)
 
     
     const [destacados,setDestacados] = useState([]);
@@ -59,23 +59,7 @@ const MySpace =(props)=>{
         </div>
         
 
-        <div className='separador'></div>
-        <div className="publicidad-uno">
-             <div className="span-my-space"> 
-                    <div className="parrafo  parrafo-uno">
-                    En <strong>TEcMobil</strong>  Sabemos lo importante que es tu Telefono o Tu Tablet, por eso Cuidaremos todos los detalles para que tu dispositivo reciba el mejor trato posible , a fin de que vuelvas a utilizarlo con la misma ilusion que el primer dia.
-                    </div>
-
-                                               <h2>LOS MEJORES PROFESIONALES PARA MANIPULAR TU SMARTPHONE</h2>
-
-                    
-                    
-                    <div className='parrafo parrafo-dos'> 
-                    El trabajo empieza desde el primer momento, para hacer una buena reparación hay que entender la avería, muchos fallos que presentan hoy en día los equipos son producidos por problemas de configuraciones.
-                    </div>  
-               </div>
        
-        </div>
 
         <div className='separador'></div>
 
