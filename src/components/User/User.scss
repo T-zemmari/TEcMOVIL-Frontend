@@ -1,0 +1,40 @@
+.lista-usuarios-registrados-datos{
+    display: flex;
+    flex-direction: row;
+  
+}
+.user-data-admin-datos {
+ 
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 150px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    //align-items: center;
+    flex-wrap: wrap;
+    border: 0.1px rgb(130, 146, 190) solid;
+    
+}
+.user-payment-admin-view{
+    width: 75px;
+}
+.user-name-admin-view{
+    width: 75px;
+}
+.user-name-admin-view{
+    width: 100px;
+}
+.user-phone-admin-view{
+    width: 110px;
+}
+.user-lastname-admin-view{
+    width: 150px;
+}
+.user-born-admin-view{
+    width: 100px;
+}
+.user-email-admin-view{
+    width: 260px;
+}

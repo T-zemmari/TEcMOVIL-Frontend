@@ -5,3 +5,64 @@
     background-image: url('../../img/unnamed.jpg');
 
 }
+.body-vista-admin{
+ display: flex;;
+ flex-direction: row;
+
+
+}
+
+//..............Menu Izquierda...............//
+
+
+.vista-menu-izquierda-admin{
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid rgb(105, 101, 101);
+    width: 200px;
+    height: 500px;
+    margin: 20px;
+    justify-content: space-evenly;
+}
+.boton-admin-menu-izquierdo{
+    margin: 10px;
+}
+
+.Usuarios-Registrados-Menu-Izquierda{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+//.............Menu Central....................
+
+.vista-central-admin{
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid rgb(105, 101, 101);
+    width: 1100px;
+    height: 500px;
+    margin: 20px;
+    background-color: aliceblue;
+  
+}
+.lista-usuarios-registrados{
+    display: flex;
+    flex-direction: row;
+}
+.user-data-admin {
+    margin: 5px;
+    width: 150px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0.1px rgb(101, 135, 231) solid;
+    
+
+}
+
