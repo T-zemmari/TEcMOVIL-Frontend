@@ -4,10 +4,12 @@ import Header from '../../components/Header/Header';
 import Button from '@material-ui/core/Button';
 import User from '../../components/User/User';
 import axios from 'axios';
+import Loading from '../../components/Loading/Loading';
 
 const Admin =(props)=>{
 
   const [usuario,setUsuario]=useState([]);
+  const [loading,setLoading]=useState(false);
 
   let UserEndpoint='http://localhost:3002/users';
 
@@ -18,31 +20,21 @@ const Admin =(props)=>{
   const listaUsuarios =async ()=>{
    
    let userData= await axios.get(UserEndpoint);
-   setUsuario(userData.data)   
+   setUsuario(userData.data) ;
    
   }
   
-  console.log(usuario)
+ 
 
-  /*if(!usuario){
-      return;
-  }else{
-    let name =usuario.foreach(element =>{
-       return  <div>{element.name}</div>
-      
-   })}*/
   
-
-
-
-
     return(
-
+          
         <div className="vista-admin-container">
- <Header style ='Admin'></Header>
+                 <Loading visible={loading}></Loading>
+                 <Header style ='Admin'></Header>
          <div className="body-vista-admin">
-
-
+            {/*--------------------Menu Izquierdo------------------------- */}
+            
              <div className="vista-menu-izquierda-admin">
                <div className="boton-admin-menu-izquierdo"> <Button variant="contained" color="primary">
                  Lista D Productos
@@ -65,11 +57,9 @@ const Admin =(props)=>{
                </div>
               
               
-                 <div
-                 
-                 className="Usuarios-Registrados-Menu-Izquierda"></div>
+                 <div className="Usuarios-Registrados-Menu-Izquierda"></div>
 
-
+                {/*--------------------Usuarios Menu Central-----------------------*/}
 
              </div>
 
@@ -91,31 +81,22 @@ const Admin =(props)=>{
                    <div className="user-data-admin  user-payment-admin-view">Pago</div>
                </div>
 
-
+          
                <div>
                 {usuario?.map(usuario => <User key={usuario._id} {...usuario}/>)}
                </div>
 
-              {/* <div className="lista-usuarios-registrados-datos">
-                   <div className=" user-data-admin-datos  
-                     user-name-admin-view"></div>
-                   
-                   <div className="user-data-admin-datos  user-lastname-admin-view"></div>
+                {/*---------------------Productos Menu Central-----------------------*/}
 
-                   <div className="user-data-admin-datos
-                    user-email-admin-view"></div>
+                <div className="lista-productos">
 
-                   <div className="user-data-admin-datos 
 
-                   user-phone-admin-view"></div>
+                </div>
 
-                   <div className="user-data-admin-datos
-                    user-adress-admin-view"></div>
-                   <div className="user-data-admin-datos
-                    user-born-admin-view"></div>
-                   <div className="user-data-admin-datos
-                    user-payment-admin-view"></div>
-    </div>*/}
+                 
+
+
+
 
                
 

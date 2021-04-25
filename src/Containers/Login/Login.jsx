@@ -83,8 +83,7 @@ const Login = (props) => {
                 <div className="login-render-container">
                     <h2 className="login-render-h2">Login</h2><br/>
                     
-                    {/*<input  className="input-login" tipo="text" placeholder="Escribe tu Email" label="email" name="email" onChange={handler} /><br/><br/>
-                    <input tipo="password" className="input-login" placeholder="Escribe tu Contraseña" label="password" name="password" onChange={handler} /><br/><br/>*/}
+                   
                        <div className="inputContainer">
                     <Form.Item validateStatus={errors.email?.status} help={errors.email?.help}>
                         <FormInput label="Correo Electrónico" name="email" onChange={updateCredentials} maxLength="50"></FormInput>

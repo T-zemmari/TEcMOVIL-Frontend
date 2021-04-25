@@ -1,8 +1,12 @@
 .product-container{
     display: flex;
+    flex-direction: column;
     margin: 15px;
     width: 200px;
-    height: 300px;
+    height: 360px;
+    border: rgb(224, 214, 219) 1px solid;
+  
+    margin: 10px;
 }
 .destacados-style{
 
@@ -14,8 +18,26 @@
 
 
 .image-size{
+    
+    width: 80px;
+    height: 180px;
+    margin-left: 60px;
+    margin-top: 15px;
+    
+}
+.name-size{
+    margin: 5px;
+    height: 70px;
+}
+.h4-producto-color{
 
-    width: 200px;
-    height: 300px;
-    border: hotpink 1px solid;
+    color: rgb(8, 8, 151);
+    font-size: 20px;
+    margin-top: -3px;
+}
+.h4-producto-price{
+    color: rgb(250, 7, 250);
+    font-size: 25px;
+    margin-top: -25px;
+
 }

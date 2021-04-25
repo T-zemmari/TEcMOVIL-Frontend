@@ -32,6 +32,7 @@ const MySpace =(props)=>{
 
    }
 
+   
   //.................Aqui me traigo los datos de mis productos ...............//
 
    useEffect(async ()=>{
@@ -43,6 +44,14 @@ const MySpace =(props)=>{
       console.log(destacados);
        
    },[]);
+
+   const takeMeTo = (product) => {
+      localStorage.setItem('product', JSON.stringify(product));
+      let productData = JSON.parse(localStorage.getItem('product'));
+      console.log(productData);
+   
+   };
+
 
   
    if(credentiales.user?.name){
@@ -65,7 +74,7 @@ const MySpace =(props)=>{
 
            <h2>Productos destacados</h2>
            <div className="destacados-style">
-               {destacados?.map(destacados => <Product  key={destacados._id}  {...destacados} />)}
+               {destacados?.map(destacados => <Product  style='myspace' key={destacados._id}  {...destacados} onClick={() => takeMeTo(destacados)}/>)}
            </div>
 
            <div className='separador'></div>
@@ -75,7 +84,7 @@ const MySpace =(props)=>{
 
         </div>
 
-        <div className='separador'></div>
+      
 
         <div className="vista-contenedor-rep-smart-acces">
 
