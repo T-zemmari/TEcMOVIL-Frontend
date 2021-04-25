@@ -98,14 +98,9 @@ if(props.style === 'home' ){
                 
               
                    
-                <select  className='select-not-home' name="Tienda" id="">
-                <option  className='option-not-home' value="Smartphones">Smartphones</option>
-                <option  className='option-not-home'value="Tablets">Tablets</option>
-                <option  className='option-not-home'value="Accesorios">Accesorios</option>
-                </select>
                 
-                <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
-                <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
+                
+              
                
               
             </div>
