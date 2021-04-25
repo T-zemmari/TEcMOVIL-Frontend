@@ -8,7 +8,7 @@
     margin-left: 5px;
     margin-right: 5px;
     width: 150px;
-    height: 20px;
+    height: 25px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -19,9 +19,11 @@
 }
 .user-payment-admin-view{
     width: 80px;
+    color: rgb(233, 14, 14);
 }
 .user-name-admin-view{
     width: 75px;
+    color: rgb(5, 96, 148);
 }
 .user-email-admin-view{
     width: 300px;
@@ -38,3 +40,7 @@
 .user-adress-admin-view{
     width: 350px;
 }
+
+//---------estilo Productos--------------//
+
+

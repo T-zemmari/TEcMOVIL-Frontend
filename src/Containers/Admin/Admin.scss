@@ -1,13 +1,14 @@
 .vista-admin-container{
 
     width: 100%;
-    height: 100em;
+    height: 100vh;
     background-image: url('../../img/unnamed.jpg');
 
 }
 .body-vista-admin{
  display: flex;;
  flex-direction: row;
+ 
 
 
 }
@@ -44,7 +45,7 @@
     flex-direction: column;
     border: 0.5px solid rgb(105, 101, 101);
     width: 1300px;
-    height: 500px;
+    height: auto;
     margin: 20px;
     background-color: aliceblue;
   
@@ -68,3 +69,42 @@
 
 //----------vista productos-------------//
 
+.lista-productos-registrados{
+    display: flex;
+    flex-direction: row;
+}
+.product-data-admin{
+    margin: 5px;
+    //width: 150px;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0.1px rgb(101, 135, 231) solid;
+    
+
+}
+.product-identificador-admin-view{
+    width: 200px;
+    color: rgb(233, 14, 14);
+}
+
+.product-name-admin-view{
+    width: 200px;
+}
+.product-price-admin-view{
+    width: 100px;
+}
+.product-color-admin-view{
+    width: 100px;
+}
+.product-rate-admin-view{
+    width: 100px;
+}
+.product-pantalla-admin-view{
+    width: 100px;
+}
+.product-image-admin-view{
+    width: 410px;
+}
