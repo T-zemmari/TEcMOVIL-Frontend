@@ -75,7 +75,7 @@ const MySpace =(props)=>{
 
            <h2>Productos destacados</h2>
            <div className="destacados-style">
-               {destacados?.map(destacados => <Product  style='myspace' key={destacados._id}  {...destacados} onClick={() => takeMeTo(destacados)}/>)}
+               {destacados?.map(destacados => <Product  tamaño ='normal' style='myspace' key={destacados._id}  {...destacados} onClick={() => takeMeTo(destacados)}/>)}
            </div>
 
            <div className='separador'></div>

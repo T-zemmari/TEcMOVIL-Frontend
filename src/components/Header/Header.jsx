@@ -51,7 +51,7 @@ if(props.style === 'home' ){
         
             
             <li className='li-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
-            <li className='li-home'>Presupuestos</li>
+            <li className='li-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
             <li className='li-home'>Contactenos</li>
             <LoginRender>
                 
@@ -96,21 +96,10 @@ if(props.style === 'home' ){
             <div className="vista-logo" onClick={()=>Logout()}>TEcMovil</div>
             <div className="vista-nav">
                 
-              
-                   
-                
-                
-              
-               
-              
-            </div>
+             </div>
         </div>
        )
 }
-
-
-
-
 
 
 if(props.style === 'logged' && credentials?.user.name){
