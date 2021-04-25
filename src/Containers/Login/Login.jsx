@@ -35,7 +35,7 @@ const Login = (props) => {
         if (response.status == 200) {
             localStorage.setItem('credentials',JSON.stringify(response.data));
             console.log(response.data)
-            if (response.data.user.admin) history.push('/admin');
+            if (response.data.user.admin == true) history.push('/admin');
             else history.push('/myspace');
         } else {
             setLoading(false);
