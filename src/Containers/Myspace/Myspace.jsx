@@ -49,6 +49,7 @@ const MySpace =(props)=>{
       localStorage.setItem('product', JSON.stringify(product));
       let productData = JSON.parse(localStorage.getItem('product'));
       console.log(productData);
+      history.push('/product-profile')
    
    };
 

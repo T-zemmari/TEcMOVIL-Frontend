@@ -93,7 +93,7 @@ if(props.style === 'home' ){
 
         <div className="header-container-not-home">
             <Loading visible={loading}></Loading>
-            <div className="vista-logo" onClick={(go)=>goto('/')}>TEcMovil</div>
+            <div className="vista-logo" onClick={()=>Logout()}>TEcMovil</div>
             <div className="vista-nav">
                 
               

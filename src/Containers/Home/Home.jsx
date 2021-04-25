@@ -2,6 +2,7 @@ import React ,{useState,useEffect} from 'react';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Product from '../../components/Products/Product';
+import ProductProfileRender from '../../components/Modal/Profile-product-render';
 import {useHistory} from 'react-router-dom';
 import Android from '../../img/MovAcc.jpg';
 import accesorios from '../../img/accesories.png';
@@ -32,8 +33,18 @@ let history = useHistory();
    localStorage.setItem('destacados',response.data);
    setDestacados(response.data);
    console.log(destacados);
+
+
     
 },[]);
+
+const takeMeTo = (product) => {
+   localStorage.setItem('product', JSON.stringify(product));
+   let productData = JSON.parse(localStorage.getItem('product'));
+   console.log(productData);
+   history.push('/product-profile')
+
+};
 
    return(
 
@@ -53,11 +64,14 @@ let history = useHistory();
 
         
 
-        <h2>Productos destacados</h2>
+        <h2>Productos destacados</h2> 
+        <ProductProfileRender>
            <div className="destacados-style">
-               {destacados?.map(destacados => <Product  key={destacados._id}  {...destacados} />)}
+             
+               {destacados?.map(destacados => <Product tamaño ='normal' key={destacados._id}  {...destacados} onClick={()=>takeMeTo(destacados)} />)}
+              
            </div>
-
+        </ProductProfileRender>
            <div className='separador'></div>
 
         <h2>CATEGORIAS</h2>

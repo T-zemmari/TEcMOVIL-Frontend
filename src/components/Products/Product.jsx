@@ -2,12 +2,16 @@ import React from 'react';
 import './Product.scss';
 
 
-const Product = ({name,imgUrl,style,image_front,image_back,image_lat,price,description,onClick,poster_path,color})=>{
+const Product = ({name,imgUrl,style,tamaño,image_front,image_back,image_lat,price,description,onClick,poster_path,color})=>{
 
     
-     
 
-   if(style === 'myspace'){
+   
+    let ProductOnProfile = 
+    <img className='image-size-grande' src={imgUrl} alt={name}/>
+    
+
+   if(style !=='admin' && tamaño === 'normal'){
     return(
         <div className='product-container'>
             
@@ -18,6 +22,14 @@ const Product = ({name,imgUrl,style,image_front,image_back,image_lat,price,descr
            
        </div>
     )}
+    if(style !=='admin' && tamaño === 'grande'){
+        return(
+           
+                
+              {ProductOnProfile}
+         
+        )}
+
     if(style ==='admin'){
 
         return(
@@ -42,6 +54,7 @@ const Product = ({name,imgUrl,style,image_front,image_back,image_lat,price,descr
                </div>
 
         )
+     
     }
 
 }
