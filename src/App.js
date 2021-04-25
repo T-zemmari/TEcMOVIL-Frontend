@@ -8,6 +8,7 @@ import MySpace from './Containers/Myspace/Myspace';
 import Profile from './Containers/Profile/Profile';
 import Presupuestos from './Containers/Presupuestos/Presupuestos';
 import Repuestos from './Containers/Repuestos/Repuestos';
+import Admin from './Containers/Admin/Admin';
 
 
 function App() {
@@ -24,8 +25,9 @@ function App() {
          <Route path='/login' exact component={Login}/>
          <Route path='/myspace' exact component={MySpace}/>
          <Route path='/profile' exact component={Profile}/>
-         <Route path='/presupuestos' exact component={Presupuestos}/>
+         <Route path='/presupuestos' exact componen={Presupuestos}/>
          <Route path='/repuestos' exact component={Repuestos}/>
+         <Route path="/admin" exact component={Admin}/>
 
         </Switch>
       

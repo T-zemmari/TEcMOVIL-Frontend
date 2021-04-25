@@ -48,12 +48,7 @@ if(props.style === 'home' ){
         <div className="vista-nav">
            
             <li className='li-home'>Tienda</li>
-               
-            {/*<select name="Tienda" id="">
-            <option value="Smartphones">Smartphones</option>
-            <option value="Tablets">Tablets</option>
-            <option value="Accesorios">Accesorios</option>
-            </select>*/}
+        
             
             <li className='li-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
             <li className='li-home'>Presupuestos</li>
@@ -92,7 +87,38 @@ if(props.style === 'home' ){
                     </div>
                 </div>
                )
-}if(props.style === 'logged' && credentials?.user.name){
+}if(props.style === 'Admin' ){
+    return(
+
+
+        <div className="header-container-not-home">
+            <Loading visible={loading}></Loading>
+            <div className="vista-logo" onClick={(go)=>goto('/')}>TEcMovil</div>
+            <div className="vista-nav">
+                
+              
+                   
+                <select  className='select-not-home' name="Tienda" id="">
+                <option  className='option-not-home' value="Smartphones">Smartphones</option>
+                <option  className='option-not-home'value="Tablets">Tablets</option>
+                <option  className='option-not-home'value="Accesorios">Accesorios</option>
+                </select>
+                
+                <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
+                <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
+               
+              
+            </div>
+        </div>
+       )
+}
+
+
+
+
+
+
+if(props.style === 'logged' && credentials?.user.name){
             return(
                 
                 
