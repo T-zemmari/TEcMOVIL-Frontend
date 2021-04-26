@@ -38,10 +38,9 @@ let history = useHistory();
     
 },[]);
 
-const takeMeTo = (product) => {
-   localStorage.setItem('product', JSON.stringify(product));
-   let productData = JSON.parse(localStorage.getItem('product'));
-   console.log(productData);
+const GetProductInfo = (product) => {
+   localStorage.removeItem('products');
+   localStorage.setItem('products',JSON.stringify(product));
    history.push('/product-profile')
 
 };
@@ -66,9 +65,9 @@ const takeMeTo = (product) => {
 
         <h2>Productos destacados</h2> 
         <ProductProfileRender>
-           <div className="destacados-style">
+           <div className="destacados-z-index-superior">
              
-               {destacados?.map(destacados => <Product tamaño ='normal' key={destacados._id}  {...destacados} onClick={()=>takeMeTo(destacados)} />)}
+               {destacados?.map(destacados => <Product tamaño ='normal' key={destacados._id}  {...destacados}  onClick={()=>GetProductInfo(destacados)}/>)}
               
            </div>
         </ProductProfileRender>

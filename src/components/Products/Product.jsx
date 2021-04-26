@@ -2,7 +2,7 @@ import React from 'react';
 import './Product.scss';
 
 
-const Product = ({name,imgUrl,style,tamaño,image_front,image_back,image_lat,price,description,onClick,poster_path,color})=>{
+const Product = ({name,imgUrl,style,tamaño,label,_id,onClick,image_front,image_back,image_lat,price,description,color})=>{
 
     
 
@@ -13,15 +13,17 @@ const Product = ({name,imgUrl,style,tamaño,image_front,image_back,image_lat,pri
 
    if(style !=='admin' && tamaño === 'normal'){
     return(
-        <div className='product-container'>
+        <div className='product-container'onClick ={onClick}>
             
-           <img className='image-size' src={imgUrl} alt={name}/>
-           <div className="name-size" onClick={onClick}><h3>{name}</h3></div>
+           <img className='image-size' src={imgUrl} alt={name} />
+           <div className="name-size" ><h3>{name}</h3></div>
            <div className="rate-size"><h4 className="h4-producto-color">{color}</h4></div>
            <div className="price-size"><h4  className="h4-producto-price">{price}</h4></div>
            
        </div>
     )}
+
+
     if(style !=='admin' && tamaño === 'grande'){
         return(
            

@@ -2,7 +2,7 @@ import React from 'react';
 import './User.scss';
 
 
-const User = ({name,lastname,email,phone,adress,born,payment,onClick})=>{
+const User = ({name,lastname,email,phone,adress,born,payment})=>{
 
     
      

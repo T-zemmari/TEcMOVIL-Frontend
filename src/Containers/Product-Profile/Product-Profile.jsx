@@ -5,10 +5,10 @@ import './Product-Profile.scss';
 
 const ProductProfile = ({tamaño})=>{
    
-     let datosProducto = JSON.parse(localStorage.getItem('product'));
+     let datosProducto = JSON.parse(localStorage.getItem('products'));
      console.log(datosProducto);
 
-
+    if(datosProducto?.imgUrl){
     return (
 
         <div className="vista-product-profile-container">
@@ -25,7 +25,14 @@ const ProductProfile = ({tamaño})=>{
               </div>
           </div>
         </div>
-    )
+    )}else{
+
+        return(
+            <div>
+                Algo esta fallando
+            </div>
+        )
+    }
 }
 
 export default ProductProfile;

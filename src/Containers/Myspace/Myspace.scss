@@ -30,12 +30,18 @@
     color: rgb(12, 12, 46);
 }
 
-.destacados-style{
+.destacados-z-index-superior{
 
     display:flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    //z-index: 100;
+}
+
+.destacados-z-index-inferios{
+
+    z-index:1;
 }
 
 .vista-contenedor-rep-smart-acces{

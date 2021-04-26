@@ -7,6 +7,7 @@ import accesorios from '../../img/accesories.png';
 import smartphone from '../../img/smarts.jpeg';
 import repuestos from '../../img/flex.png';
 import Loading from '../../components/Loading/Loading';
+import ProductProfileRender from '../../components/Modal/Profile-product-render';
 import './Myspace.scss';
 import Product from '../../components/Products/Product';
 import axios from 'axios';
@@ -45,13 +46,18 @@ const MySpace =(props)=>{
        
    },[]);
 
-   const takeMeTo = (product) => {
-      localStorage.setItem('product', JSON.stringify(product));
-      let productData = JSON.parse(localStorage.getItem('product'));
+   /*const takeMeTo = (producto) => {
+      localStorage.setItem('product', JSON.stringify(producto));
+      let productData = localStorage.getItem('product');
       console.log(productData);
       history.push('/product-profile')
    
-   };
+   };*/
+   /*const takeMeToo = (product) => {
+      localStorage.setItem('prductos', JSON.stringify(product));
+      console.log(product)
+      //history.push('/product-profile');
+   };*/
 
 
   
@@ -74,9 +80,15 @@ const MySpace =(props)=>{
         <div className='separador'></div>
 
            <h2>Productos destacados</h2>
-           <div className="destacados-style">
-               {destacados?.map(destacados => <Product  tamaño ='normal' style='myspace' key={destacados._id}  {...destacados} onClick={() => takeMeTo(destacados)}/>)}
-           </div>
+
+
+           <ProductProfileRender>
+           <div className="destacados-z-index-superior" >
+              {destacados?.map(destacados => <Product  tamaño='normal' key={destacados._id}  {...destacados}  />)}
+              </div>
+           </ProductProfileRender>
+
+
 
            <div className='separador'></div>
 

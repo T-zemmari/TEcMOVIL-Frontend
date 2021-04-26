@@ -2,7 +2,7 @@ import React from 'react';
 import './Products-admin.scss';
 
 
-const ProductsAdmin = ({name,price,color,rate,_id,imgUrl,pantalla,onClick})=>{
+const ProductsAdmin = ({name,price,color,rate,_id,imgUrl,pantalla})=>{
 
     
      
