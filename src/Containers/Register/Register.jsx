@@ -15,14 +15,15 @@ const Register = (props) => {
   let history = useHistory();
 
   const [user, setUser] = useState({
-    email: "",
-    password: "",
     name: "",
     lastname: "",
-    address: "",
+    email: "",
+    password: "",
     nif: "",
-    born: "",
     phone: "",
+    address: "",
+    born: "",
+    payment:'',
     passwordValidation: ""
   });
 
@@ -50,6 +51,7 @@ const Register = (props) => {
       lastname: user.lastname,
       email: user.email,
       password: user.password,
+      nif:user.nif,
       phone: user.phone,
       adress: user.adress,
       born: user.born,
