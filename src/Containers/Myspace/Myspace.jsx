@@ -59,6 +59,13 @@ const MySpace =(props)=>{
       //history.push('/product-profile');
    };*/
 
+   const GetProductInfo = (product) => {
+      localStorage.removeItem('productos');
+      localStorage.setItem('productos',JSON.stringify(product));
+      history.push('/product-profile')
+   
+   };
+
 
   
    if(credentiales.user?.name){
@@ -82,11 +89,11 @@ const MySpace =(props)=>{
            <h2>Productos destacados</h2>
 
 
-           <ProductProfileRender>
+           
            <div className="destacados-z-index-superior" >
-              {destacados?.map(destacados => <Product  tamaño='normal' key={destacados._id}  {...destacados}  />)}
+              {destacados?.map(destacados => <Product  tamaño='normal' key={destacados._id}  {...destacados} onClick={()=>GetProductInfo(destacados) } />)}
               </div>
-           </ProductProfileRender>
+           
 
 
 

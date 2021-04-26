@@ -39,8 +39,8 @@ let history = useHistory();
 },[]);
 
 const GetProductInfo = (product) => {
-   localStorage.removeItem('products');
-   localStorage.setItem('products',JSON.stringify(product));
+   localStorage.removeItem('productos');
+   localStorage.setItem('productos',JSON.stringify(product));
    history.push('/product-profile')
 
 };
@@ -64,13 +64,13 @@ const GetProductInfo = (product) => {
         
 
         <h2>Productos destacados</h2> 
-        <ProductProfileRender>
+        
            <div className="destacados-z-index-superior">
              
-               {destacados?.map(destacados => <Product tamaño ='normal' key={destacados._id}  {...destacados}  onClick={()=>GetProductInfo(destacados)}/>)}
+               {destacados?.map(destacados => <Product tamaño ='normal' key={destacados._id}  {...destacados}  onClick={()=>GetProductInfo(destacados) } />)}
               
            </div>
-        </ProductProfileRender>
+      
            <div className='separador'></div>
 
         <h2>CATEGORIAS</h2>
