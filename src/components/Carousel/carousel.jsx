@@ -22,8 +22,7 @@ function Carousel() {
           <ArrowBackIosIcon style={{ fontSize: 30 }} />
         </div>
         <div className="center">
-          <h1>{images[currImg].title}</h1>
-          <p>{images[currImg].subtitle}</p>
+         
         </div>
         <div
           className="right"

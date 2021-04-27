@@ -3,6 +3,7 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Product from '../../components/Products/Product';
 import ProductProfileRender from '../../components/Modal/Profile-product-render';
+import Carousel from '../../components/Carousel/carousel'
 import {useHistory} from 'react-router-dom';
 import Android from '../../img/MovAcc.jpg';
 import accesorios from '../../img/accesories.png';
@@ -25,14 +26,31 @@ let history = useHistory();
    //................Me traigo los productos destacados..........//
 
  const [destacados,setDestacados] = useState([]);
-
+ const [accessorios_destacados,setAccessoriosDestacados] = useState([]);
  useEffect(async ()=>{
 
+   //------------Me traigo los productos destacados-----------//
+
       
-   let response = await axios.get('http://localhost:3002/products');
-   localStorage.setItem('destacados',response.data);
-   setDestacados(response.data);
+   let response_uno = await axios.get('http://localhost:3002/products');
+   localStorage.setItem('destacados',response_uno.data);
+   console.log(response_uno.data.slice(0,12))
+   let primeraPagina = response_uno.data.slice(0,7);
+   setDestacados(primeraPagina);
+   
    console.log(destacados);
+
+
+
+   let response_dos= await axios.get('http://localhost:3002/accessorios');
+   localStorage.setItem('accesoriosDestacados',response_dos.data)
+   
+   let primeraPaginaAccessorios = response_dos.data.slice(0.7)
+   setAccessoriosDestacados(primeraPaginaAccessorios);
+
+   console.log(accessorios_destacados);
+
+
 
 
     
@@ -57,21 +75,35 @@ const GetProductInfo = (product) => {
             <img className="vista-portada-uno" src={Android} alt="tab"/>
             <div className="header"><Header style='home'/></div>
         </div>
+
+
+        <Carousel>
+
+        </Carousel>
        
 
         <div className='separador'></div>
 
         
 
-        <h2>Productos destacados</h2> 
+           <h2 className='h2-vista-product-home'>
+              Productos destacados</h2> 
         
-           <div className="destacados-z-index-superior">
+           <div className="destacados-z-index-superior-home">
              
                {destacados?.map(destacados => <Product tamaño ='normal' key={destacados._id}  {...destacados}  onClick={()=>GetProductInfo(destacados) } />)}
               
            </div>
       
            <div className='separador'></div>
+
+           <h2 className='h2-vista-product-home'>Accesorios destacados</h2> 
+
+           <div className="destacados-accesorios-home">
+
+           {accessorios_destacados?.map(accedorios_destacados => <Product tamaño ='normal' key={accessorios_destacados._id}  {...accessorios_destacados}  onClick={()=>GetProductInfo(accessorios_destacados) } />)}
+              
+           </div>
 
         <h2>CATEGORIAS</h2>
         <div className="home-categorias"></div>

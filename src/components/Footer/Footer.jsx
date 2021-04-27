@@ -11,7 +11,7 @@ if(props.tamaño ==='product-profile'){
     
     <div className="footer-container-product-profile">
         <div className="vista-sobre-nosotros">
-            <p>Enlaces de interes</p>
+            Enlaces de interes
             <div>Envios</div>
             <div>Repuestos</div>
             <div>Accesorios</div>
@@ -20,14 +20,14 @@ if(props.tamaño ==='product-profile'){
         
         </div>
         <div className="vista-sobre-nosotros">
-            <p>Sobre Nosotros</p>
+            Sobre Nosotros
             <div>Calle los leones 28 bajo 46022 Valencia</div>
             <div></div>
             <div></div>
         </div>
 
         <div className="vista-sobre-nosotros">
-            <p>Sobre Nosotros</p>
+            Sobre Nosotros
             <div>Calle los leones 28 bajo 46022 Valencia</div>
             <div></div>
             <div></div>
@@ -43,7 +43,7 @@ if(props.tamaño ==='product-profile'){
 
 <div className="footer-container">
         <div className="vista-sobre-nosotros">
-            <p>Enlaces de interes</p>
+            Enlaces de interes
             <div>Envios</div>
             <div>Repuestos</div>
             <div>Accesorios</div>
@@ -52,14 +52,14 @@ if(props.tamaño ==='product-profile'){
         
         </div>
         <div className="vista-sobre-nosotros">
-            <p>Sobre Nosotros</p>
+            Sobre Nosotros
             <div>Calle los leones 28 bajo 46022 Valencia</div>
             <div></div>
             <div></div>
         </div>
 
         <div className="vista-sobre-nosotros">
-            <p>Sobre Nosotros</p>
+            Sobre Nosotros
             <div>Calle los leones 28 bajo 46022 Valencia</div>
             <div></div>
             <div></div>

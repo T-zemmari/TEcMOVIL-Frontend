@@ -1,12 +1,15 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import { useHistory} from 'react-router-dom';
 import {Avatar, Button, ClickAwayListener} from '@material-ui/core';
 import './Product-Profile.scss';
 
 
 
 const ProductProfile = ({tamaño})=>{
+
+    let history = useHistory();
    
      let datosProducto = JSON.parse(localStorage.getItem('productos'));
      console.log(datosProducto);
@@ -118,8 +121,8 @@ const ProductProfile = ({tamaño})=>{
 
               </div>
 
-              <div className="vista-boton-comprar-product-profile">
-                  <Button variant="contained" color="secondary">
+              <div className="vista-boton-comprar-product-profile" >
+                  <Button variant="contained" color="secondary"onClick={()=>history.push('/')}>
                       Comprar Ahora
                   </Button>
               </div>
