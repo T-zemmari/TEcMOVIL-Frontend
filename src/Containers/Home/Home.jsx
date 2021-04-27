@@ -45,7 +45,7 @@ let history = useHistory();
    let response_dos= await axios.get('http://localhost:3002/accessorios');
    localStorage.setItem('accesoriosDestacados',response_dos.data)
    
-   let primeraPaginaAccessorios = response_dos.data.slice(0.7)
+   let primeraPaginaAccessorios = response_dos.data.slice(0,3)
    setAccessoriosDestacados(primeraPaginaAccessorios);
 
    console.log(accessorios_destacados);
@@ -64,17 +64,12 @@ const GetProductInfo = (product) => {
 };
 
    return(
-
-
+<>
+<div className="header"><Header style='home'/></div>
     <div className="home-container">
         
 
-        <div className="vista-portada-uno">
-           
-           
-            <img className="vista-portada-uno" src={Android} alt="tab"/>
-            <div className="header"><Header style='home'/></div>
-        </div>
+        
 
 
         <Carousel>
@@ -101,7 +96,7 @@ const GetProductInfo = (product) => {
 
            <div className="destacados-accesorios-home">
 
-           {accessorios_destacados?.map(accedorios_destacados => <Product tamaño ='normal' key={accessorios_destacados._id}  {...accessorios_destacados}  onClick={()=>GetProductInfo(accessorios_destacados) } />)}
+           {accessorios_destacados?.map(accessorios_destacados => <Product  label = 'accessorios-destacados' key={accessorios_destacados._id}  {...accessorios_destacados}  onClick={()=>GetProductInfo(accessorios_destacados) } />)}
               
            </div>
 
@@ -162,6 +157,7 @@ const GetProductInfo = (product) => {
         <div className="footer"><Footer/></div>
         
     </div>
+    </>
    )
 
 

@@ -2,7 +2,30 @@ import React from 'react';
 import './Product.scss';
 
 
-const Product = ({name,imgUrl,style,tamaño,label,_id,onClick,image_front,image_back,image_lat,price,description,color})=>{
+const Product = (
+    {
+        name,
+        imgUrl,
+        style,
+        tamaño,
+        label,
+        _id,
+        onClick,
+        image_front,
+        image_back,
+        image_lat,
+        price,
+        rate,
+        description,
+        color,
+        image1,
+        image2,
+        priceWithIva,
+
+
+    
+    }
+    )=>{
 
     
 
@@ -57,7 +80,17 @@ const Product = ({name,imgUrl,style,tamaño,label,_id,onClick,image_front,image_
 
         )
      
-    }
+    }if(style !=='admin'  && label === 'accessorios-destacados'){
+    return(
+        <div className='product-container-accessorios'onClick ={onClick}>
+            
+           <img className='image-size-accessorio' src={image1} alt={name} />
+           <div className="name-size" ><h3>{name}</h3></div>
+           
+           
+       </div>
+    )}
+
 
 }
 

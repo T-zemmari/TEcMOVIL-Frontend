@@ -8,6 +8,20 @@
   
     margin: 10px;
 }
+.product-container-accessorios{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin: 15px;
+    width:400px;
+    height: 450px;
+    border: rgb(224, 214, 219) 1px solid;
+  
+    margin: 10px;
+
+}
 .destacados-style{
 
     display:flex;
@@ -24,6 +38,14 @@
     margin-left: 60px;
     margin-top: 15px;
     
+}
+.image-size-accessorio{
+
+    width: 350px;
+    height: 400px;
+    margin-top: 20px;
+    //margin-left: 60px;
+    //margin-top: 15px; 
 }
 .image-size-grande{
 
