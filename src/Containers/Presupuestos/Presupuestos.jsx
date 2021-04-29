@@ -2,6 +2,7 @@ import React from 'react';
 import './Presupuestos.scss';
 import Header from '../../components/Header/Header';
 import  Carousel  from '../../components/Carousel/carousel';
+import publi from '../../img/distribuidores-pc.jpg'
 
 const Presupuestos =()=>{
 
@@ -23,8 +24,8 @@ const Presupuestos =()=>{
            <div className="vista-presupuesto-container">
             <Header style='repuestos'/>
             <div className="body-container-prepusupuesto">
-                <div className="caroussel-container">
-                <Carousel ></Carousel>
+                <div className="vista-imagen-promocional">
+                    <img src="" alt=""/>
                 </div>
                </div>
            </div>

@@ -11,6 +11,7 @@ import Repuestos from './Containers/Repuestos/Repuestos';
 import Admin from './Containers/Admin/Admin';
 import ProductProfile from './Containers/Product-Profile/Product-Profile';
 import Tienda from './Containers/Tienda/Tienda';
+import Scrolltop from './components/Scrolltop/Scrolltop';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       
       <BrowserRouter>
 
-      
+       
         <Switch>
          <Route path='/' exact component={Home}/>
          <Route path='/register' exact component={Register}/>
@@ -32,7 +33,7 @@ function App() {
          <Route path="/admin" exact component={Admin}/>
          <Route path="/product-profile" exact component={ProductProfile}/>
          <Route path="/tienda" exact component ={Tienda}/>
-
+        
         </Switch>
       
       

@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useEffect}from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { useHistory} from 'react-router-dom';
@@ -8,6 +8,10 @@ import './Product-Profile.scss';
 
 
 const ProductProfile = ({tamaño})=>{
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
     let history = useHistory();
    
@@ -93,21 +97,23 @@ const ProductProfile = ({tamaño})=>{
   }if(datosProducto?.name && !credentials?.user.name){
 
         return(
-            <div>
+           
                 <>
-        <Header style ='register'></Header>
-        <div className="vista-product-profile-container">
-        <div className="image-datainfo-and-div-garantia">
+    <Header style ='register'></Header>
+      <div className="vista-product-profile-container">
+           <div className="image-datainfo-and-div-garantia">
 
-          {/*---------------imagen + datos del producto ---------------*/}
+          
         
-         {/*<div className="Image-and-datainfo-together-product-profile"></div>*/}
+         
+         <div className="Image-and-datainfo-together-product-profile">
+         
 
           <div className="image-product-profile">
            <img className='img-product-size-on-profile'tamaño ='grande' src={datosProducto.imgUrl} alt={datosProducto.name}/>
           </div>
 
-        
+         
           <div className="data-product-profile">
                   <h1 className='h1-vista-product-profile'>{datosProducto.name}</h1>
               <div className="masdatos">
@@ -127,7 +133,7 @@ const ProductProfile = ({tamaño})=>{
                   </div>
 
 
-                  {/* ------------ More -  info - Reparto ---etc----------*/}
+               
 
                 <div className="vista-more-info-pago-reparto-sat">
                   <div className="vista-icono-tarjeta"></div>
@@ -154,11 +160,13 @@ const ProductProfile = ({tamaño})=>{
                   
               </div>
           </div>
+         
+          
 
          
          
    
-        {/*-------------Menu derecho Garantia---etc-------------*/}
+       
 
         <div className="vista-right-menu-product-profile">
               <div className="vista-disponible-product-profile">
@@ -191,22 +199,20 @@ const ProductProfile = ({tamaño})=>{
                   </Button>
               </div>
           </div>
+          
        </div>
+       </div>
+
        <div className="vista-description-product-profile">
           <h2 className='h2-vista-product-profile'>Descripción</h2>
            <p className='p-vista-product-profile'>{datosProducto.description}</p>
           </div>
 
-          {/*<div className="vista-description-product-profile">
-          <h2 className='h2-vista-product-profile'>Descripción</h2>
-           <p className='p-vista-product-profile'>{datosProducto.description}</p>
-           </div>
-        //<div tamaño ='product-profile'><Footer/></div>*/}
-        </div>
-        </>
+         
+       
                 
             </div>
-        )
+        </> )
     }
 }
 
