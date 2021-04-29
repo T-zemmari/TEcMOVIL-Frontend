@@ -10,6 +10,7 @@ import Presupuestos from './Containers/Presupuestos/Presupuestos';
 import Repuestos from './Containers/Repuestos/Repuestos';
 import Admin from './Containers/Admin/Admin';
 import ProductProfile from './Containers/Product-Profile/Product-Profile';
+import Tienda from './Containers/Tienda/Tienda';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
          <Route path='/repuestos' exact component={Repuestos}/>
          <Route path="/admin" exact component={Admin}/>
          <Route path="/product-profile" exact component={ProductProfile}/>
+         <Route path="/tienda" exact component ={Tienda}/>
 
         </Switch>
       

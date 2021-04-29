@@ -65,19 +65,25 @@ const GetProductInfo = (product) => {
 
    return(
 <>
-<div className="header"><Header style='home'/></div>
+ 
     <div className="home-container">
+      
+
+        <div className="vista-portada-uno-home">
+
+           <div className="header-home"><Header style='home'/></div> 
+           <img className="vista-portada-uno-home" src={Android} alt="android"/>
+        </div>
+        
+
+
+
         
 
         
-
-
-        <Carousel>
-
-        </Carousel>
        
 
-        <div className='separador'></div>
+        <div className='separador-home'></div>
 
         
 
@@ -90,7 +96,7 @@ const GetProductInfo = (product) => {
               
            </div>
       
-           <div className='separador'></div>
+           <div className='separador-home'></div>
 
            <h2 className='h2-vista-product-home'>Accesorios destacados</h2> 
 
@@ -100,7 +106,7 @@ const GetProductInfo = (product) => {
               
            </div>
 
-        <h2>CATEGORIAS</h2>
+        <h2 className='h2-vista-product-home'>Categorias</h2>
         <div className="home-categorias"></div>
 
         <div className="vista-contenedor-rep-smart-acces">
@@ -133,7 +139,7 @@ const GetProductInfo = (product) => {
            </div>
         </div>
 
-        <div className="separador"></div>
+        <div className="separador-home"></div>
 
         <div className="publicidad-uno">
              <div className="span-my-space"> 
@@ -151,7 +157,7 @@ const GetProductInfo = (product) => {
                </div>
        
         </div>
-        <div className="separador"></div>
+        <div className="separador-home"></div>
         <h2> PRODUCTOS ESTRELLA</h2>
 
         <div className="footer"><Footer/></div>

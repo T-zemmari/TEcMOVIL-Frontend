@@ -6,7 +6,7 @@
 }
 .header{
     display: flex;
-    margin-top: -70px;
+    margin-top: 70px;
     //width: 100vw;
 }
 .vista-portada-uno{
@@ -22,13 +22,13 @@
    // border: 0.01px solid rgb(61, 59, 59) ;
     border: 0.01px solid rgb(182, 177, 177) ;
 }
-.parrafo{
-    margin: 20px;
-    padding: 15px;
-    font-size: 30px;
-    font-weight: 300;
-    color: rgb(12, 12, 46);
-}
+// .parrafo{
+//     margin: 20px;
+//     padding: 15px;
+//     font-size: 30px;
+//     font-weight: 300;
+//     color: rgb(12, 12, 46);
+// }
 
 .destacados-z-index-superior{
 
@@ -77,13 +77,7 @@
    margin-top: -2px;
    font-size: 30px;
 }
-.p-home-parrafo{
-    margin-top: -10px;
-    //color: rgb(250, 242, 242);
-    color: rgb(5, 0, 0);
-    font-size: 16px;
 
-}
 .vista-contenido{
 
     display: flex;

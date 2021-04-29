@@ -1,6 +1,7 @@
 import React from 'react';
 import './Presupuestos.scss';
 import Header from '../../components/Header/Header';
+import  Carousel  from '../../components/Carousel/carousel';
 
 const Presupuestos =()=>{
 
@@ -18,9 +19,14 @@ const Presupuestos =()=>{
    )}else{
        return(
        <>
-       <Header style='repuestos'/>
-           <div>
-               
+       
+           <div className="vista-presupuesto-container">
+            <Header style='repuestos'/>
+            <div className="body-container-prepusupuesto">
+                <div className="caroussel-container">
+                <Carousel ></Carousel>
+                </div>
+               </div>
            </div>
         </>
        )

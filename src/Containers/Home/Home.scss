@@ -1,26 +1,36 @@
 .home-container{
-    width: 100%;
+    width: 100vw;
     height: auto;
    // background-color: rgb(43, 37, 37);
     background-color: rgb(248, 246, 246);
 }
-.header{
+.vista-fondo-black{
+    position: relative;
+    background-color: rgb(39, 25, 25);
     display: flex;
-    margin-top:1px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header-home{
+    display: flex;
+    //margin-left:-980px;
+    position: absolute;
     //width: 100vw;
 }
-.vista-portada-uno{
+.vista-portada-uno-home{
     
      width: 100%;
      height: 500px;
 }
-.separador{
+.separador-home{
 
-    width: 1000px;
-    margin-top: 40px;
-    margin-left: 170px;
+    width: auto;
+    margin:auto;
+   // margin-top: 40px;
+   // margin-left: 170px;
    // border: 0.01px solid rgb(61, 59, 59) ;
-    border: 0.01px solid rgb(182, 177, 177) ;
+    border: 0,01px solid rgb(182, 177, 177) ;
 }
 
 .vista-contenedor-rep-smart-acces{
@@ -45,7 +55,23 @@
     border: 1px solid rgb(212, 202, 202);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
+@media (max-width:500px){.destacados-accesorios-home{
+    margin-left: 18px;
+    margin-top: 40px;
+    width: auto;
+    height: auto;
+    border: 1px solid rgb(212, 202, 202);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+}}
+
+
 .destacados-accesorios-home{
     margin-left: 18px;
     margin-top: 40px;
@@ -82,6 +108,14 @@
     font-size: 16px;
 
 }
+
+.parrafo{
+     margin: 20px;
+     padding: 15px;
+     font-size: 30px;
+     font-weight: 300;
+     color: rgb(12, 12, 46);
+     }
 .vista-contenido{
 
     display: flex;
@@ -90,4 +124,64 @@
     height: 330px;
    // border: 0.5px solid rgb(131, 126, 126);
     border-radius: 5px;
+}
+@media (max-width:767px){
+
+    .separador-home{
+
+        
+        visibility: hidden;
+    }
+
+    .vista-contenedor-rep-smart-acces{
+
+        display: flex;
+        margin-top: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .destacados-z-index-superior-home{
+
+        margin-left: 18px;
+        margin-top: 40px;
+        width: 98%;
+        height: auto;
+        border: 1px solid rgb(212, 202, 202);
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+    }
+
+    .p-home-titulo{
+        //color: rgb(255, 255, 255);
+        color: rgb(8, 8, 8);
+        //margin-top: -2px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+
+
+    .parrafo{
+        margin: 50px;
+        padding: 15px;
+        font-size: 30px;
+        font-weight: 300;
+        color: rgb(12, 12, 46);
+    }
+    .vista-contenido{
+        margin-top:40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 380px;
+        height: 330px;
+       // border: 0.5px solid rgb(131, 126, 126);
+        border-radius: 5px;
+    }
 }

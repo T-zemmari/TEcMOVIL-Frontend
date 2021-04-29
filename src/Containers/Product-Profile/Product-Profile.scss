@@ -1,31 +1,39 @@
+
 .vista-product-profile-container{
 
     width: 100%;
-  
+    height: auto;
     background-color: rgb(228, 225, 225);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: space-evenly;
+    
     
 
 }
+.image-datainfo-and-div-garantia{
 
-//-----------div contendor imagen + datos + mas datos---------//
-.Image-and-datainfo-together-product-profile{
-    position: relative;
-    margin: 40px;
-    height: 1000px;
+    //width: 1100px;
+    width: 86%;
+    height: auto;
+    background-color: rgb(247, 245, 242);
+    border: 1px solid rgb(212, 206, 206);
+    margin-top: 20px;
     display: flex;
-    flex-wrap:wrap;
+    align-self: center;
     flex-direction: row;
-    background-color: rgb(241, 240, 226);
-    border: rgb(219, 223, 213) solid 5px;
-
+    //flex-wrap: wrap;
 }
 
+
+
+
+//-----------div contendor imagen + datos + ---------//
+
 .data-product-profile{
-    width: 560px;
+    width: 46%;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -36,8 +44,9 @@
 }
 
 //-----------imagen del terminal--------------//
+
 .image-product-profile{
-    width: 300px;
+    width:20%;
     height: 500px;
     //border: 0.1px solid rgb(230, 231, 227);
     margin:10px;
@@ -55,10 +64,14 @@
 
 .h1-vista-product-profile{
 color: rgb(0, 140, 255);
-
+text-align: start;
+font-size: 25px;
 font-weight: 100;
 }
+
+
 .masdatos{
+    width:100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -67,59 +80,115 @@ font-weight: 100;
 .vista-color-product-profile{
     display: flex;
     justify-content: flex-start;
+    height: 30px;
+    margin-bottom: 10px;
 
 }
 .vista-rate-product-profile{
     display: flex;
     justify-content: flex-start;
     font-size:20px ;
+    height: 30px;
 }
 
 .vista-pantalla-product-profile{
     display: flex;
     justify-content: flex-start;
     font-size:20px ;
+    height: 50px;
 }
 
 .vista-price-product-profile{
     display: flex;
-    justify-content: center;
-    font-weight: 3000;
-    font-size:40px;
-    color: rgb(243, 43, 243);
-   
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    //border: 1px solid black;
+    background-color: rgb(240, 195, 240);
+}
+.h3-precio{
+    font-family: cursive;
+    font-size: 18px;
+    font-weight: 100;
+    
+
+}
+.price{
+    font-weight: 500;
 }
 .h2-vista-product-profile{
+    //font-weight: bold;
+    font-size: 20px;
+   
     font-weight: 100;
 }
 
-//------------div descripcion del terminal----------------//
-.vista-description-product-profile{
-    position: absolute;
-    display: flex;
-    text-align: initial;
-    flex-direction: column;
-    justify-content: flex-start;
-     margin-top: 480px;
-     margin-left: 40px;
-    width: 800px;
-    height: auto;
-    border: 0.1px solid rgb(230, 231, 227);
-    background-color: rgb(241, 240, 226);
+//------------------------moreinfo------------tarjeta reparto----sat------------//
+
+.vista-more-info-pago-reparto-sat{
+
+   display: flex;
+   flex-direction: row;
+   margin-left: 5px;
 }
-.p-vista-product-profile{
+.vista-div-more-info {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    //border: 1px solid rgb(184, 179, 179);
+    background-color: rgb(240, 235, 235);
+    text-align: start;
+}
+.vista-icono-tarjeta{
+    margin-right:  10px;
+    width: 50px;
+    height: 50px;
+    background-image: url('../../img/check.png');
+    background-position: center;
+    background-size: cover;
+
+    
 }
 
-//------------------div mas datos ---------------//
+.vista-icono-reparto{
+    margin-right:  10px;
+    width: 50px;
+    height: 50px;
+    background-image: url('../../img/camion.png');
+    background-position: center;
+    background-size: cover;
+
+    
+}
+
+.vista-icono-flechas{
+    margin-right:  10px;
+    width: 50px;
+    height: 50px;
+    background-image: url('../../img/flechas.png');
+    background-position: center;
+    background-size: cover;
+
+    
+}
+
+
+.vista-div-garantia-sat-dev-product-profile{
+    width: 100px;
+    height: 20px;
+    border: 1px black solid;
+}
+
+//------------Garantia-devolucion-Sat----------------//
 
 .vista-right-menu-product-profile{
-
-    width: 400px;
+    width: 34%;
+   // width: 300px;
     height: 500px;
-
-    margin: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 .vista-disponible-product-profile{
     margin-top: 20px;
@@ -139,22 +208,68 @@ font-weight: 100;
     margin-top: 5px;
 }
 .vista-garantia-product-profile{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
     margin-top: 20px;
     margin-left: 40px;
     width: 280px;
-    height: 200px;
+    height: 310px;
     border: rgb(219, 223, 213) solid 1px;
 
 }
-.vista-entrega-product-profile{
-
-    margin-top: 20px;
-    margin-left: 40px;
-    width: 280px;
-    height: 400px;
-    border: rgb(219, 223, 213) solid 1px;
+.vista-comun-garantia-sat-devolucion{
+    
+    width: 200px;
+    height: 30px;
+    //border: 1px black solid;
+    margin-top:10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+   
+    align-items: center;
+   
 }
+.check-verde{
+    width: 30px;
+    height: 30px;
+    background-image: url('../../img/check-verde.png');
+    background-position: center;
+    background-size: cover;
+}
+
 .vista-boton-comprar-product-profile{
     margin:30px;
 }
+
+
+
+//------------div descripcion del terminal----------------//
+
+
+.vista-description-product-profile{
+    
+    display: flex;
+    text-align: initial;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 86%;
+    height: auto;
+    border: 0.1px solid rgb(230, 231, 227);
+    background-color: rgb(247, 245, 242);
+}
+.p-vista-product-profile{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
+
+/*//-------------------Responsive-----------------------/*/
+
+
+

@@ -1,10 +1,95 @@
-.carousel {
-    margin: 10px;
-    width: 98%;
-    height: 280px;
-    background-color: black;
+@media (max-width:767px){
+
+    .carousel-home {
+        margin: 10px;
+        width: 400px;
+        height: 280px;
+        background-color: rgb(104, 55, 55);
+        visibility: hidden;
+    }
+    
+    .carouselInner-home {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+    }
+    
+    .carousel{
+        margin: 10px;
+        margin-left:30px;
+        width: 95%;
+        height: 400px;
+        background-color: black;
+    
+    }
+    .carouselInner {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+    }
+    
+    
+    .carouselInner .left {
+        flex: 0.1%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.05);
+        display: grid;
+        place-items: center;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .carouselInner .center {
+        flex: 98%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: justify;
+        text-align-last: center;
+    }
+    
+    .carouselInner .right {
+        flex: 0.1%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.05);
+        display: grid;
+        place-items: center;
+        color: white;
+        cursor: pointer;
+    }
 }
 
+.carousel-home {
+    margin: 10px;
+    width: 895px;
+    height: 280px;
+    background-color: rgb(104, 55, 55);
+}
+
+.carouselInner-home {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+}
+
+.carousel{
+    margin: 10px;
+    margin-left:30px;
+    width: 95%;
+    height: 400px;
+    background-color: black;
+
+}
 .carouselInner {
     height: 100%;
     width: 100%;
@@ -13,6 +98,7 @@
     background-size: contain;
     display: flex;
 }
+
 
 .carouselInner .left {
     flex: 0.1%;
@@ -32,20 +118,6 @@
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
     text-align-last: center;
-}
-
-h1 {
-    font-size: 5rem;
-}
-
-p {
-    font-size: 2rem;
-}
-
-h1, p {
-    background-color: rgb(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 9px;
 }
 
 .carouselInner .right {
