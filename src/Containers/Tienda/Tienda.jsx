@@ -10,12 +10,18 @@ import { useHistory } from 'react-router';
 
 
 
+
+
+
 const Tienda = (props)=>{
 
     let history = useHistory();
 
     const [phones,setPhones]=useState([]);
-
+    let imgArr=[
+        'https://fondosmil.com/fondo/32772.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTInnPiPu1yksTuAH79j5mkjW3IcgwcDRIY16DONrXrjJZnQaFbdTK7by4kfHdWSNHy4eM&usqp=CAU'
+    ]
 
     useEffect(async()=>{
 
@@ -44,7 +50,8 @@ const Tienda = (props)=>{
         <>
         <Header  style ='register'/>
         <div className="vista-Container-Tienda">
-
+            
+  
             <div className="nav-bar-container">
            
              <Button variant="contained" color="secondary">
@@ -68,6 +75,18 @@ const Tienda = (props)=>{
             </div>
 
           <div className="vista-contenedor-telefonos-repuestos-accessorio">
+
+              <div className="vista-nav-bar">
+                <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+                <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+                  Total Productos = {phones.length}
+                </Button> 
+                  
+               
+              </div>
+
+            
+                  
 
               <div className="vista-todos-los-Smartphones">
                   {phones.map(phones => <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}

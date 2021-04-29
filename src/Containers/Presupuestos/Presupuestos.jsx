@@ -1,8 +1,8 @@
 import React from 'react';
 import './Presupuestos.scss';
 import Header from '../../components/Header/Header';
-import  Carousel  from '../../components/Carousel/carousel';
-import publi from '../../img/distribuidores-pc.jpg'
+import FormInput from '../../components/FormInput/FormInput';
+
 
 const Presupuestos =()=>{
 
@@ -26,6 +26,15 @@ const Presupuestos =()=>{
             <div className="body-container-prepusupuesto">
                 <div className="vista-imagen-promocional">
                     <img src="" alt=""/>
+                </div>
+
+                <div className="vista-seleccionar-marca-modelo">
+                    Selecciona <h2 className="he2-vista-presupuesto">Marca y Modelo</h2>
+                    
+                </div>
+
+                <div className="-vista-modelos-y-marca">
+                 
                 </div>
                </div>
            </div>

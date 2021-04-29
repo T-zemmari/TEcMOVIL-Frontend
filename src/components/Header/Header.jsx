@@ -26,7 +26,7 @@ const Header = (props)=>{
 
   const getPhones=async()=>{
 
- if(!selectProducts === 'Accesorios'){
+ if(selectProducts === 'Accesorios'){
   let response_for_smartphones = await axios.get('http://localhost:3002/products');
   setSmartphones(response_for_smartphones.data)
   localStorage.setItem('phones',response_for_smartphones.data);
@@ -36,23 +36,13 @@ const Header = (props)=>{
  
 
  useEffect(async()=>{
-    if(!selectProducts === 'Accesorios'){
-        let response_for_smartphones = await axios.get('http://localhost:3002/products');
+    if(selectProducts === 'Smartphones'){
+        let response_for_smartphones = await axios.get('http://localhost:3002products');
         setSmartphones(response_for_smartphones.data)
         localStorage.setItem('phones',response_for_smartphones.data);
 
  }},[]) 
-  const getAccessories=async()=>{
-
-if(!selectProducts === 'Smartphones'){
-    return;
-    }else{
-    let response_for_accessories = await axios.get('http://localhost:3002/accessorios');
-    setAccessorios(response_for_accessories.data)
-    localStorage.setItem('allAccessories',response_for_accessories.data);
-
-  }} 
-  //getAccessories();
+ 
   console.log(smartPhones)
   console.log(accessorios)
   

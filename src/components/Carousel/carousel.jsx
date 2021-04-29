@@ -5,7 +5,7 @@ import {moreImages} from '../helpers/carousel-exports-two';
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
-function Carousel(props) {
+function CarouselTwo(props) {
   const [currImg, setCurrImg] = useState(0);
 
   if(props.style === 'home'){
@@ -70,4 +70,4 @@ function Carousel(props) {
     )}
 }
 
-export default Carousel;
+export default CarouselTwo;
