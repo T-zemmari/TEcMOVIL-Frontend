@@ -108,15 +108,11 @@ if(props.style === 'home' ){
                         
                       
                            
-                        <select  className='select-not-home' name="Tienda" id="Tienda"  const onChange = {(e)=>{
-      const selectedProduct = e.target.value;
-      setSelectProducts(selectedProduct);
+                  
 
-  }}>
-                        <option  className='option-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</option>
-                        <option  className='option-not-home' value="Smartphones" >Smartphones</option>
-                        <option  className='option-not-home'value="Accesorios" >Accesorios</option>
-                        </select>
+
+                        <li  className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
+                        
                         
                         <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                         <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
