@@ -170,7 +170,7 @@
 .imagen-style{
 
     width:80%;
-    height:500px;
+    height:600px;
     margin-top: 20px;
 }
 .vista-div-reparaciones{
@@ -184,21 +184,46 @@
     //border: 1px solid rgb(194, 192, 197);
 }
 .vista-check{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     margin-top: -10px;
     width: 600px;
     height: 50px;
     border :rgb(189, 189, 197) solid 1px;
     border-radius: 5px;
 }
+.checkbox-style{
+     margin-left: 10px;
+     margin-right:10px;
+     width: 20px;
+     height: 20px;
+}
+.div-checkbox-and-averia{
+ display: flex;
+ flex-direction: row;
+}
 .vista-audio-check{
     margin-top: -10px;
     width: 600px;
-    height: 150px;
+    height: 120px;
     border :rgb(189, 189, 197) solid 1px;
     border-radius: 5px
 }
 .vista-div-problemas-de-audio{
    width: 300px;
+   
+}
+.contacta-nos-style{
+    color: rgb(10, 10, 110);
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.separador-presupuesto-vista-div-reparaciones{
+
+    width: 80%;
    
 }
 
