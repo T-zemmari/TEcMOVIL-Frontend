@@ -8,6 +8,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import Phone from '../../img/phone.jpg';
 
 const useStyles = makeStyles((theme)=>({
         formControl : {
@@ -23,7 +24,8 @@ const Presupuestos =()=>{
 
     // hooks //
 
-    const [value,setValue]=React.useState('')
+    const [marca,setMarca]=React.useState('')
+    const [modelo,setModelo]=React.useState('')
 
     // functions //
 
@@ -31,10 +33,11 @@ const Presupuestos =()=>{
 
     const handelIt = (event)=>{
 
-      setValue(event.target.value)
+      setMarca(event.target.value)
+      setModelo(event.target.value)
     }
 
-    console.log(value)
+    console.log(marca)
 
 
 
@@ -76,7 +79,7 @@ const Presupuestos =()=>{
                     <FormControl className={classes.formControl}>
 
                       
-                        <Select labelID ='selected' id = 'Marcas' value ={value} onChange={handelIt}>
+                        <Select labelID ='selected' id = 'Marcas' value ={marca} onChange={handelIt}>
 
 
                            <MenuItem value ='Alcatel' >Alcatel</MenuItem> 
@@ -93,7 +96,7 @@ const Presupuestos =()=>{
                        <FormControl className={classes.formControl}>
 
                       
-                        <Select labelID ='select-demo' id = 'Modelos' value ={value} onChange={handelIt}>
+                        <Select labelID ='select-demo' id = 'Modelos' value ={modelo} onChange={handelIt}>
 
 
                            <MenuItem value ='Alcatel' >Alcatel</MenuItem> 
@@ -112,6 +115,36 @@ const Presupuestos =()=>{
 
 
                 </div>
+
+                 {/*.................Div contenedor div imagen-croquis / div elegir tipo de reparacion----// ---------------*/}
+
+
+                 <div className="vista-contenedor-div-croquis-div-reparaciones">
+
+                      <div className="vista-div-imagen-croquis">
+                          <div className="marca-y-modelo">
+                             Modelo :   <strong> {marca}  {modelo}</strong>
+                          </div>
+                          <div className="separador-presupuesto"></div>
+                          <img className ='imagen-style' src={Phone} alt="croquis"/>
+
+
+                      </div>
+
+                      <div className="vista-div-reparaciones">
+                        <div className="no-enciende-ni-carga"><h2>No enciende / No Carga </h2></div>
+                        <div className="vista-check"></div>
+
+                        <div className="no-enciende-ni-carga"><h2>Daños estéticos / Roturas </h2></div>
+                        <div className="vista-check"></div>
+
+                      </div>
+
+
+                 </div>
+
+
+
                </div>
            </div>
         </>
