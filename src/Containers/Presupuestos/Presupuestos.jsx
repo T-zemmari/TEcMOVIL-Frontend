@@ -135,7 +135,24 @@ const Presupuestos =()=>{
                         <div className="no-enciende-ni-carga"><h2>No enciende / No Carga </h2></div>
                         <div className="vista-check"></div>
 
-                        <div className="no-enciende-ni-carga"><h2>Daños estéticos / Roturas </h2></div>
+                        <div className="error-estetico"><h2>Daños estéticos / Roturas </h2></div>
+                        <div className="vista-check"></div>
+
+                        <div className="vista-div-problemas-de-audio"><h2>Problemas de audio </h2></div>
+                        <div className="vista-check vista-audio-check">
+                            <div className="tipo-averia-audio">
+                               <div className="altavoz">Micrófono -</div>
+                               <div className="speaker">Auricular speaker -</div>
+                               <div className="altavoz-buzzer">Altavoz buzzer -</div>
+                            </div>
+
+                            
+                        </div>
+
+                        <div className="error-de-software"><h2>Reinstalacion de softwares </h2></div>
+                        <div className="vista-check"></div>
+
+                        <div className="no-enciende-ni-carga"><h2>Contacta con nosotros si no encuentras tu averia </h2></div>
                         <div className="vista-check"></div>
 
                       </div>
