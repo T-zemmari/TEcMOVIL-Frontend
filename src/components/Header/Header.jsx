@@ -202,11 +202,10 @@ if(props.style === 'logged' && credentials?.user.name){
                             
                             <li className='li-not-home' onClick={(go)=>goto('/')}>Inicio</li>
                                
-                            <select  className='select-not-home' name="Tienda" id="">
-                            <option  className='option-not-home' value="Smartphones">Smartphones</option>
-                            <option  className='option-not-home'value="Tablets">Tablets</option>
-                            <option  className='option-not-home'value="Accesorios">Accesorios</option>
-                            </select>
+                           
+                            <li  className='li-not-home' value="Smartphones">Tienda</li>
+                            
+                            
                             
                             
                             <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
@@ -225,11 +224,9 @@ if(props.style === 'logged' && credentials?.user.name){
                                 
                                 <li className='li-not-home' onClick={(go)=>goto('/')}>Inicio</li>
                                    
-                                <select  className='select-not-home' name="Tienda" id="">
-                                <option  className='option-not-home' value="Smartphones">Smartphones</option>
-                                <option  className='option-not-home'value="Tablets">Tablets</option>
-                                <option  className='option-not-home'value="Accesorios">Accesorios</option>
-                                </select>
+                              
+                                <li  className='option-not-home' value="Smartphones">Tienda</li>
+                            
                                 
                                 
                                 <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
