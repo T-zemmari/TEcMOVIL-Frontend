@@ -155,6 +155,15 @@ if(props.style === 'logged' && credentials?.user.name){
                        
                         
                         </div>
+                            
+                        <div className="vista-contenedor-carrito-imagen-cantidad">
+                                <h5 className="h5-carrito">10</h5>
+                                <div className="vista-icono-carrito">
+                                  <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
+                                </div>
+                            </div>
+
+
                         <div className="vista-user-logged">
                           
                           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" >
@@ -169,26 +178,23 @@ if(props.style === 'logged' && credentials?.user.name){
                     
                     
                     <div className="header-container-repuestos-Presupuesto-user-logged">
+
                         <Loading visible={loading}></Loading>
+
                         <div className="vista-logo" onClick={(go)=>goto('/myspace')}>TEcMovil</div>
-                        <div className="vista-nav">
-         
-                            
+
+                            <div className="vista-nav">
                             <li  className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
-                            
-                            
                             <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                             <li className='li-not-home'onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
+                            </div>
 
-                            
-                           
-                            
-                            </div>
+
                             <div className="vista-contenedor-carrito-imagen-cantidad">
-                            <h5 className="h5-carrito">10</h5>
-                            <div className="vista-icono-carrito">
-                            <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
-                            </div>
+                                <h5 className="h5-carrito">10</h5>
+                                <div className="vista-icono-carrito">
+                                  <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
+                                </div>
                             </div>
 
 
@@ -214,14 +220,16 @@ if(props.style === 'logged' && credentials?.user.name){
                                
                            
                             <li onClick={()=>history.push('/tienda')} className='li-not-home' value="Smartphones">Tienda</li>
-                            
-                            
-                            
-                            
                             <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
                             <li className='li-not-home'>Contactenos</li>
                           
                         </div>
+                        <div className="vista-contenedor-carrito-imagen-cantidad">
+                                <h5 className="h5-carrito">10</h5>
+                                <div className="vista-icono-carrito">
+                                  <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
+                                </div>
+                            </div>
                     </div>)
 }if(props.style === 'presupuestos' ){
                     return(
@@ -233,16 +241,19 @@ if(props.style === 'logged' && credentials?.user.name){
                             <div className="vista-nav">
                                 
                                 <li className='li-not-home' onClick={(go)=>goto('/')}>Inicio</li>
-                                   
-                              
                                 <li  className='option-not-home' value="Smartphones">Tienda</li>
-                            
-                                
-                                
                                 <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                                 <li className='li-not-home'>Contactenos</li>
                               
                             </div>
+
+                            <div className="vista-contenedor-carrito-imagen-cantidad">
+                                <h5 className="h5-carrito">10</h5>
+                                <div className="vista-icono-carrito">
+                                  <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
+                                </div>
+                            </div>
+                            
                         </div>
                        )}
 }
