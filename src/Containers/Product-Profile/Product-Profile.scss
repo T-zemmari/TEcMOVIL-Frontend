@@ -15,7 +15,7 @@
 }
 .image-datainfo-and-div-garantia{
 
-    //width: 1100px;
+  
     width: 86%;
     height: auto;
     background-color: rgb(247, 245, 242);
@@ -27,29 +27,14 @@
     //flex-wrap: wrap;
 }
 .Image-and-datainfo-together-product-profile{
-    //width:66% ;
+    width:80% ;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-@media (max-width:1100){
 
-    .image-datainfo-and-div-garantia{
-
-        //width: 1100px;
-        width: 86%;
-        height: auto;
-        background-color: rgb(247, 245, 242);
-        border: 1px solid rgb(212, 206, 206);
-        margin-top: 20px;
-        display: flex;
-        align-self: center;
-        flex-direction: column;
-        //flex-wrap: wrap;
-    }
-
-}
 
 
 
@@ -154,7 +139,8 @@ font-weight: 100;
 
    display: flex;
    flex-direction: row;
-   margin-left: 5px;
+   text-align: start;
+   margin-left: 10px;
 }
 .vista-div-more-info {
     display: flex;
@@ -214,6 +200,8 @@ font-weight: 100;
     margin-top: 40px;
     margin-bottom: 40px;
 }
+
+
 .vista-disponible-product-profile{
     margin-top: 20px;
     margin-left: 40px;
@@ -295,5 +283,211 @@ font-weight: 100;
 
 /*//-------------------Responsive-----------------------/*/
 
+@media (max-width:1240px){
+
+    .image-datainfo-and-div-garantia{
+
+       
+        width: 86%;
+        height: auto;
+        background-color: rgb(247, 245, 242);
+        border: 1px solid rgb(212, 206, 206);
+        margin-top: 20px;
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .Image-and-datainfo-together-product-profile{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        //flex-wrap: wrap;
+
+    }
+    .vista-right-menu-product-profile{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        visibility: hidden;
+    }
+    .vista-disponible-product-profile{
+        margin-top: 20px;
+        margin-left: 40px;
+        width: 30%;
+        height: 38px;
+        background-color: rgb(58, 55, 55);
+        display: flex;
+        justify-content: center;
+        align-self:center;
+        border: rgb(219, 223, 213) solid 1px;
+    
+    }.vista-comun-garantia-sat-devolucion{
+    
+        width: 500px;
+        height: 30px;
+        //border: 1px black solid;
+        margin-top:10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+       
+        align-items: center;
+       
+    }
+
+}
+
+
+@media (max-width:1100px){
+    .vista-product-profile-container{
+
+        //width: 100vw;
+        height: auto;
+        background-color: rgb(228, 225, 225);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        
+    
+    }
+
+    .Image-and-datainfo-together-product-profile{
+        width:100% ;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+
+    .data-product-profile{
+        width: 55%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin:10px;
+       
+      
+    }
+    .masdatos{
+        width:100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      
+    }
+    .vista-div-more-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 80%;
+        height: auto;
+        //border: 1px solid rgb(184, 179, 179);
+        background-color: rgb(240, 235, 235);
+        text-align: start;
+        margin-left: auto;
+    }
+
+}
+
+@media (max-width:800px){
+    .data-product-profile{
+        width: 40%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin:10px;
+       
+      
+    }
+
+}
+
+@media (max-width:730px){
+
+    .image-datainfo-and-div-garantia{
+
+  
+       
+        height: auto;
+        background-color: rgb(247, 245, 242);
+        border: 1px solid rgb(212, 206, 206);
+        margin-top: 20px;
+        display: flex;
+        align-self: center;
+        //flex-direction: row;
+        //flex-wrap: wrap;
+    }
+
+    .Image-and-datainfo-together-product-profile{
+        width:100% ;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+       
+       
+    }
+    .data-product-profile{
+        width: 80%;
+        height: 500px;
+        display: flex;
+       
+        
+        align-items: center;
+        margin:10px;
+        border: 1px violet solid;
+       
+      
+    }
+    .masdatos{
+        width:100%;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+      
+    }
+    .vista-div-more-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 80%;
+        height: auto;
+        //border: 1px solid rgb(184, 179, 179);
+        background-color: rgb(240, 235, 235);
+        text-align: start;
+      
+    }
+    .image-product-profile{
+        width:80%;
+        height: 500px;
+        //border: 0.1px solid rgb(230, 231, 227);
+        margin:10px;
+       
+    
+    }
+    .img-product-size-on-profile{
+        width: 200px;
+        height: 400px;
+        
+        margin-top: 25px;
+    }
+    
+
+}
 
 

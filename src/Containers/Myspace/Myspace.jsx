@@ -110,7 +110,7 @@ const MySpace =(props)=>{
 
            <div className="vista-contenedor-divs-rep-smart-acces">
            <div className="vista-contenido">
-              <img onClick={(go)=>goto('repuestos')} className="vista-contenido" src={smartphone} alt="smart"/>
+              <img onClick={(go)=>goto('/tienda')} className="vista-contenido" src={smartphone} alt="smart"/>
            </div> 
            <p className='p-home-titulo'>Telefonos</p> 
            <p className='p-home-parrafo'>Navega por nuestro catalogo, y elige el accesorio que <br/>

@@ -203,7 +203,7 @@ if(props.style === 'logged' && credentials?.user.name){
                             <li className='li-not-home' onClick={(go)=>goto('/')}>Inicio</li>
                                
                            
-                            <li  className='li-not-home' value="Smartphones">Tienda</li>
+                            <li onClick={()=>history.push('/tienda')} className='li-not-home' value="Smartphones">Tienda</li>
                             
                             
                             

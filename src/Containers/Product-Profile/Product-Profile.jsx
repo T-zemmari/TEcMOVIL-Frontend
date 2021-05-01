@@ -168,7 +168,10 @@ const ProductProfile = ({tamaño})=>{
    
        
 
-        <div className="vista-right-menu-product-profile">
+        
+          
+       </div>
+       <div className="vista-right-menu-product-profile">
               <div className="vista-disponible-product-profile">
                   <h3 className='h3-vista-disponible-product-profile'>Producto Disponible</h3>
               </div>
@@ -199,8 +202,7 @@ const ProductProfile = ({tamaño})=>{
                   </Button>
               </div>
           </div>
-          
-       </div>
+
        </div>
 
        <div className="vista-description-product-profile">
