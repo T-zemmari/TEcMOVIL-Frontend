@@ -7,4 +7,8 @@ export const UPDATE_USER = 'update_user';
 
 //Smartphone Types
 
-export const Smartphones = 'smartphones';
+export const SMARTPHONES = 'smartphones';
+
+//Accessorios Types
+
+export const ACCESSORIOS = 'accessorios';

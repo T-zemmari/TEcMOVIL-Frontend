@@ -1,4 +1,4 @@
-import {Smartphones} from '../Types';
+import {SMARTPHONES} from '../Types';
 
 const initialState = {
     Smartphones: {}
@@ -7,7 +7,7 @@ const initialState = {
 
 const smartphonesReducer = (state = initialState, action) => {
     switch(action.type){
-        case Smartphones :
+        case SMARTPHONES :
             return {
                 ...state,
                 smartphones : action.payload.smartphones,
