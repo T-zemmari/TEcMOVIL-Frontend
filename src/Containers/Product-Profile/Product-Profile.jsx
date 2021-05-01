@@ -35,6 +35,8 @@ const ProductProfile = ({tamaño})=>{
 
           <div className="image-product-profile">
            <img className='img-product-size-on-profile'tamaño ='grande' src={datosProducto.imgUrl} alt={datosProducto.name}/>
+           
+           <img className='img-product-size-on-profile-accessorio'tamaño ='grande' src={datosProducto.image1} alt={datosProducto.name}/>
           </div>
 
          

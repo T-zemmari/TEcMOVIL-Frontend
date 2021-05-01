@@ -11,6 +11,7 @@ import ProductProfileRender from '../../components/Modal/Profile-product-render'
 import './Myspace.scss';
 import Product from '../../components/Products/Product';
 import axios from 'axios';
+import {connect} from 'react-redux';
 
 
 
@@ -21,6 +22,9 @@ const MySpace =(props)=>{
 
    let credentiales = JSON.parse(localStorage.getItem('credentials'));
    console.log(credentiales.user?.name)
+
+   let DatosDelUsuario = props.user;
+   console.log(DatosDelUsuario)
 
     
     const [destacados,setDestacados] = useState([]);
@@ -46,18 +50,7 @@ const MySpace =(props)=>{
        
    },[]);
 
-   /*const takeMeTo = (producto) => {
-      localStorage.setItem('product', JSON.stringify(producto));
-      let productData = localStorage.getItem('product');
-      console.log(productData);
-      history.push('/product-profile')
-   
-   };*/
-   /*const takeMeToo = (product) => {
-      localStorage.setItem('prductos', JSON.stringify(product));
-      console.log(product)
-      //history.push('/product-profile');
-   };*/
+  
 
    const GetProductInfo = (product) => {
       localStorage.removeItem('productos');
@@ -68,17 +61,17 @@ const MySpace =(props)=>{
 
 
   
-   if(credentiales.user?.name){
+   if(credentiales?.token){
    return(
 
    <div className="home-container">
-        
+         <div className="header"><Header style='logged'/></div>
 
         <div className="vista-portada-uno">
-           
+          
           
             <img className="vista-portada-uno" src={Android} alt="tab"/>
-            <div className="header"><Header style='logged'/></div>
+            
         </div>
         
 
@@ -149,5 +142,11 @@ const MySpace =(props)=>{
 
 
 
+   const mapStateToProps = (state)=>{
 
-export default MySpace;
+      return {
+          user:state.userReducer.user,
+          token:state.userReducer.token
+    }
+   }
+export default connect(mapStateToProps)(MySpace);

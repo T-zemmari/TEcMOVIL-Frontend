@@ -8,7 +8,10 @@ import ShopingCart from '../../img/shopping_cart-removebg-preview.png';
 //import Avatar from '@material-ui/core/Avatar';
 import {Avatar, Button, ClickAwayListener} from '@material-ui/core';
 
+
 const Header = (props)=>{
+
+    
 
   const [loading, setLoading] = useState(false);
   const [selectProducts ,setSelectProducts]= useState('');
@@ -69,10 +72,7 @@ const Header = (props)=>{
     }
       
   }
-   
-
-
-
+  
 if(props.style === 'home' ){
    return(
 
@@ -144,15 +144,12 @@ if(props.style === 'logged' && credentials?.user.name){
                     <div className="vista-logo"  >TEcMovil</div>
                     <div className="vista-nav">
      
-                        <select  className='select-not-home' name="Tienda" id="">
-                        <option  className='option-not-home' value="Smartphones">Smartphones</option>
-                        <option  className='option-not-home'value="Tablets">Tablets</option>
-                        <option  className='option-not-home'value="Accesorios">Accesorios</option>
-                        </select>
+
                         
+                        <li  className='li-not-home' value="Smartphones">Tienda</li>
                         <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                         <li className='li-not-home'onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
-                       
+                      
                         
                         </div>
                             

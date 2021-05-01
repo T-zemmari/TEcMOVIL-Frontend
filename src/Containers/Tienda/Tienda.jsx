@@ -44,10 +44,10 @@ const Tienda = (props)=>{
      };
     
      
-     console.log(credentials.user.name)
+     console.log(credentials?.user.name)
 
 
-   if(!credentials.user?.name){
+   if(!credentials?.user.name){
     return (
         <>
         <Header  style ='register'/>

@@ -11,7 +11,10 @@ import { Form } from 'antd';
 import axios from 'axios';
 import Message from '../../components/Message/Message';
 import './Login.scss';
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
+import { LOGIN ,LOGOUT ,UPDATE_USER} from '../../Redux/Types';
+import {connect} from 'react-redux';
+import userReducer from '../../Redux/Root-reducers';
 
 
 
@@ -33,6 +36,8 @@ const Login = (props) => {
 
     const handleResponse = (response) => {
         if (response.status == 200) {
+            props.dispatch({ type: LOGIN, payload: response.data });
+           
             localStorage.setItem('credentials',JSON.stringify(response.data));
             console.log(response.data)
             if (response.data.user.admin == true) history.push('/admin');
@@ -114,6 +119,14 @@ const Login = (props) => {
     )
 };
 
+const mapStateToProps = (state)=>{
+
+  return {
+    user:state.userReducer.user,
+    token:state.userReducer.token
+  }
+}
 
 
-export default Login;
+
+export default  connect(mapStateToProps)(Login);
