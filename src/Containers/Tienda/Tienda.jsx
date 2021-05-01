@@ -29,9 +29,10 @@ const Tienda = (props)=>{
          setPhones(response_for_phones.data);
     },[])
 
-    let credentials = localStorage.getItem('credentials');
+    let credentials = JSON.parse(localStorage.getItem('credentials'));
     let smartphones = localStorage.getItem('phones');
     let accessories = localStorage.getItem('allAccessories');
+    
     console.log(phones);
 
 
@@ -41,11 +42,12 @@ const Tienda = (props)=>{
         history.push('/product-profile')
      
      };
+    
      
+     console.log(credentials.user.name)
 
 
-
-   if(!credentials?.user.name){
+   if(!credentials.user?.name){
     return (
         <>
         <Header  style ='register'/>
@@ -100,10 +102,66 @@ const Tienda = (props)=>{
         </div>
         </>
     )
+}else{
+    return (
+        <>
+        <Header  style ='logged-two'/>
+        <div className="vista-Container-Tienda">
+            
+  
+            <div className="nav-bar-container">
+           
+             <Button variant="contained" color="secondary">
+                 Smartphones 
+             </Button>
+             <Button variant="contained" color="secondary">
+                 Accesorios 
+             </Button>
+             <Button variant="contained" color="secondary">
+                 Xiaomi
+             </Button>
+             <Button variant="contained" color="secondary">
+                 Samsung
+             </Button>
+             <Button variant="contained" color="secondary">
+                 Iphone
+             </Button>
+
+
+
+            </div>
+
+          <div className="vista-contenedor-telefonos-repuestos-accessorio">
+
+              <div className="vista-nav-bar">
+                <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+                <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+                  Total Productos = {phones.length}
+                </Button> 
+                  
+               
+              </div>
+
+            
+                  
+
+              <div className="vista-todos-los-Smartphones">
+                  {phones.map(phones => <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}
+              </div>
+              <div className="vista-todos-los-accessorios">
+
+              </div>
+
+          </div>
+
+        </div>
+        </>
+    )
+
+
 }
-
-
-
 }
+    
+
 
 export default Tienda;
