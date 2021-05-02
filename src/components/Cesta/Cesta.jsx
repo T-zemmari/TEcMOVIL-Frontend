@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 import './Cesta.scss';
+import Button from '@material-ui/core/Button'
+
 
 
 const Cesta =({imgUrl,image,name,price,cantidad})=>{
@@ -44,7 +46,22 @@ const Cesta =({imgUrl,image,name,price,cantidad})=>{
                    </div>
 
                     <div className="vista-nombre-productos">
-                        {name}
+                        {name} 
+                        Duérmete Online Colchón Viscoelástico Bio MAX con Viscogel | Firme y Confortable | Anti-ácaros e Hipoalergénico, 150 x 190
+
+                        <div className="disponible-eliminar">
+                        <div className="Disponible">
+                        <Button variant="text" color="default">
+                            Disponible  
+                            </Button></div>
+                        <div className='vista-añadir-cantidades-eliminar'>
+                           
+                            <Button variant="text" color="secondary">
+                              Eliminar de la cesta
+                            </Button>
+                        </div>
+                        </div>
+
                     </div>
 
                     <div className="precio-unidad">
