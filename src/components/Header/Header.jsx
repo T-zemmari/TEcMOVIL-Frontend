@@ -106,14 +106,7 @@ if(props.style === 'home' ){
                     <div className="vista-logo" onClick={(go)=>goto('/')}>TEcMovil</div>
                     <div className="vista-nav">
                         
-                      
-                           
-                  
-
-
-                        <li  className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
-                        
-                        
+                        <li className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
                         <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                         <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
                         <li className='li-not-home'>Contactenos</li>
@@ -162,7 +155,7 @@ if(props.style === 'logged' && credentials?.user.name){
 
                         <div className="vista-user-logged">
                           
-                          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" >
+                          <Avatar onClick={()=>{history.push('/profile-user')}} alt="Remy Sharp" src="/static/images/avatar/1.jpg" >
                         {credentials.user?.name[0]}</Avatar>
                         
             <h4 className="h4-vista-logged" onClick={()=>Logout()}>Hola {credentials.user?.name}</h4>
@@ -200,7 +193,7 @@ if(props.style === 'logged' && credentials?.user.name){
 
                             <div className="vista-user-logged">
                               
-                              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" >
+                              <Avatar onClick={()=>{history.push('/profile-user')}}  alt="Remy Sharp" src="/static/images/avatar/1.jpg" >
                             {credentials.user?.name[0]}</Avatar>
                             
                 <h4 className="h4-vista-logged" onClick={()=>Logout('/')}>Hola {credentials.user?.name}</h4>

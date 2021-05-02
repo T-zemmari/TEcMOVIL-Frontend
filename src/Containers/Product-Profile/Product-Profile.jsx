@@ -19,6 +19,36 @@ const ProductProfile = ({tamaño})=>{
      console.log(datosProducto);
      let credentials = JSON.parse(localStorage.getItem('credentials'));
 
+
+  let producto =  {
+
+          id:datosProducto._id,
+          name:datosProducto.name,
+          price:datosProducto.price,
+          imgUrl:datosProducto.imgUrl,
+          image1:datosProducto.image1
+        }
+        console.log(producto)
+
+
+      const data =(producto)=>{
+
+        /*if(!credentials?.user.name){
+
+          alert('Tienes que entrar a tu perfil primero')
+          history.push('/login')
+        }*/
+         
+        localStorage.setItem('productDataCart',producto)
+        
+      }
+     let productDataCart = localStorage.getItem('productDataCart')
+      console.log(productDataCart)
+
+
+
+   
+
     if(datosProducto?.name && credentials?.user.name){
 
     return (
@@ -122,11 +152,11 @@ const ProductProfile = ({tamaño})=>{
 
               </div>
 
-              <div className="vista-boton-comprar-product-profile" >
-                  <Button variant="contained" color="secondary"onClick={()=>history.push('/')}>
+             <div className="vista-boton-comprar-product-profile" >
+                  <Button variant="contained" color="secondary"onClick={()=>data(producto)}>
                       Comprar Ahora
                   </Button>
-              </div>
+    </div>
           </div>
 
        </div>

@@ -210,6 +210,18 @@
         background-color: rgba(28, 28, 29,0.1);
     
     }
+    .header-container-not-home{
+        
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 55px;
+   // border: 1px solid rgb(78, 73, 73);
+    //background-color: rgb(49, 49, 82);
+    background-color: rgb(30, 30, 156);
+    }
 
 .vista-nav{
     display: flex;

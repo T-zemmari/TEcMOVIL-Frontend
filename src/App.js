@@ -13,6 +13,7 @@ import ProductProfile from './Containers/Product-Profile/Product-Profile';
 import Tienda from './Containers/Tienda/Tienda';
 import Scrolltop from './components/Scrolltop/Scrolltop';
 import Cart from './components/Cart/Cart';
+import UserData from './Containers/User-data/User-data';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
          <Route path="/product-profile" exact component={ProductProfile}/>
          <Route path="/tienda" exact component ={Tienda}/>
          <Route path="/cart" exact component={Cart}/>
+         <Route path='/profile-user' exact component={UserData}/>
         
         </Switch>
       

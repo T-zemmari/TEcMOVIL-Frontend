@@ -1,0 +1,126 @@
+/*
+.contenedor-update-user-and-payment{
+
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+
+}
+.contenedor-update-data-use{
+  display: flex;
+  width: 60%;
+  height: auto;
+
+    
+}
+
+
+@media (max-width : 1100px){
+
+    .contenedor-update-user-and-payment{
+
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+  
+    .inputContainer-update{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+    }
+    .buttonContainer{
+        width: 50px;
+    }
+    .h2-div-container{
+        width: 200px;
+        
+    }
+}*/
+
+
+
+.contenedor-update-user-and-payment{
+
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+   
+
+}
+.imagen-tarjeta-de-credito{
+    margin-left: 35px;
+}
+.update-payment{
+
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tarjeta-de-credito{
+    width: 300px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.formulario-tarjeta{
+    width: 400px;
+    height: 300px;
+    color: white;
+    border: 1px solid rgb(156, 156, 163);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    //background-color: rgb(16, 4, 88);
+    background-color: #1e1e9c;
+    border-radius: 10px;
+}
+.input-form-tarjeta{
+
+    height: 30px;
+    width: 300px;
+}
+.input-form-tarjeta-fecha{
+
+    height: 30px;
+    width: 145.5px;
+}
+
+.fecha-de-expiracion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contendor-fecha{
+    display: flex;
+    flex-direction: column;
+}
+.contendor-CVC{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (width-max:600px){
+
+    .tarjeta-de-credito{
+        width: 300px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
