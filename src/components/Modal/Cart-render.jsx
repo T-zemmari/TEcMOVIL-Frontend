@@ -1,12 +1,12 @@
 import React from 'react'
 import Modal from './Modal';
 import {useState} from 'react';
-import Login from '../../Containers/Login/Login';
+import Cart from '../../components/Cart/Cart';
 
 
 
 
-function LoginRender(props) {
+function CartRender(props) {
 
     // Modal Hook
     const [active, setActive] = useState(false);
@@ -21,10 +21,10 @@ function LoginRender(props) {
         <div>
             <div className="configComponent" onClick={toggle}>{props.children}</div>
                 <Modal active={active} toggle={toggle}>
-                  <Login></Login>
+                  <Cart></Cart>
                 </Modal>
         </div>
     )
 }
 
-export default LoginRender;
+export default CartRender;

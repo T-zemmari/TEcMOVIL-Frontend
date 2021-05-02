@@ -1,0 +1,109 @@
+.vista-cesta-container{
+
+    width: 800px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    border:solid 0.5px rgb(189, 183, 183);
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.separador-cart{
+    margin-top: 5px;
+    margin-left :10px;
+    width: 95%;
+    border: rgb(202, 198, 202) solid 0.5px;
+}
+.vista-imagen-productos{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 200px;
+    height: 200px;
+    border:solid 0.5px rgb(189, 183, 183);
+}
+.contenedor-precio-titulo-carrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.titulos-carrito{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 400;
+    font-style: italic;
+}
+.precio{
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.contenedor-imagen-titulo-articulo-precio{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.vista-nombre-productos{
+    margin-top: 10px;
+  
+    display: flex;
+    border:solid 0.5px rgb(189, 183, 183);
+    width: 60%;
+    height: 200px;
+    
+}
+.precio-unidad{
+    margin-top: 10px;
+    margin-right: 5px;
+    color: rgb(34, 32, 32);
+    font: italic;
+    font-family: cursive;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 200px;
+    border:solid 0.5px rgb(189, 183, 183);
+}
+.precio-total-y-cantidad-productos{
+    margin-top: 20px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 20px;
+    font-family: cursive;
+}
+
+@media (max-width:810px){
+
+
+    .vista-cart-container{
+
+        width: 500px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid violet;
+        background-color: blanchedalmond;
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+
+}

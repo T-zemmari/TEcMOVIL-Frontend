@@ -5,8 +5,9 @@ import LoginRender from '../Modal/Login-render';
 import Loading from '../Loading/Loading';
 import axios from 'axios';
 import ShopingCart from '../../img/shopping_cart-removebg-preview.png';
-//import Avatar from '@material-ui/core/Avatar';
 import {Avatar, Button, ClickAwayListener} from '@material-ui/core';
+import CartRender from '../Modal/Cart-render';
+
 
 
 const Header = (props)=>{
@@ -26,7 +27,7 @@ const Header = (props)=>{
   }
 
  
-  console.log(selectProducts)
+
 
   const getPhones=async()=>{
 
@@ -47,15 +48,13 @@ const Header = (props)=>{
 
  }},[]) 
  
-  console.log(smartPhones)
-  console.log(accessorios)
-  
+ 
   
 
 
 
   let credentials = JSON.parse(localStorage.getItem('credentials'));
-  console.log(credentials)
+  
 
   const Logout=()=>{
     
@@ -177,23 +176,26 @@ if(props.style === 'logged' && credentials?.user.name){
                     <div className="header-container-repuestos-Presupuesto-user-logged">
 
                         <Loading visible={loading}></Loading>
-
+                        
                         <div className="vista-logo" onClick={(go)=>goto('/myspace')}>TEcMovil</div>
+
+                        
 
                             <div className="vista-nav">
                             <li  className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
                             <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                             <li className='li-not-home'onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
                             </div>
+                           
 
-
+                            <CartRender>
                             <div className="vista-contenedor-carrito-imagen-cantidad">
                                 <h5 className="h5-carrito">10</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
                             </div>
-
+                            </CartRender>
 
 
                             <div className="vista-user-logged">
@@ -206,7 +208,7 @@ if(props.style === 'logged' && credentials?.user.name){
                 </div> )
 }if(props.style === 'repuestos' ){
                 return(
-    
+               
         
                     <div className="header-container-not-home">
                         <Loading visible={loading}></Loading>

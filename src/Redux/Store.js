@@ -12,8 +12,7 @@ const store = createStoreWithMiddleware(
     load({
         preloadState : {
             user : {},
-            smartphones :{},
-            accessorios:{}
+            
         },
         state: ['data']
     }),

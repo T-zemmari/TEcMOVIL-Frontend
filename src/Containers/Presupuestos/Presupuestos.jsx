@@ -9,6 +9,11 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import Phone from '../../img/phone.jpg';
+import {connect} from 'react-redux';
+
+
+
+
 
 const useStyles = makeStyles((theme)=>({
         formControl : {
@@ -16,7 +21,13 @@ const useStyles = makeStyles((theme)=>({
             minWidth:300
     }}))
 
-const Presupuestos =()=>{
+const Presupuestos =(props)=>{
+
+   let datosDelUsuario = props.user;
+  
+   let datosSmartphone =props.smartphone;
+   let datosAccessorio = props.accessorio;
+   console.log(datosAccessorio,datosSmartphone,datosDelUsuario)
 
     // datos del usuario //
 
@@ -332,4 +343,13 @@ const Presupuestos =()=>{
    }
 }
 
-export default Presupuestos;
+const mapStateToProps=(state)=>{
+
+     return {
+          user:state.userReducer.user,
+          //smartphone:state.smartphoneReducer.smartphone,
+         // accessorio:state.accessorioReducer.accessorio
+     }
+}
+
+export default connect(mapStateToProps)(Presupuestos);

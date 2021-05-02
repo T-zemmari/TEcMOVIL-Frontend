@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Portal from '../Portal';
 // import { faTimes} from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './Modal.scss';
+
 
 export default class Modal extends Component {
 

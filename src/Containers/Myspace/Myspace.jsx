@@ -4,14 +4,17 @@ import Header from '../../components/Header/Header';
 import {useHistory} from 'react-router-dom';
 import Android from '../../img/48369.jpg';
 import accesorios from '../../img/accesories.png';
-import smartphone from '../../img/smarts.jpeg';
+import smartphoneImage from '../../img/smarts.jpeg';
 import repuestos from '../../img/flex.png';
-import Loading from '../../components/Loading/Loading';
-import ProductProfileRender from '../../components/Modal/Profile-product-render';
+
 import './Myspace.scss';
 import Product from '../../components/Products/Product';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import { SMARTPHONE ,ACCESSORIO } from '../../Redux/Types';
+
+
+
 
 
 
@@ -22,12 +25,13 @@ const MySpace =(props)=>{
 
    let credentiales = JSON.parse(localStorage.getItem('credentials'));
    console.log(credentiales.user?.name)
-
-   let DatosDelUsuario = props.user;
-   console.log(DatosDelUsuario)
+  
+   let datosDelUsuario = props.user;
+    console.log(datosDelUsuario)
 
     
     const [destacados,setDestacados] = useState([]);
+    const [accessorios_destacados,setAccessoriosDestacados] = useState([]);
 
    
    let history = useHistory();
@@ -44,11 +48,25 @@ const MySpace =(props)=>{
 
       
       let response = await axios.get('http://localhost:3002/products');
+      props.dispatch({ type: SMARTPHONE, payload: response.data });
       localStorage.setItem('destacados',response.data);
+      console.log(response.data)
       setDestacados(response.data);
-      console.log(destacados);
+   
+
+      let response_dos= await axios.get('http://localhost:3002/accessorios');
+      props.dispatch({ type: ACCESSORIO, payload: response_dos.data });
+      localStorage.setItem('accesoriosDestacados',response_dos.data)
+      
+      let primeraPaginaAccessorios = response_dos.data.slice(0,3)
+      setAccessoriosDestacados(primeraPaginaAccessorios);
+ 
        
    },[]);
+
+
+   
+  
 
   
 
@@ -58,6 +76,8 @@ const MySpace =(props)=>{
       history.push('/product-profile')
    
    };
+
+   
 
 
   
@@ -80,12 +100,18 @@ const MySpace =(props)=>{
         <div className='separador'></div>
 
            <h2>Productos destacados</h2>
-
+         
 
            
            <div className="destacados-z-index-superior" >
               {destacados?.map(destacados => <Product  tamaño='normal' key={destacados._id}  {...destacados} onClick={()=>GetProductInfo(destacados) } />)}
               </div>
+
+              <div className="destacados-accesorios-home">
+
+           {accessorios_destacados?.map(accessorios_destacados => <Product  label = 'accessorios-destacados' key={accessorios_destacados._id}  {...accessorios_destacados}  onClick={()=>GetProductInfo(accessorios_destacados) } />)}
+              
+           </div>
            
 
 
@@ -103,7 +129,7 @@ const MySpace =(props)=>{
 
            <div className="vista-contenedor-divs-rep-smart-acces">
            <div className="vista-contenido">
-              <img onClick={(go)=>goto('/tienda')} className="vista-contenido" src={smartphone} alt="smart"/>
+              <img onClick={(go)=>goto('/tienda')} className="vista-contenido" src={smartphoneImage} alt="smart"/>
            </div> 
            <p className='p-home-titulo'>Telefonos</p> 
            <p className='p-home-parrafo'>Navega por nuestro catalogo, y elige el accesorio que <br/>
@@ -146,7 +172,9 @@ const MySpace =(props)=>{
 
       return {
           user:state.userReducer.user,
-          token:state.userReducer.token
+          token:state.userReducer.token,
+          //smartphone:state.smartphone.smartphone
+          //accessorio:state.accessorioReducer.accessorio
     }
    }
 export default connect(mapStateToProps)(MySpace);

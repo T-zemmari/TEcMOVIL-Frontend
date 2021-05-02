@@ -1,14 +1,14 @@
 import {combineReducers} from 'redux';
 import userReducer from './Reducers/User-reducer';
-import smartphonesReducer from './Reducers/Product-reducer';
-import accessoriosReducer from './Reducers/Accesorios-reducer';
+import smartphoneReducer from './Reducers/Product-reducer';
+import accessorioReducer from './Reducers/Accesorios-reducer';
 
 
 
 const rootReducer = combineReducers({
     userReducer,
-    smartphonesReducer,
-    accessoriosReducer
+    smartphoneReducer,
+    accessorioReducer
  
 });
 

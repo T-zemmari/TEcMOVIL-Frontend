@@ -1,23 +1,22 @@
-import {ACCESSORIOS} from '../Types';
+
+import {ACCESSORIO } from '../Types';
 
 const initialState = {
-    Smartphones: {}
+    accessorio: []
    
 };
 
-const accessoriosReducers = (state = initialState, action) => {
+const accessorioReducer = (state = initialState, action) => {
     switch(action.type){
-        case ACCESSORIOS :
+        case ACCESSORIO:
             return {
                 ...state,
-                accessorios : action.payload.accessorios,
-               
+                accessorio: action.payload
             }
-
         
-        default : 
+        default:
             return state
     }
 };
 
-export default accessoriosReducers;
+export default accessorioReducer;
