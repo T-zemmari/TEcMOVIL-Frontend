@@ -9,6 +9,7 @@ import Android from '../../img/MovAcc.jpg';
 import accesorios from '../../img/accesories.png';
 import smartphone from '../../img/smarts.jpeg';
 import repuestos from '../../img/flex.png';
+import {connect} from 'react-redux';
 import axios from 'axios';
 import './Home.scss';
 
@@ -168,5 +169,14 @@ const GetProductInfo = (product) => {
 
 
 }
+const mapStateToProps =(state)=>{
 
-export default Home;
+   return {
+       carrito : state.carritoReducer.carrito,
+       user: state.userReducer.user,
+       product:state.productReducer.product
+   }
+}
+
+
+export default connect(mapStateToProps)(Home);

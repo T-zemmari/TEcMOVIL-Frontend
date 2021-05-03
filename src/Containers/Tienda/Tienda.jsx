@@ -5,8 +5,7 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import Product from '../../components/Products/Product';
 import { useHistory } from 'react-router';
-
-
+import {connect} from 'react-redux';
 
 
 
@@ -164,4 +163,14 @@ const Tienda = (props)=>{
     
 
 
-export default Tienda;
+const mapStateToProps =(state)=>{
+
+    return {
+        carrito : state.carritoReducer.carrito,
+        user: state.userReducer.user,
+        product:state.productReducer.product
+    }
+ }
+ 
+ 
+ export default connect(mapStateToProps)(Tienda);

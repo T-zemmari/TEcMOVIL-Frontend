@@ -5,14 +5,19 @@ import { useHistory} from 'react-router-dom';
 import {Avatar, Button, ClickAwayListener} from '@material-ui/core';
 import {connect} from 'react-redux';
 import './Product-Profile.scss';
+import { ADD_TO_CARRITO } from '../../Redux/Types';
 
 
 
-const ProductProfile = ({tamaño})=>{
+const ProductProfile = (props,{tamaño})=>{
 
 
-  const [carrito ,setCarrito]=useState([])
+  const [arrayProducts ,setArrayProducts]=useState([]);
+ 
 
+
+  const product = props.product;
+  console.log('Soy product y vengo de los props ', product)
 
 
   useEffect(() => {
@@ -26,7 +31,7 @@ const ProductProfile = ({tamaño})=>{
      let credentials = JSON.parse(localStorage.getItem('credentials'));
 
 
-  let producto =  {
+  let objectProduct =  {
 
           id:datosProducto._id,
           name:datosProducto.name,
@@ -34,22 +39,18 @@ const ProductProfile = ({tamaño})=>{
           imgUrl:datosProducto.imgUrl,
           image1:datosProducto.image1
         }
-        console.log(producto)
+        console.log(objectProduct)
 
 
-      const data =(producto)=>{
-
-        /*if(!credentials?.user.name){
-
-          alert('Tienes que entrar a tu perfil primero')
-          history.push('/login')
-        }*/
-         
-        localStorage.setItem('productDataCart',producto)
+      const addToCart =()=>{
+       
+        setArrayProducts(objectProduct)
+       props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
+        
         
       }
-     let productDataCart = localStorage.getItem('productDataCart')
-      console.log(productDataCart)
+     
+      console.log(arrayProducts)
 
 
 
@@ -159,7 +160,7 @@ const ProductProfile = ({tamaño})=>{
               </div>
 
              <div className="vista-boton-comprar-product-profile" >
-                  <Button variant="contained" color="secondary"onClick={()=>data(producto)}>
+                  <Button variant="contained" color="secondary"onClick={()=>addToCart()}>
                       Comprar Ahora
                   </Button>
     </div>
@@ -280,8 +281,8 @@ const ProductProfile = ({tamaño})=>{
               </div>
 
               <div className="vista-boton-comprar-product-profile" >
-                  <Button variant="contained" color="secondary"onClick={()=>history.push('/')}>
-                      Comprar Ahora
+                  <Button variant="contained" color="secondary"onClick={()=>addToCart()}>
+                      Añadir Al Carrito
                   </Button>
               </div>
           </div>
@@ -301,4 +302,13 @@ const ProductProfile = ({tamaño})=>{
     }
 }
 
-export default connect()(ProductProfile);
+const mapStateToProps =(state)=>{
+
+  return {
+      carrito : state.carritoReducer.carrito,
+      user: state.userReducer.user,
+      product:state.productReducer.product
+  }
+}
+
+export default connect(mapStateToProps)(ProductProfile);

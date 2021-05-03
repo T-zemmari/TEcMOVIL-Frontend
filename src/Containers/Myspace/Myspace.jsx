@@ -11,7 +11,7 @@ import './Myspace.scss';
 import Product from '../../components/Products/Product';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import { SMARTPHONE ,ACCESSORIO } from '../../Redux/Types';
+import { SMARTPHONE ,ACCESSORIO, PRODUCT } from '../../Redux/Types';
 
 
 
@@ -71,8 +71,12 @@ const MySpace =(props)=>{
   
 
    const GetProductInfo = (product) => {
+
       localStorage.removeItem('productos');
       localStorage.setItem('productos',JSON.stringify(product));
+
+      props.dispatch({type:PRODUCT,payload:product});
+      
       history.push('/product-profile')
    
    };

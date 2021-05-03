@@ -13,6 +13,10 @@ export const SMARTPHONE = 'smartphone';
 
 export const ACCESSORIO = 'accessorio';
 
+//Product type:
+
+export const PRODUCT = 'product';
+
 //Carrito Types
 
 export const ADD_TO_CARRITO = 'addtocarrito';
