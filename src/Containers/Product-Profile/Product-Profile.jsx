@@ -1,13 +1,19 @@
-import React ,{useEffect}from 'react';
+import React ,{useEffect, useState}from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { useHistory} from 'react-router-dom';
 import {Avatar, Button, ClickAwayListener} from '@material-ui/core';
+import {connect} from 'react-redux';
 import './Product-Profile.scss';
 
 
 
 const ProductProfile = ({tamaño})=>{
+
+
+  const [carrito ,setCarrito]=useState([])
+
+
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -295,4 +301,4 @@ const ProductProfile = ({tamaño})=>{
     }
 }
 
-export default ProductProfile;
+export default connect()(ProductProfile);

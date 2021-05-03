@@ -1,13 +1,22 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 import './Cesta.scss';
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
+import {connect} from 'react-redux';
 
 
 
-const Cesta =({imgUrl,image,name,price,cantidad})=>{
+const Cesta =(props,{imgUrl,image,name,price,cantidad})=>{
 
     let history = useHistory();
+
+
+    const  carrito = props.carrito;
+    const user = props.user;
+
+    console.log('Los datos de user con props en cesta son : ',user);
+
+    console.log('Los datos de carrito con props en cesta son : ',carrito);
 
     let credentials = JSON.parse(localStorage.getItem('credentials'));
     let productsData = localStorage.getItem('productsData');
@@ -80,4 +89,12 @@ const Cesta =({imgUrl,image,name,price,cantidad})=>{
     }
 }
 
-export default Cesta;
+
+const mapStateToProps =(state)=>{
+
+    return {
+        carrito : state.carritoReducer.carrito,
+        user: state.userReducer.user
+    }
+}
+export default connect(mapStateToProps)(Cesta);
