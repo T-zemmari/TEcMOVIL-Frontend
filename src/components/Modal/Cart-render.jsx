@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from './Modal';
 import {useState} from 'react';
 import Cart from '../../components/Cart/Cart';
+import './Cart-render.scss';
 
 
 

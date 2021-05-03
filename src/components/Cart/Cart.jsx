@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import Cesta from '../Cesta/Cesta';
 import './Cart.scss';
@@ -8,8 +8,12 @@ const Cart =(props)=>{
 
     let history = useHistory();
 
+    const [arrayProducts ,setArrayProducts]=useState([]);
+
     const  carrito = props.carrito;
     const user = props.user;
+
+    
 
     console.log('Los datos de user con props en Cart son : ',user);
 
@@ -31,10 +35,13 @@ const Cart =(props)=>{
 
     return(
 
+        
+      <div className="scroll">
         <div className="vista-cart-container">
            
           {/* {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}*/}
           {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}*
+       </div>
        </div>
     )
     }

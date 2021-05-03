@@ -6,6 +6,10 @@
     overflow-y: auto;
 }*/
 
+.scroll{
+   overflow-y:auto;
+}
+
 
 .vista-cart-container{
 
@@ -17,7 +21,7 @@
     background-color: rgb(241, 240, 237);
     display: flex;
     flex-direction: column;
-    overflow-x: scroll;
+    
    
     
 }

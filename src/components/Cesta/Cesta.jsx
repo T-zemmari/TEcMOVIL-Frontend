@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 
 
 
-const Cesta =(props,{imgUrl,image,name,price,cantidad})=>{
+const Cesta =(props)=>{
 
     let history = useHistory();
 
@@ -51,11 +51,11 @@ const Cesta =(props,{imgUrl,image,name,price,cantidad})=>{
             <div className="contenedor-imagen-titulo-articulo-precio">
 
                     <div className="vista-imagen-productos">
-                       <img src={imgUrl} alt={name}/>
+                       <img src={props.imgUrl} alt={props.name}/>
                    </div>
 
                     <div className="vista-nombre-productos">
-                        {name} 
+                        {props.name} 
                         
 
                         <div className="disponible-eliminar">
@@ -74,14 +74,14 @@ const Cesta =(props,{imgUrl,image,name,price,cantidad})=>{
                     </div>
 
                     <div className="precio-unidad">
-                        {price} €
+                        {props.price} 
                     </div>
            
              </div>
 
            <div className="separador-cart"></div>
 
-           <div className="precio-total-y-cantidad-productos">Subtotal (1 producto): {price} €</div>
+           <div className="precio-total-y-cantidad-productos">Subtotal (1 producto): {props.price} </div>
        
        
        </div>
