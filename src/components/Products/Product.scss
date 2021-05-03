@@ -22,6 +22,29 @@
     margin: 10px;
 
 }
+.product-container-repuesto{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    margin: 15px;
+    width:400px;
+    height: 450px;
+    border: rgb(224, 214, 219) 1px solid;
+    background-color: rgb(253, 253, 253);
+    margin: 10px;
+
+}
+
+.image-size-repuesto{
+
+    margin-top: 20px;
+
+    width: 300px;
+    height: 300px;
+}
 @media (max-width:500px){
     .product-container-accessorios{
         display: flex;

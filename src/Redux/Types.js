@@ -7,11 +7,11 @@ export const UPDATE_USER = 'update_user';
 
 //Smartphone Types
 
-export const SMARTPHONE = 'smartphone';
+export const SMARTPHONES = 'smartphone';
 
 //Accessorios Types
 
-export const ACCESSORIO = 'accessorio';
+export const ACCESSORIOS = 'accessorio';
 
 //Product type:
 

@@ -6,6 +6,8 @@ import axios from 'axios';
 import Product from '../../components/Products/Product';
 import { useHistory } from 'react-router';
 import {connect} from 'react-redux';
+import { SMARTPHONES,ACCESSORIOS } from '../../Redux/Types';
+
 
 
 
@@ -15,8 +17,22 @@ import {connect} from 'react-redux';
 const Tienda = (props)=>{
 
     let history = useHistory();
+    const user = props.user;
+    const token=props.token; 
 
     const [phones,setPhones]=useState([]);
+    const [accesorios,setAccessorios]=useState([]);
+    const [smartphones,setSmartphones]=useState([]);
+   
+
+    const [page,setPage]=useState('pageOne');
+    console.log(page)
+
+    const switchPages=(nextPage)=>{
+
+        setPage(nextPage)
+    }
+
     let imgArr=[
         'https://fondosmil.com/fondo/32772.jpg',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTInnPiPu1yksTuAH79j5mkjW3IcgwcDRIY16DONrXrjJZnQaFbdTK7by4kfHdWSNHy4eM&usqp=CAU'
@@ -26,13 +42,17 @@ const Tienda = (props)=>{
 
          let response_for_phones = await axios.get('http://localhost:3002/products');
          setPhones(response_for_phones.data);
+         props.dispatch({type:SMARTPHONES,payload:response_for_phones.data});
+
+         let response_for_access = await axios.get('http://localhost:3002/accessorios');
+         setAccessorios(response_for_access.data);
+         props.dispatch({type:ACCESSORIOS,payload:response_for_access.data});
     },[])
 
-    let credentials = JSON.parse(localStorage.getItem('credentials'));
-    let smartphones = localStorage.getItem('phones');
-    let accessories = localStorage.getItem('allAccessories');
+    
     
     console.log(phones);
+    console.log(accesorios);
 
 
     const GetProductInfo = (product) => {
@@ -41,24 +61,43 @@ const Tienda = (props)=>{
         history.push('/product-profile')
      
      };
+
+     const renderSmartphones = ()=>{
+       <>
+                  
+         {phones.map(phones => <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}
+      </>
+      
+     }
+     const renderAccessorios =()=>{
+
+      
+
+      
+             <>     
+         {accesorios.map(accesorios => <Product key={accesorios._id}{...accesorios} tamaño = 'normal' onClick={()=>GetProductInfo(accesorios)}/>)}
+             </>
+         
+     }
+    
     
      
-     console.log(credentials?.user.name)
+     console.log(props?.token)
 
 
-   if(!credentials?.user.name){
+   if(!props?.token){
     return (
-        <>
-        <Header  style ='register'/>
+        
+        
         <div className="vista-Container-Tienda">
-            
+            <Header  style ='register'/>
   
             <div className="nav-bar-container">
            
-             <Button variant="contained" color="secondary">
+             <Button variant="contained" color="secondary" onClick={()=>{switchPages('pageOne')}}>
                  Smartphones 
              </Button>
-             <Button variant="contained" color="secondary">
+             <Button variant="contained" color="secondary" onClick={()=>{switchPages('pageTwo')}}>
                  Accesorios 
              </Button>
              <Button variant="contained" color="secondary">
@@ -86,20 +125,22 @@ const Tienda = (props)=>{
                
               </div>
 
-            
-                  
-
               <div className="vista-todos-los-Smartphones">
-                  {phones.map(phones => <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}
-              </div>
-              <div className="vista-todos-los-accessorios">
 
+                   {page === 'pageOne' && renderSmartphones()}
+                   {page ==='pageTwo' && renderAccessorios()}
+                
               </div>
+              
+              
+              
+
+              
 
           </div>
 
         </div>
-        </>
+        
     )
 }else{
     return (
@@ -143,11 +184,14 @@ const Tienda = (props)=>{
 
             
                   
+            {page === 'pageOne' && renderSmartphones()}
+            {page ==='pageTwo' && renderAccessorios()}
 
-              <div className="vista-todos-los-Smartphones">
+              {/*<div className="vista-todos-los-Smartphones">
                   {phones.map(phones => <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}
-              </div>
-              <div className="vista-todos-los-accessorios">
+              </div>*/}
+    
+            <div className="vista-todos-los-accessorios">
 
               </div>
 
@@ -168,7 +212,9 @@ const mapStateToProps =(state)=>{
     return {
         carrito : state.carritoReducer.carrito,
         user: state.userReducer.user,
-        product:state.productReducer.product
+        product:state.productReducer.product,
+        smartphones:state.smartReducer.smartphones,
+        accessorios:state.accessReducer.accessorios
     }
  }
  

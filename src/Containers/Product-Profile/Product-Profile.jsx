@@ -12,23 +12,6 @@ import { ADD_TO_CARRITO } from '../../Redux/Types';
 const ProductProfile = (props,{tamaño})=>{
 
 
-  /*const [arrayProducts ,setArrayProducts]=useState([
-
-    {
-      Procesador: "",
-      bateria: "",
-      color: "",
-      creationDate: "",
-      description: '',
-      imgUrl: "",
-      name: "",
-      pantalla: "",
-      price: "",
-      rate: '',
-      _id: ''
-    }
-  ]);*/
-
   const [arrayProducts ,setArrayProducts]=useState([]);
  
 
@@ -56,36 +39,20 @@ const ProductProfile = (props,{tamaño})=>{
       
      //--------Funcion que almacenara el producto en el carrito---------//
 
-      /*const addToCart =()=>{
-        let product = props.product;
-        
-        let data = {
-        
-          Procesador: product.Procesador,
-          bateria: product.bateria,
-          color: product.color,
-          description:product.description,
-          imgUrl:product.imgUrl,
-          name:product.name,
-          pantalla:product.pantalla,
-          price:product.price,
-          rate:product.rate,
-          _id:product._id
-
-        }
-        
-       setArrayProducts(data)
-       props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
-        
-        
-      }*/
+     
 
       const addToCart =()=>{
         let product = props.product
-        setArrayProducts([...arrayProducts,product])
+        setArrayProducts([...arrayProducts,{...product}])
         props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
 
       }
+
+      const removeItem =(producto_a_eliminar)=>{
+
+        setArrayProducts(arrayProducts.filter(producto => producto !== producto_a_eliminar))
+    }
+  
      
       console.log(arrayProducts)
 

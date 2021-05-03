@@ -5,6 +5,9 @@ import './Product.scss';
 const Product = (
     {
         name,
+        marca,
+        modelo,
+        nombre,
         imgUrl,
         style,
         tamaño,
@@ -45,6 +48,19 @@ const Product = (
            
        </div>
     )}
+
+
+    if(style !=='admin' && nombre === 'repuesto'){
+        return(
+            <div className='product-container-repuesto'onClick ={onClick}>
+                
+               <img className='image-size-repuesto' src={image1} alt={name} />
+               <div className="name-size" ><h3>{marca}</h3></div>
+               <div className="rate-size"><h4 className="h4-producto-color">{modelo}</h4></div>
+               <div className="price-size"><h4  className="h4-producto-price">{price}</h4></div>
+               
+           </div>
+        )}
 
 
     if(style !=='admin' && tamaño === 'grande'){

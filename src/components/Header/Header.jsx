@@ -16,11 +16,15 @@ const Header = (props)=>{
 
     const  carrito = props.carrito;
     const user = props.user;
+    const smartphones = props.smartphones;
+    const accessorios=props.accessorios;
+
+    console.log(carrito,user,smartphones,accessorios)
 
   const [loading, setLoading] = useState(false);
   const [selectProducts ,setSelectProducts]= useState('');
   const [smartPhones ,setSmartphones]= useState([]);
-  const [accessorios ,setAccessorios]= useState([]);
+  const [accessorio ,setAccessorio]= useState([]);
 
   let history = useHistory();
 
@@ -85,9 +89,6 @@ if(props.style === 'home' ){
         <div className="vista-nav">
            
             <li className='li-home' onClick={()=>history.push('/tienda')}>Tienda</li>
-        
-            
-            <li className='li-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
             <li className='li-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
             <li className='li-home'>Contactenos</li>
             <LoginRender>
@@ -98,6 +99,8 @@ if(props.style === 'home' ){
             </LoginRender>
             
         </div>
+
+                      
     </div>
    )
 }if(props.style === 'register' ){
@@ -115,6 +118,15 @@ if(props.style === 'home' ){
                         <li className='li-not-home'>Contactenos</li>
                       
                     </div>
+                   < CartRender>
+                            
+                        <div className="vista-contenedor-carrito-imagen-cantidad">
+                                <h5 className="h5-carrito">{carrito?.length}</h5>
+                                <div className="vista-icono-carrito">
+                                  <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
+                                </div>
+                            </div>
+                            </CartRender>
                 </div>
                )
 }if(props.style === 'Admin' ){
@@ -141,7 +153,7 @@ if(props.style === 'logged' && credentials?.user.name){
      
 
                         
-                        <li  className='li-not-home' value="Smartphones">Tienda</li>
+                        <li  className='li-not-home' value="Smartphones"onClick={(go)=>goto('/tienda')}>Tienda</li>
                         <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                         <li className='li-not-home'onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
                       
@@ -264,7 +276,9 @@ const mapStateToProps =(state)=>{
 
     return {
         carrito : state.carritoReducer.carrito,
-        user: state.userReducer.user
+        user: state.userReducer.user,
+        smartphones:state.smartReducer.smartphones,
+        accessorios:state.accessReducer.accessorios
     }
 }
 export default connect(mapStateToProps)(Header);

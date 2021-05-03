@@ -1,34 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import './Cesta.scss';
 import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux';
+import ProductProfile from '../../Containers/Product-Profile/Product-Profile';
 
 
 
 const Cesta =(props)=>{
 
+
     let history = useHistory();
 
 
-    const  carrito = props.carrito;
-    const user = props.user;
 
-    console.log('Los datos de user con props en cesta son : ',user);
-
-    console.log('Los datos de carrito con props en cesta son : ',carrito);
 
     let credentials = JSON.parse(localStorage.getItem('credentials'));
     let productsData = localStorage.getItem('productsData');
     console.log(productsData);
+
+
+
+
+    //functiones------------------//
+
+  
     
     if(!credentials?.user.name){
        //alert('No puedes acceder al carrito , si no estas logeado')
      
         history.push('/')  
         window.location.reload()
-      
-       
     }else{
 
 
@@ -65,7 +67,7 @@ const Cesta =(props)=>{
                             </Button></div>
                         <div className='vista-añadir-cantidades-eliminar'>
                            
-                            <Button variant="text" color="secondary">
+                            <Button variant="text" color="secondary" >
                               Eliminar de la cesta
                             </Button>
                         </div>

@@ -11,7 +11,7 @@ import './Myspace.scss';
 import Product from '../../components/Products/Product';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import { SMARTPHONE ,ACCESSORIO, PRODUCT } from '../../Redux/Types';
+import { SMARTPHONES ,ACCESSORIOS, PRODUCT } from '../../Redux/Types';
 
 
 
@@ -48,14 +48,14 @@ const MySpace =(props)=>{
 
       
       let response = await axios.get('http://localhost:3002/products');
-      props.dispatch({ type: SMARTPHONE, payload: response.data });
+      props.dispatch({ type: SMARTPHONES, payload: response.data });
       localStorage.setItem('destacados',response.data);
       console.log(response.data)
       setDestacados(response.data);
    
 
       let response_dos= await axios.get('http://localhost:3002/accessorios');
-      props.dispatch({ type: ACCESSORIO, payload: response_dos.data });
+      props.dispatch({ type: ACCESSORIOS, payload: response_dos.data });
       localStorage.setItem('accesoriosDestacados',response_dos.data)
       
       let primeraPaginaAccessorios = response_dos.data.slice(0,3)
@@ -177,8 +177,8 @@ const MySpace =(props)=>{
       return {
           user:state.userReducer.user,
           token:state.userReducer.token,
-          //smartphone:state.smartphone.smartphone
-          //accessorio:state.accessorioReducer.accessorio
-    }
+         //  smartphones:state.smartReducer.smartphones,
+         //  accessorios:state.accessReducer.accessorios
    }
+}
 export default connect(mapStateToProps)(MySpace);
