@@ -7,12 +7,15 @@ import axios from 'axios';
 import ShopingCart from '../../img/shopping_cart-removebg-preview.png';
 import {Avatar, Button, ClickAwayListener} from '@material-ui/core';
 import CartRender from '../Modal/Cart-render';
+import carritoReducer from '../../Redux/Reducers/Carrito-reducer';
+import {connect} from 'react-redux';
 
 
 
 const Header = (props)=>{
 
-    
+    const  carrito = props.carrito;
+    const user = props.user;
 
   const [loading, setLoading] = useState(false);
   const [selectProducts ,setSelectProducts]= useState('');
@@ -144,13 +147,15 @@ if(props.style === 'logged' && credentials?.user.name){
                       
                         
                         </div>
+                        <CartRender>
                             
                         <div className="vista-contenedor-carrito-imagen-cantidad">
-                                <h5 className="h5-carrito">10</h5>
+                                <h5 className="h5-carrito">{carrito?.length}</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
                             </div>
+                            </CartRender>
 
 
                         <div className="vista-user-logged">
@@ -183,7 +188,7 @@ if(props.style === 'logged' && credentials?.user.name){
 
                             <CartRender>
                             <div className="vista-contenedor-carrito-imagen-cantidad">
-                                <h5 className="h5-carrito">10</h5>
+                                <h5 className="h5-carrito">{carrito?.length}</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
@@ -216,12 +221,15 @@ if(props.style === 'logged' && credentials?.user.name){
                             <li className='li-not-home'>Contactenos</li>
                           
                         </div>
+
+                        <CartRender>
                         <div className="vista-contenedor-carrito-imagen-cantidad">
-                                <h5 className="h5-carrito">10</h5>
+                                <h5 className="h5-carrito">{carrito?.length}</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
                             </div>
+                            </CartRender>
                     </div>)
 }if(props.style === 'presupuestos' ){
                     return(
@@ -239,15 +247,24 @@ if(props.style === 'logged' && credentials?.user.name){
                               
                             </div>
 
-                            <div className="vista-contenedor-carrito-imagen-cantidad">
-                                <h5 className="h5-carrito">10</h5>
+                              <CartRender>
+                        <div className="vista-contenedor-carrito-imagen-cantidad">
+                                <h5 className="h5-carrito">{carrito?.length}</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
                             </div>
+                            </CartRender>
                             
                         </div>
                        )}
 }
 
-export default Header;
+const mapStateToProps =(state)=>{
+
+    return {
+        carrito : state.carritoReducer.carrito,
+        user: state.userReducer.user
+    }
+}
+export default connect(mapStateToProps)(Header);

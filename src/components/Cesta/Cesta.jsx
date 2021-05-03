@@ -56,7 +56,7 @@ const Cesta =(props,{imgUrl,image,name,price,cantidad})=>{
 
                     <div className="vista-nombre-productos">
                         {name} 
-                        Duérmete Online Colchón Viscoelástico Bio MAX con Viscogel | Firme y Confortable | Anti-ácaros e Hipoalergénico, 150 x 190
+                        
 
                         <div className="disponible-eliminar">
                         <div className="Disponible">
@@ -81,7 +81,7 @@ const Cesta =(props,{imgUrl,image,name,price,cantidad})=>{
 
            <div className="separador-cart"></div>
 
-           <div className="precio-total-y-cantidad-productos">Subtotal (1 producto): 159,19 €</div>
+           <div className="precio-total-y-cantidad-productos">Subtotal (1 producto): {price} €</div>
        
        
        </div>

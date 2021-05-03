@@ -33,9 +33,8 @@ const Cart =(props)=>{
 
         <div className="vista-cart-container">
            
-           {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}
-      
-       
+          {/* {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}*/}
+          {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}*
        </div>
     )
     }

@@ -12,12 +12,28 @@ import { ADD_TO_CARRITO } from '../../Redux/Types';
 const ProductProfile = (props,{tamaño})=>{
 
 
+  /*const [arrayProducts ,setArrayProducts]=useState([
+
+    {
+      Procesador: "",
+      bateria: "",
+      color: "",
+      creationDate: "",
+      description: '',
+      imgUrl: "",
+      name: "",
+      pantalla: "",
+      price: "",
+      rate: '',
+      _id: ''
+    }
+  ]);*/
+
   const [arrayProducts ,setArrayProducts]=useState([]);
  
 
 
-  const product = props.product;
-  console.log('Soy product y vengo de los props ', product)
+  
 
 
   useEffect(() => {
@@ -29,25 +45,46 @@ const ProductProfile = (props,{tamaño})=>{
      let datosProducto = JSON.parse(localStorage.getItem('productos'));
      console.log(datosProducto);
      let credentials = JSON.parse(localStorage.getItem('credentials'));
+     
+
+     //---------Datos del producto escogido---------//
 
 
-  let objectProduct =  {
+     const product = props.product;
+     console.log('Soy product y vengo de los props ', product)
 
-          id:datosProducto._id,
-          name:datosProducto.name,
-          price:datosProducto.price,
-          imgUrl:datosProducto.imgUrl,
-          image1:datosProducto.image1
+      
+     //--------Funcion que almacenara el producto en el carrito---------//
+
+      /*const addToCart =()=>{
+        let product = props.product;
+        
+        let data = {
+        
+          Procesador: product.Procesador,
+          bateria: product.bateria,
+          color: product.color,
+          description:product.description,
+          imgUrl:product.imgUrl,
+          name:product.name,
+          pantalla:product.pantalla,
+          price:product.price,
+          rate:product.rate,
+          _id:product._id
+
         }
-        console.log(objectProduct)
-
-
-      const addToCart =()=>{
-       
-        setArrayProducts(objectProduct)
+        
+       setArrayProducts(data)
        props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
         
         
+      }*/
+
+      const addToCart =()=>{
+        let product = props.product
+        setArrayProducts([...arrayProducts,product])
+        props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
+
       }
      
       console.log(arrayProducts)
