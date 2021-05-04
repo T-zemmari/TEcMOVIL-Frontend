@@ -5,19 +5,21 @@
     width: 200px;
     height: 360px;
     border: rgb(224, 214, 219) 1px solid;
-  
+    transition: 1s;
     margin: 10px;
 }
 
 .product-container:hover{
     display: flex;
     flex-direction: column;
+    
     margin: 15px;
-    width: 220px;
-    height: 380px;
-    border: rgb(223, 61, 142) 1px solid;
-  
+    width: 300px;
+    height: 460px;
+    border: rgb(65, 22, 105) 1px solid;
+    border-radius: 10px;
     margin: 10px;
+    transition: 1s;
 }
 
 .product-container-accessorios{
@@ -56,6 +58,14 @@
 
     width: 300px;
     height: 300px;
+
+}
+.image-size-repuesto:hover{
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+
+
 }
 @media (max-width:500px){
     .product-container-accessorios{
@@ -88,8 +98,18 @@
     height: 180px;
     margin-left: 60px;
     margin-top: 15px;
+    transition: 1.5s;
     
 }
+.image-size:hover{
+    
+    width: 120px;
+    height: 280px;
+    margin-left: 100px;
+    margin-top: 15px;
+    transition: 1.5s;
+}
+
 .image-size-accessorio{
 
     width: 350px;
@@ -115,6 +135,11 @@
 .name-size{
     margin: 5px;
     height: 95px;
+}
+.name-size:hover{
+
+    margin: 7.5px;
+    height:142.5px;
 }
 .h4-producto-color{
 
