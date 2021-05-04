@@ -4,10 +4,10 @@ import './Cesta.scss';
 import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux';
 import ProductProfile from '../../Containers/Product-Profile/Product-Profile';
+import Cart from '../Cart/Cart';
 
 
-
-const Cesta =({onClick,name,imgUrl,price})=>{
+const Cesta =({onClick,name,imgUrl,price,removeItem})=>{
 
 
     let history = useHistory();
@@ -67,7 +67,7 @@ const Cesta =({onClick,name,imgUrl,price})=>{
                             </Button></div>
                         <div className='vista-añadir-cantidades-eliminar'>
                            
-                            <Button variant="text" color="secondary" onClick={onClick} >
+                            <Button variant="text" color="secondary" onClick={(product)=>removeItem(product)} >
                               Eliminar de la cesta
                             </Button>
                         </div>

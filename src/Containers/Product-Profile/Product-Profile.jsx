@@ -15,10 +15,6 @@ const ProductProfile = (props)=>{
 
   const [arrayProducts ,setArrayProducts]=useState([]);
   const [page,setPage]= useState('carrito-hidden');
- 
-
-
-  
 
 
   useEffect(() => {
@@ -41,11 +37,6 @@ const ProductProfile = (props)=>{
       
      //--------Funcion que almacenara el producto en el carrito---------//
 
-     
-
-      
-
-      
      
      const switchPages = (nextPage)=>{
 
@@ -82,69 +73,61 @@ const ProductProfile = (props)=>{
 
            {arrayProducts?.map((arrayProducts ,id)=><div className="vista-cart-container" key={id}>
 
+                     <div className="contenedor-precio-titulo-carrito">
+                         <div className="titulos-carrito">
+                          Carrito 
+                         </div>
 
-<div className="contenedor-precio-titulo-carrito">
-     <div className="titulos-carrito">
-         Carrito 
-     </div>
-
-      <div className="precio">Precio</div>
-</div>
+                        <div className="precio">Precio</div>
+                     </div>
 
 
-<div className="separador-cart"></div>
+                      <div className="separador-cart"></div>
 
-<div className="contenedor-imagen-titulo-articulo-precio">
+                      <div className="contenedor-imagen-titulo-articulo-precio">
 
-       <div className="vista-imagen-productos">
-          <img src={arrayProducts.imgUrl} alt={arrayProducts.name}/>
-      </div>
+                      <div className="vista-imagen-productos">
+                             <img src={arrayProducts.imgUrl} alt={arrayProducts.name}/>
+                      </div>
 
-       <div className="vista-nombre-productos">
-           {props.name} 
+                      <div className="vista-nombre-productos">
+                         {props.name} 
            
-
-           <div className="disponible-eliminar">
-           <div className="Disponible">
-           <Button variant="text" color="default">
-               Disponible  
-               </Button></div>
-           <div className='vista-añadir-cantidades-eliminar'>
+                          <div className="disponible-eliminar">
+                               <div className="Disponible">
+                                  <Button variant="text" color="default">
+                                     Disponible  
+                                 </Button></div>
+                          <div className='vista-añadir-cantidades-eliminar'>
               
-               <Button variant="text" color="secondary"  onClick={()=>removeItem(arrayProducts)} >
-                 Eliminar de la cesta
-               </Button>
-           </div>
-           </div>
+                                 <Button variant="text" color="secondary"  onClick={()=>removeItem(arrayProducts)} >
+                                     Eliminar de la cesta
+                                 </Button>
+                           </div>
+                       </div>
 
-       </div>
+                      </div>
 
-       <div className="precio-unidad">
-           {arrayProducts.price} 
-       </div>
+                           <div className="precio-unidad">
+                                {arrayProducts.price} 
+                           </div>
+                     </div>
 
-</div>
+                           <div className="separador-cart"></div>
 
-<div className="separador-cart"></div>
-
-<div className="precio-total-y-cantidad-productos">Subtotal (1 producto): {arrayProducts.price} </div>
+                           <div className="precio-total-y-cantidad-productos">Subtotal (1 producto): {arrayProducts.price} </div>
 
 
-</div>
-            
-            
-            
-            
-            
-            
-            
-            
-            )}
-           </div>
+                  </div>
+          )}
+        </div>
+
+            {/*-----------------------Fin del div del Carrito------------------------*/}
+
+
+           
            <div className="image-datainfo-and-div-garantia">
 
-          
-        
          
          <div className="Image-and-datainfo-together-product-profile">
          
@@ -175,8 +158,6 @@ const ProductProfile = (props)=>{
                   </div>
 
 
-               
-
                 <div className="vista-more-info-pago-reparto-sat">
                   <div className="vista-icono-tarjeta"></div>
                   <div className="vista-div-more-info pagar-con-tarjeta">
@@ -203,14 +184,6 @@ const ProductProfile = (props)=>{
               </div>
           </div>
          
-          
-
-         
-         
-   
-       
-
-        
           
        </div>
        <div className="vista-right-menu-product-profile">
@@ -256,27 +229,101 @@ const ProductProfile = (props)=>{
            <p className='p-vista-product-profile'>{datosProducto.description}</p>
           </div>
 
-         
-       
-                
-            </div>
+    </div>
         </> )
-  }if(datosProducto?.name && credentials?.user.name && page ==='carrito-hidden'){
+  }
+
+
+  if(datosProducto?.name && credentials?.user.name && page ==='carrito' && props.style ==='solo-carrito'){
+
+    return (
+    <>
+      
+      <div className="vista-product-profile-container">
+
+
+
+           <div className="carrito-hidden">
+
+             
+
+           {arrayProducts?.map((arrayProducts ,id)=><div className="vista-cart-container" key={id}>
+
+                     <div className="contenedor-precio-titulo-carrito">
+                         <div className="titulos-carrito">
+                          Carrito 
+                         </div>
+
+                        <div className="precio">Precio</div>
+                     </div>
+
+
+                      <div className="separador-cart"></div>
+
+                      <div className="contenedor-imagen-titulo-articulo-precio">
+
+                      <div className="vista-imagen-productos">
+                             <img src={arrayProducts.imgUrl} alt={arrayProducts.name}/>
+                      </div>
+
+                      <div className="vista-nombre-productos">
+                         {props.name} 
+           
+                          <div className="disponible-eliminar">
+                               <div className="Disponible">
+                                  <Button variant="text" color="default">
+                                     Disponible  
+                                 </Button></div>
+                          <div className='vista-añadir-cantidades-eliminar'>
+              
+                                 <Button variant="text" color="secondary"  onClick={()=>removeItem(arrayProducts)} >
+                                     Eliminar de la cesta
+                                 </Button>
+                           </div>
+                       </div>
+
+                      </div>
+
+                           <div className="precio-unidad">
+                                {arrayProducts.price} 
+                           </div>
+                     </div>
+
+                           <div className="separador-cart"></div>
+
+                           <div className="precio-total-y-cantidad-productos">Subtotal (1 producto): {arrayProducts.price} </div>
+
+
+                  </div>
+          )}
+
+          <Button variant="contained" color="default">
+            Ver Mas Productos
+          </Button>
+        </div>
+
+            {/*-----------------------Fin del div del Carrito------------------------*/}
+
+
+
+    </div>
+        </> )}
+  
+  
+  
+  
+  
+  
+  if(datosProducto?.name && credentials?.user.name && page ==='carrito-hidden'){
 
     return (
     <>
        <Header style ='logged-two'></Header>
       <div className="vista-product-profile-container">
 
+       <div className="image-datainfo-and-div-garantia">
 
-
-          
-           <div className="image-datainfo-and-div-garantia">
-
-          
-        
-         
-         <div className="Image-and-datainfo-together-product-profile">
+           <div className="Image-and-datainfo-together-product-profile">
          
 
           <div className="image-product-profile">
@@ -327,22 +374,11 @@ const ProductProfile = (props)=>{
                       Atención al cliente personalizada, si tienes cualquier duda te ayudamos
                     </div>
                   </div> 
-
-
-                  
-              </div>
+                 </div>
           </div>
          
-          
-
          
-         
-   
-       
-
-        
-          
-       </div>
+         </div>
        <div className="vista-right-menu-product-profile">
               <div className="vista-disponible-product-profile">
                   <h3 className='h3-vista-disponible-product-profile'>Producto Disponible</h3>
@@ -384,15 +420,10 @@ const ProductProfile = (props)=>{
           <h2 className='h2-vista-product-profile'>Descripción</h2>
            <p className='p-vista-product-profile'>{datosProducto.description}</p>
           </div>
-
-         
        
-                
             </div>
         </> )
   }
-  
-  
   
   
   if(datosProducto?.name && !credentials?.user.name){
@@ -431,10 +462,7 @@ const ProductProfile = (props)=>{
                   </div>
                   <div className="vista-pantalla-product-profile">
                     <h2 className='h2-vista-product-profile'>Pantalla : {datosProducto.pantalla} Pulgadas</h2>
-                  </div>
-
-
-               
+                  </div>        
 
                 <div className="vista-more-info-pago-reparto-sat">
                   <div className="vista-icono-tarjeta"></div>
@@ -455,21 +483,9 @@ const ProductProfile = (props)=>{
                       <div className="vista-div-more-info Atención-al-cliente">
                       Atención al cliente personalizada, si tienes cualquier duda te ayudamos
                     </div>
-                  </div> 
-
-
-                  
+                  </div>         
               </div>
           </div>
-         
-          
-
-         
-         
-   
-       
-
-        
           
        </div>
        <div className="vista-right-menu-product-profile">

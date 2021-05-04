@@ -12,6 +12,7 @@ const store = createStoreWithMiddleware(
     load({
         preloadState : {
             user : {},
+            carrito:[]
             
         },
         state: ['data']

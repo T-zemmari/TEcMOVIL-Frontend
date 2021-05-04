@@ -4,15 +4,22 @@ import Cesta from '../Cesta/Cesta';
 import './Cart.scss';
 import {connect} from 'react-redux';
 import { REMOVE_FROM_CARRITO } from '../../Redux/Types';
+import ProductProfile from '../../Containers/Product-Profile/Product-Profile';
 
 const Cart =(props)=>{
 
     let history = useHistory();
 
-    const [arrayProducts ,setArrayProducts]=useState([]);
+    
 
     const  carrito = props.carrito;
     const user = props.user;
+
+    const removeItem =(producto_a_eliminar)=>{
+
+        props.dispatch({type:REMOVE_FROM_CARRITO ,payload :carrito.filter(producto => producto !== producto_a_eliminar)})
+        }
+  
 
  
 
@@ -39,13 +46,13 @@ const Cart =(props)=>{
     return(
 
         
-      <div className="scroll">
+      
         <div className="vista-cart-container">
+        {carrito.map(carrito => <Cesta key={carrito._id} {...carrito} removeItem ={removeItem}/>)}
            
-          {/* {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}*/}
-          {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}
+      
        </div>
-       </div>
+    
     )
     }
 }
