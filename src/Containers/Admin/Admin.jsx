@@ -6,12 +6,15 @@ import Button from '@material-ui/core/Button';
 import User from '../../components/User/User';
 import axios from 'axios';
 import Loading from '../../components/Loading/Loading';
+import AccessoriosAdmin from '../../components/AccesoriosAdmin/AccessoriosAdmin';
 
 const Admin =(props)=>{
 
   const [usuario,setUsuario]=useState([]);
   const [loading,setLoading]=useState(false);
   const [products,setProducs]=useState([]);
+  const [accessorios,setAccessorios]=useState([]);
+  const [page,setPage]= useState('usuarios');
 
   let UserEndpoint='http://localhost:3002/users';
   let ProductEndpoint = 'http://localhost:3002/products';
@@ -20,6 +23,9 @@ const Admin =(props)=>{
       setUsuario([]);
       setProducs([]);
   },[])
+
+
+
 
   const listaUsuarios =async ()=>{
    
@@ -30,12 +36,26 @@ const Admin =(props)=>{
   const listaProductos = async()=>{
     let productsData = await axios.get(ProductEndpoint);
     setProducs(productsData.data);
-    console.log(products)
+   
+  }
+
+  let listaAccessorios = async()=>{
+    let accessoriosData = await axios.get('http://localhost:3002/accessorios');
+    setAccessorios(accessoriosData.data);
+   console.log(accessorios)
   }
   
+
+  //-----------cambio de pantalla------------//
+
+
+  const switchPages = (nextPage)=>{
+
+    setPage(nextPage)
+   }
  
 
-  
+   if(page === 'usuarios'){
     return(
           
         <div className="vista-admin-container">
@@ -45,25 +65,38 @@ const Admin =(props)=>{
             {/*--------------------Menu Izquierdo------------------------- */}
             
              <div className="vista-menu-izquierda-admin">
-               <div className="boton-admin-menu-izquierdo"> <Button variant="contained" color="primary" onClick ={()=>{listaProductos()}}>
-                 Lista D Productos
+               <div className="boton-admin-menu-izquierdo">
+                  <Button variant="contained" color="primary"  onClick ={()=>{listaProductos()}}>
+                 Lista D Telefonos
                </Button>
                </div>
                <div className="boton-admin-menu-izquierdo"> 
-               <Button variant="contained" color="primary" onClick ={()=>{listaUsuarios()}}>
+               <Button variant="contained" color="primary"  onClick ={()=>{listaUsuarios()}}>
                  Lista De Usuarios
                </Button>
                </div>
                <div className="boton-admin-menu-izquierdo"> 
-               <Button variant="contained" color="primary">
-                 Stock De Xiaomi
+               <Button variant="contained" color="primary" onClick ={()=>{listaAccessorios()}} onClick ={()=>switchPages('telefono')} >
+                 Lista  Accessorios
+               </Button>
+               </div>
+               <div className="boton-admin-menu-izquierdo"> 
+               <Button variant="contained" color="primary"  >
+                 Añadir Telefonos
+               </Button>
+               </div>
+
+               <div className="boton-admin-menu-izquierdo"> 
+               <Button variant="contained" color="primary" >
+                 Añadir Accessorio
                </Button>
                </div>
                <div className="boton-admin-menu-izquierdo"> 
                <Button variant="contained" color="primary">
-                 Stock Samsung
+                 Añadir repuestos
                </Button>
                </div>
+              
               
               
                  <div className="Usuarios-Registrados-Menu-Izquierda"></div>
@@ -126,6 +159,93 @@ const Admin =(props)=>{
          </div>
         </div>
     )
+   }
+
+
+   if(page === 'telefono'){
+    return(
+          
+        <div className="vista-admin-container">
+                 <Loading visible={loading}></Loading>
+                 <Header style ='Admin'></Header>
+         <div className="body-vista-admin">
+
+            {/*--------------------Menu Izquierdo------------------------- */}
+            
+             <div className="vista-menu-izquierda-admin">
+               <div className="boton-admin-menu-izquierdo"> 
+               <Button variant="contained" color="primary" onClick ={()=>{listaProductos()}} onClick ={()=>switchPages('usuarios')} >
+                 Lista D Telefonos
+               </Button>
+               </div>
+               <div className="boton-admin-menu-izquierdo"> 
+               <Button variant="contained" color="primary"  onClick ={()=>{listaUsuarios()}} onClick ={()=>switchPages('usuarios')} >
+                 Lista De Usuarios
+               </Button>
+               </div>
+               <div className="boton-admin-menu-izquierdo"> 
+               <Button variant="contained" color="primary" onClick ={()=>switchPages('telefono')}>
+               Lista  Accessorios
+               </Button>
+               </div>
+               <div className="boton-admin-menu-izquierdo"> 
+               <Button variant="contained" color="primary" >
+                 Añadir Telefonos
+               </Button>
+               </div>
+
+               <div className="boton-admin-menu-izquierdo"> 
+               <Button variant="contained" color="primary">
+                 Añadir Accessorio
+               </Button>
+               </div>
+
+               <div className="boton-admin-menu-izquierdo"> 
+               <Button variant="contained" color="primary">
+                 Añadir repuestos
+               </Button>
+               </div>
+              
+              {/*--------------------Telefonos Menu Central-----------------------*/}
+             
+           
+
+               
+
+             </div>
+
+                      <div className="vista-central-admin">
+
+                     
+ 
+                         <div className="lista-productos">
+                             <h2>Lista Del Stock de los Accessorios</h2>
+
+                        </div>
+
+                           <div className="lista-productos-registrados">
+                              <div className="product-data-admin product-identificador-admin-view">Identificador</div>
+                              <div className="product-data-admin product-name-admin-view">Producto</div>
+                              <div className="product-data-admin product-price-admin-view">precio S/iva</div>
+                              <div className="product-data-admin product-color-admin-view">precio c/iva</div>
+                              <div className="product-data-admin product-rate-admin-view">color</div>
+                              <div className="product-data-admin product-pantalla-admin-view">rate</div>
+                              <div className="product-data-admin product-image-admin-view">image</div>
+                           </div>
+
+
+                           <div>
+                            {accessorios?.map(accessorios => <AccessoriosAdmin key={accessorios._id} {...accessorios}/>)}
+                           </div>
+
+ 
+
+
+                           </div>
+                     </div>
+               </div>
+    )
+   }
 }
 
 

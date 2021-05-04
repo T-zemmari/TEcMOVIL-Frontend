@@ -2,7 +2,7 @@ import React from 'react';
 import './User.scss';
 
 
-const User = ({name,lastname,email,phone,adress,born,payment})=>{
+const User = ({name,lastname,email,phone,adress,born})=>{
 
     
      
@@ -27,7 +27,7 @@ const User = ({name,lastname,email,phone,adress,born,payment})=>{
         <div className="user-data-admin-datos
          user-born-admin-view">{born}</div>
         <div className="user-data-admin-datos
-         user-payment-admin-view">{payment}</div>
+         user-payment-admin-view">{}</div>
     </div>
     )
 }

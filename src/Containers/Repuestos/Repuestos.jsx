@@ -158,19 +158,124 @@ const Repuestos =()=>{
       </>)
 
 
-   }else{
-       return(
-       <>
-       <Header style='repuestos'/>
-           <div>
-               hola
+   }if( page === 'repuestos'){
+    return (
+     <>
+     <Header  style ='register'/>
+     <div className="vista-Container-Tienda">
+         
+ 
+         <div className="nav-bar-container">
+        
+         
+          <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
+              Accesorios 
+          </Button>
+          <Button variant="contained" color="secondary">
+              Xiaomi
+          </Button>
+          <Button variant="contained" color="secondary">
+              Samsung
+          </Button>
+          <Button variant="contained" color="secondary">
+              Iphone
+          </Button>
+ 
+ 
+ 
+         </div>
+ 
+       <div className="vista-contenedor-telefonos-repuestos-accessorio">
+ 
+           <div className="vista-nav-bar">
+             <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+             <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+               Total Productos = {repuestos.length}
+             </Button> 
                
+            
            </div>
-        </>
-       )
+ 
+         
+               
+        
+ 
+           {<div className="vista-todos-los-repuestos">
+               {repuestos.map(repuestos=> <Product key={repuestos._id}{...repuestos} nombre = 'repuesto' onClick={()=>GetProductInfo(repuestos)}/>)}
+           </div>}
+ 
+         <div className="vista-todos-los-accessorios">
+ 
+           </div>
+ 
+       </div>
+ 
+     </div>
+     </>
+    )}
+    
+    
+    if( page === 'accesorios'){
+ 
+ 
+     return (
+       <>
+       <Header  style ='register'/>
+       <div className="vista-Container-Tienda">
            
-       
-   }
+   
+           <div className="nav-bar-container">
+          
+           
+            <Button variant="contained" color="secondary" onClick={()=>shwichPages('repuestos')}>
+                Repuestos 
+            </Button>
+            <Button variant="contained" color="secondary">
+                Xiaomi
+            </Button>
+            <Button variant="contained" color="secondary">
+                Samsung
+            </Button>
+            <Button variant="contained" color="secondary">
+                Iphone
+            </Button>
+   
+   
+   
+           </div>
+   
+         <div className="vista-contenedor-telefonos-repuestos-accessorio">
+   
+             <div className="vista-nav-bar">
+               <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+               <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+                 Total Productos = {accesorios.length}
+               </Button> 
+                 
+              
+             </div>
+   
+           
+                 
+          
+   
+             {<div className="vista-todos-los-repuestos">
+                 {accesorios.map(accesorios=> <Product key={accesorios._id}{...accesorios} nombre = 'repuesto'  onClick={()=>GetProductInfo(accesorios)}/>)}
+             </div>}
+   
+           <div className="vista-todos-los-accessorios">
+   
+             </div>
+   
+         </div>
+   
+       </div>
+       </>)
+ 
+ 
+    }
+   
+  
 }
 
 export default Repuestos;

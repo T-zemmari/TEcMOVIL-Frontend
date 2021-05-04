@@ -269,7 +269,7 @@ const RenderSamusungModels =(props)=>{
 <>
       
       <div className="vista-presupuesto-container">
-      <Header style='repuestos'/>
+      <Header style='register'/>
            <div className="body-container-prepusupuesto">
                <div className="vista-imagen-promocional">
                    <img src="" alt=""/>
