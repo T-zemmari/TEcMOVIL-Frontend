@@ -1,0 +1,52 @@
+.vista-form-container{
+
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    background-image: url('../../img/fondo.jpg');
+}
+
+.vista-añadir-info-texto{
+
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    
+}
+.vista-añadir-info-imagenes{
+
+    width: 150px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+.inputs-form-admin{
+
+    all: unset;
+    width: 80%;
+    height: 30px;
+    border: 1px solid violet;
+    background-color: white;
+    margin: 15px;
+}
+.description-form{
+
+    height: 70px;
+}
+.inputs-form-admin-imagenes{
+
+    all:unset;
+    //width: 80%;
+    height: 30px;
+    border: 1px solid violet;
+    background-color: white;
+    margin: 200px;
+}

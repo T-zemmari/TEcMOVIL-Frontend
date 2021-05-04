@@ -7,6 +7,7 @@ import User from '../../components/User/User';
 import axios from 'axios';
 import Loading from '../../components/Loading/Loading';
 import AccessoriosAdmin from '../../components/AccesoriosAdmin/AccessoriosAdmin';
+import FormRender from '../../components/Modal/Form-render';
 
 const Admin =(props)=>{
 
@@ -23,6 +24,12 @@ const Admin =(props)=>{
       setUsuario([]);
       setProducs([]);
   },[])
+
+
+  //---------logica del añadir a un producto en la base de datos (insertar y borrar)---------//
+
+
+
 
 
 
@@ -81,9 +88,12 @@ const Admin =(props)=>{
                </Button>
                </div>
                <div className="boton-admin-menu-izquierdo"> 
+
+               <FormRender>
                <Button variant="contained" color="primary"  >
                  Añadir Telefonos
                </Button>
+               </FormRender>
                </div>
 
                <div className="boton-admin-menu-izquierdo"> 
@@ -189,9 +199,11 @@ const Admin =(props)=>{
                </Button>
                </div>
                <div className="boton-admin-menu-izquierdo"> 
-               <Button variant="contained" color="primary" >
+               <FormRender>
+               <Button variant="contained" color="primary"  >
                  Añadir Telefonos
                </Button>
+               </FormRender>
                </div>
 
                <div className="boton-admin-menu-izquierdo"> 
