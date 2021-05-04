@@ -3,6 +3,7 @@ import { useHistory } from 'react-router';
 import Cesta from '../Cesta/Cesta';
 import './Cart.scss';
 import {connect} from 'react-redux';
+import { REMOVE_FROM_CARRITO } from '../../Redux/Types';
 
 const Cart =(props)=>{
 
@@ -12,6 +13,8 @@ const Cart =(props)=>{
 
     const  carrito = props.carrito;
     const user = props.user;
+
+ 
 
     
 
@@ -40,7 +43,7 @@ const Cart =(props)=>{
         <div className="vista-cart-container">
            
           {/* {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}*/}
-          {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}*
+          {carrito?.map(carrito => <Cesta key={carrito._id} {...carrito}/>)}
        </div>
        </div>
     )

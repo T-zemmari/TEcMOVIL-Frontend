@@ -163,6 +163,7 @@ const Repuestos =()=>{
        <>
        <Header style='repuestos'/>
            <div>
+               hola
                
            </div>
         </>

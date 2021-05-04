@@ -11,14 +11,15 @@ import { SMARTPHONES,ACCESSORIOS } from '../../Redux/Types';
 
 
 
-
-
-
 const Tienda = (props)=>{
 
     let history = useHistory();
+    
     const user = props.user;
     const token=props.token; 
+
+    const credentials = JSON.parse(localStorage.getItem('credentials'));
+
 
     const [phones,setPhones]=useState([]);
     const [accesorios,setAccessorios]=useState([]);
@@ -27,6 +28,7 @@ const Tienda = (props)=>{
 
     const [page,setPage]=useState('pageOne');
     console.log(page)
+    console.log(user)
 
     const switchPages=(nextPage)=>{
 
@@ -61,31 +63,62 @@ const Tienda = (props)=>{
         history.push('/product-profile')
      
      };
-
-     const renderSmartphones = ()=>{
-       <>
-                  
-         {phones.map(phones => <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}
-      </>
-      
-     }
-     const renderAccessorios =()=>{
-
-      
-
-      
-             <>     
-         {accesorios.map(accesorios => <Product key={accesorios._id}{...accesorios} tamaño = 'normal' onClick={()=>GetProductInfo(accesorios)}/>)}
-             </>
-         
-     }
     
-    
-     
      console.log(props?.token)
 
 
-   if(!props?.token){
+   if(credentials?.user.name && page ==='PageOne'){
+    return (
+        
+        
+        <div className="vista-Container-Tienda">
+            <Header  style ='register'/>
+  
+            <div className="nav-bar-container">
+           
+             <Button variant="contained" color="secondary" onClick={()=>{switchPages('pageOne')}}>
+                 Smartphones 
+             </Button>
+             <Button variant="contained" color="secondary" onClick={()=>{switchPages('pageTwo')}}>
+                 Accesorios 
+             </Button>
+             <Button variant="contained" color="secondary">
+                 Xiaomi
+             </Button>
+             <Button variant="contained" color="secondary">
+                 Samsung
+             </Button>
+             <Button variant="contained" color="secondary">
+                 Iphone
+             </Button>
+
+            </div>
+
+          <div className="vista-contenedor-telefonos-repuestos-accessorio">
+
+              <div className="vista-nav-bar">
+                <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+                <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+                  Total Productos = {phones.length}
+                </Button> 
+                  
+               
+              </div>
+
+              <div className="vista-todos-los-Smartphones">
+
+              {phones.map(phones => <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}
+                
+              </div>         
+
+          </div>
+
+        </div>
+        
+    )
+
+}if(credentials?.user.name && page ==='pageTwo'){
+
     return (
         
         
@@ -127,25 +160,23 @@ const Tienda = (props)=>{
 
               <div className="vista-todos-los-Smartphones">
 
-                   {page === 'pageOne' && renderSmartphones()}
-                   {page ==='pageTwo' && renderAccessorios()}
+              {accesorios.map(accesorios => <Product key={accesorios._id}{...accesorios} tamaño = 'normal' onClick={()=>GetProductInfo(accesorios)}/>)}
                 
               </div>
               
-              
-              
-
-              
-
-          </div>
+             </div>
 
         </div>
         
     )
-}else{
+}
+
+
+
+{/*if(user?.name){
     return (
         <>
-        <Header  style ='logged-two'/>
+        
         <div className="vista-Container-Tienda">
             
   
@@ -184,12 +215,11 @@ const Tienda = (props)=>{
 
             
                   
-            {page === 'pageOne' && renderSmartphones()}
-            {page ==='pageTwo' && renderAccessorios()}
+           
 
-              {/*<div className="vista-todos-los-Smartphones">
+              <div className="vista-todos-los-Smartphones">
                   {phones.map(phones => <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}
-              </div>*/}
+              </div>
     
             <div className="vista-todos-los-accessorios">
 
@@ -202,7 +232,7 @@ const Tienda = (props)=>{
     )
 
 
-}
+}*/}
 }
     
 

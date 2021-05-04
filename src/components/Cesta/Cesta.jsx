@@ -7,7 +7,7 @@ import ProductProfile from '../../Containers/Product-Profile/Product-Profile';
 
 
 
-const Cesta =(props)=>{
+const Cesta =({onClick,name,imgUrl,price})=>{
 
 
     let history = useHistory();
@@ -53,11 +53,11 @@ const Cesta =(props)=>{
             <div className="contenedor-imagen-titulo-articulo-precio">
 
                     <div className="vista-imagen-productos">
-                       <img src={props.imgUrl} alt={props.name}/>
+                       <img src={imgUrl} alt={name}/>
                    </div>
 
                     <div className="vista-nombre-productos">
-                        {props.name} 
+                        {name} 
                         
 
                         <div className="disponible-eliminar">
@@ -67,7 +67,7 @@ const Cesta =(props)=>{
                             </Button></div>
                         <div className='vista-añadir-cantidades-eliminar'>
                            
-                            <Button variant="text" color="secondary" >
+                            <Button variant="text" color="secondary" onClick={onClick} >
                               Eliminar de la cesta
                             </Button>
                         </div>
@@ -76,14 +76,14 @@ const Cesta =(props)=>{
                     </div>
 
                     <div className="precio-unidad">
-                        {props.price} 
+                        {price} 
                     </div>
            
              </div>
 
            <div className="separador-cart"></div>
 
-           <div className="precio-total-y-cantidad-productos">Subtotal (1 producto): {props.price} </div>
+           <div className="precio-total-y-cantidad-productos">Subtotal (1 producto): {price} </div>
        
        
        </div>
