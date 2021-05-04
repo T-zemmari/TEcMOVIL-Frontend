@@ -8,6 +8,18 @@
   
     margin: 10px;
 }
+
+.product-container:hover{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    width: 220px;
+    height: 380px;
+    border: rgb(223, 61, 142) 1px solid;
+  
+    margin: 10px;
+}
+
 .product-container-accessorios{
     display: flex;
     flex-direction: column;
