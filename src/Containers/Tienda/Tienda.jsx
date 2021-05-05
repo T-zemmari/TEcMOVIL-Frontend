@@ -24,7 +24,7 @@ const Tienda = (props)=>{
 
     const [phones,setPhones]=useState([]);
     const [accesorios,setAccessorios]=useState([]);
-    const [smartphones,setSmartphones]=useState([]);
+    //const [smartphones,setphones]=useState([]);
    
 
     const [page,setPage]=useState('pageOne');
@@ -73,7 +73,7 @@ const Tienda = (props)=>{
        }
 
 
-     if(credentials?.user.name ){
+     if(credentials?.user.name && page ==='pageOne'){
         return (
          <>
          <Header  style ='logged-two'/>
@@ -105,7 +105,7 @@ const Tienda = (props)=>{
                <div className="vista-nav-bar">
                  <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
                  <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
-                   Total Productos = {smartphones.length}
+                   Total Productos = {phones.length}
                  </Button> 
                    
                 
@@ -116,7 +116,7 @@ const Tienda = (props)=>{
             
      
                {<div className="vista-todos-los-repuestos">
-                   {smartphones.map(smartphones=> <Product key={smartphones._id}{...smartphones} nombre = 'repuesto' onClick={()=>GetProductInfo(smartphones)}/>)}
+                   {phones.map(smartphones=> <Product key={phones._id}{...phones} nombre = 'repuesto' onClick={()=>GetProductInfo(phones)}/>)}
                </div>}
      
              <div className="vista-todos-los-accessorios">
@@ -190,13 +190,64 @@ const Tienda = (props)=>{
      
         }else{
             return(
-            <>
-            <Header style='repuestos'/>
-                <div>
-                    hola
+          
+          
+             
+                <>
+         <Header  style ='register'/>
+         <div className="vista-Container-Tienda">
+             
+     
+             <div className="nav-bar-container">
+            
+             
+              <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
+                  Accesorios 
+              </Button>
+              <Button variant="contained" color="secondary">
+                  Xiaomi
+              </Button>
+              <Button variant="contained" color="secondary">
+                  Samsung
+              </Button>
+              <Button variant="contained" color="secondary">
+                  Iphone
+              </Button>
+     
+     
+     
+             </div>
+     
+           <div className="vista-contenedor-telefonos-repuestos-accessorio">
+     
+               <div className="vista-nav-bar">
+                 <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+                 <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+                   Total Productos = {phones.length}
+                 </Button> 
+                   
+                
+               </div>
+     
+             
+                   
+            
+     
+               {<div className="vista-todos-los-repuestos">
+                   {phones.map(phones=> <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}
+               </div>}
+     
+             <div className="vista-todos-los-accessorios">
+     
+               </div>
+     
+           </div>
+     
+         </div>
+         </>
                     
-                </div>
-             </>
+             
+         
             )
                 
             

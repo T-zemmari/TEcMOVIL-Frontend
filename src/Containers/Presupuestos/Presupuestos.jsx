@@ -44,6 +44,18 @@ const Presupuestos = (props)=>{
     const [render,setRender]=React.useState('')
     const [repuestos,setRepuestos]= React.useState([]);
     const [accesorios,setAccessorios]= React.useState([]);
+    const [pantalla,setPantalla]=React.useState();
+    const [conector,setConector]=React.useState();
+
+
+    const [opciones,setOpciones]= React.useState([
+    {check:false,id:"pantalla"},
+    {check:false,id:"conector"},
+    {check:false,id:"auricular"},
+    {check:false,id:"buzz"},
+    {check:false,id:"microfono"},
+    {check:false,id:'software'}
+    ])
     
 
     // functions //
@@ -62,6 +74,38 @@ const Presupuestos = (props)=>{
       
   
       }
+     
+       
+    const handelPantalla =(e)=>{
+
+        setPantalla({[e.target.name]:e.target.value})
+    }
+    const handelConector =(e)=>{
+
+         setConector({[e.target.name]:e.target.value})
+    }
+
+
+
+    //suma para el presupuesto :
+
+
+    const sumaTotal = (pantalla,conector)=>{
+      
+       let resultado = pantalla + conector;
+ console.log(resultado)
+       return resultado
+       
+   }
+
+  
+
+
+
+
+     
+
+      console.log(pantalla?.pantalle)
 
 
 useEffect(async()=>{
@@ -79,6 +123,10 @@ useEffect(async()=>{
     let resultado = repuestos.filter( (repuesto)=> { return repuesto.modelo === modelo; });
     console.log(resultado)
 
+
+    // funcion sums precio total del presupuesto //
+
+   
 
 
     let renderA10 = <div className="options">
@@ -200,14 +248,14 @@ const RenderSamusungModels =(props)=>{
                       <div className="vista-div-reparaciones">
                         <div className="no-enciende-ni-carga"><h2>No enciende / No Carga </h2></div>
                         <div className="vista-check">
-                            <input className='checkbox-style' type="checkbox"/>
+                            <input className='checkbox-style' type="checkbox" name ='conector' value={resultado[0]?.conectorDeCarga} onChange ={handelConector}/>
                            
                             Conector de carga -  <strong> {resultado[0]?.conectorDeCarga} Euros</strong>
                         </div>
 
                         <div className="error-estetico"><h2>Daños estéticos / Roturas </h2></div>
                         <div className="vista-check">
-                        <input className='checkbox-style' type="checkbox"/>
+                        <input className='checkbox-style' type="checkbox" name ='pantalle'  value={resultado[0]?.pantalla} onChange ={handelPantalla}/>
                         Pantalla ORIGINAL -  <strong> {resultado[0]?.pantalla} Euros</strong>
 
                         </div>
@@ -248,7 +296,7 @@ const RenderSamusungModels =(props)=>{
                         <div className="vista-check">
 
                             <ContactRender>
-                                <div className="contacta-nos-style" onClick={()=> history.push('/contact')}> Contacta-Nos </div>
+                                <div className="contacta-nos-style"> Contacta-Nos </div>
                            </ContactRender>
                         </div>
                       
@@ -259,6 +307,10 @@ const RenderSamusungModels =(props)=>{
                  </div>
 
                       <div className="separador-presupuesto-vista-div-reparaciones"></div>
+                      <div className = 'total-presupuesto'>  
+                          Precio Total : {sumaTotal}
+                      
+                       </div>             
 
                </div>
            </div>
@@ -320,7 +372,7 @@ const RenderSamusungModels =(props)=>{
 
                        <div className="error-estetico"><h2>Daños estéticos / Roturas </h2></div>
                        <div className="vista-check">
-                       <input className='checkbox-style' type="checkbox"/>
+                       <input className='checkbox-style' type="checkbox"  name ='pantalla' />
                        Pantalla ORIGINAL -  <strong> {resultado[0]?.pantalla} Euros</strong>
 
                        </div>
