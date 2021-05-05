@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Presupuestos.scss';
 import Header from '../../components/Header/Header';
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,6 +15,9 @@ import { useHistory } from 'react-router';
 import ContactRender from '../../components/Modal/Contact-render';
 import { Footer } from 'antd/lib/layout/layout';
 import FooterDos from '../../Footer-dos/Footer';
+import Button from '@material-ui/core/Button'
+import { faWindows } from '@fortawesome/free-brands-svg-icons';
+import Scrolltop from '../../components/Scrolltop/Scrolltop';
 
 
 const useStyles = makeStyles((theme)=>({
@@ -44,18 +47,27 @@ const Presupuestos = (props)=>{
     const [render,setRender]=React.useState('')
     const [repuestos,setRepuestos]= React.useState([]);
     const [accesorios,setAccessorios]= React.useState([]);
-    const [pantalla,setPantalla]=React.useState();
-    const [conector,setConector]=React.useState();
+   
+
+    
+    //hooks para Checkbox------//
+
+    
+    
+
+    const[precioPantalla , setPrecioPantalla]=useState(0)
+    const[precioConector , setPrecioConector]=useState(0)
+    const[precioSoftware , setPrecioSoftware]=useState(0)
+    const[precioBuzzer , setPrecioBuzzer]=useState(0)
+    const[precioMicrofono , setPrecioMicrofono]=useState(0)
+    const[precioAuricular , setPrecioAuricular]=useState(0)
+    const [precioTotal,setPrecioTotal]=useState('');
+
+   
+        console.log(precioPantalla ,precioSoftware,precioAuricular,precioMicrofono,precioBuzzer,precioConector)
+  
 
 
-    const [opciones,setOpciones]= React.useState([
-    {check:false,id:"pantalla"},
-    {check:false,id:"conector"},
-    {check:false,id:"auricular"},
-    {check:false,id:"buzz"},
-    {check:false,id:"microfono"},
-    {check:false,id:'software'}
-    ])
     
 
     // functions //
@@ -74,29 +86,42 @@ const Presupuestos = (props)=>{
       
   
       }
+
+      //Funcion para borrar el formulario del presupuesto
+
+      const cleanPresupuesto=()=>{
+
+         setPrecioPantalla(0)
+         setPrecioConector(0)
+         setPrecioSoftware(0)
+         setPrecioBuzzer(0)
+         setPrecioMicrofono(0)
+         setPrecioAuricular(0)
+         window.location.reload()
+      
+      }
+
+
+    
      
-       
-    const handelPantalla =(e)=>{
-
-        setPantalla({[e.target.name]:e.target.value})
-    }
-    const handelConector =(e)=>{
-
-         setConector({[e.target.name]:e.target.value})
-    }
-
+ 
 
 
     //suma para el presupuesto :
 
 
-    const sumaTotal = (pantalla,conector)=>{
-      
-       let resultado = pantalla + conector;
- console.log(resultado)
-       return resultado
+      const sumaRepuestos = (a,b,c,d,e,f)=>{
        
-   }
+          let resultado = a+b+c+d+e+f;
+          return resultado
+        }
+      const precioRepuestos = sumaRepuestos(precioPantalla, precioSoftware , precioAuricular , precioBuzzer , precioConector , precioMicrofono);
+
+      const PrecioTotal = precioRepuestos + ((precioRepuestos * 21) / 100 );
+      const Iva = ((precioRepuestos * 21) / 100 );
+
+      
+      
 
   
 
@@ -105,7 +130,7 @@ const Presupuestos = (props)=>{
 
      
 
-      console.log(pantalla?.pantalle)
+      
 
 
 useEffect(async()=>{
@@ -202,6 +227,7 @@ const RenderSamusungModels =(props)=>{
    if(credentials?.user.name ){
    return (
        <>
+       
       
        <div className="vista-presupuesto-container">
        <Header style='logged-two'/>
@@ -248,14 +274,14 @@ const RenderSamusungModels =(props)=>{
                       <div className="vista-div-reparaciones">
                         <div className="no-enciende-ni-carga"><h2>No enciende / No Carga </h2></div>
                         <div className="vista-check">
-                            <input className='checkbox-style' type="checkbox" name ='conector' value={resultado[0]?.conectorDeCarga} onChange ={handelConector}/>
+                            <input className='checkbox-style' type="checkbox" name ='conector' value={resultado[0]?.conectorDeCarga} onChange ={()=>setPrecioConector(resultado[0]?.conectorDeCarga)}/>
                            
                             Conector de carga -  <strong> {resultado[0]?.conectorDeCarga} Euros</strong>
                         </div>
 
                         <div className="error-estetico"><h2>Daños estéticos / Roturas </h2></div>
                         <div className="vista-check">
-                        <input className='checkbox-style' type="checkbox" name ='pantalle'  value={resultado[0]?.pantalla} onChange ={handelPantalla}/>
+                        <input className='checkbox-style' type="checkbox" name ='pantalle'  value={resultado[0]?.pantalla} onChange ={()=>setPrecioPantalla(resultado[0]?.pantalla)}/>
                         Pantalla ORIGINAL -  <strong> {resultado[0]?.pantalla} Euros</strong>
 
                         </div>
@@ -272,12 +298,12 @@ const RenderSamusungModels =(props)=>{
                                </div>
 
                             <div className="div-checkbox-and-averia">
-                            <input className='checkbox-style' type="checkbox"/>
+                            <input className='checkbox-style' type="checkbox" onChange={()=>setPrecioAuricular(resultado[0]?.auricular)}/>
                             <div className="speaker">Auricular speaker - <strong> {resultado[0]?.auricular} Euros</strong> </div>
                                </div>
 
                             <div className="div-checkbox-and-averia">
-                               <input className='checkbox-style' type="checkbox"/>  
+                               <input className='checkbox-style' type="checkbox" onChange={()=>setPrecioBuzzer(resultado[0]?.buzz)}/>  
                                <div className="altavoz-buzzer">Altavoz buzzer - <strong> {resultado[0]?.buzz} Euros</strong></div>
                             </div>
 
@@ -288,7 +314,7 @@ const RenderSamusungModels =(props)=>{
 
                         <div className="error-de-software"><h2>Reinstalacion de softwares </h2></div>
                         <div className="vista-check">
-                            <input className='checkbox-style' type="checkbox"/> 
+                            <input className='checkbox-style' type="checkbox" onChange={()=>setPrecioSoftware(resultado[0]?.software)}/> 
                             Software -  <strong> {resultado[0]?.software} Euros</strong>
                         </div>
 
@@ -299,6 +325,28 @@ const RenderSamusungModels =(props)=>{
                                 <div className="contacta-nos-style"> Contacta-Nos </div>
                            </ContactRender>
                         </div>
+                        <div className="calculo-del-presupuesto">
+
+                           Total precio piezas a Sustituir  : {precioRepuestos} Euros <br/>
+                           Envio , Peninsula  : 8.90 Euros<br/>
+                           
+                           <h3>Total Estimado Presupesto  : {PrecioTotal} €</h3>
+                       </div>
+
+                       <div className="aceptar-o-no">
+                          
+                          <Button variant="contained" color="secondary" >
+                            Acepto El presupuesto
+                          </Button>
+                         
+                          
+                          <Button variant="contained" color="secondary"onClick={()=>cleanPresupuesto()}>
+                            Borrar Presupuesto
+                            </Button>
+                            
+                       </div>
+
+                        
                       
                       </div>
                      
@@ -308,7 +356,7 @@ const RenderSamusungModels =(props)=>{
 
                       <div className="separador-presupuesto-vista-div-reparaciones"></div>
                       <div className = 'total-presupuesto'>  
-                          Precio Total : {sumaTotal}
+                          Precio Total : 
                       
                        </div>             
 
@@ -319,7 +367,7 @@ const RenderSamusungModels =(props)=>{
        return(
 
 <>
-      
+
       <div className="vista-presupuesto-container">
       <Header style='register'/>
            <div className="body-container-prepusupuesto">
@@ -365,14 +413,14 @@ const RenderSamusungModels =(props)=>{
                      <div className="vista-div-reparaciones">
                        <div className="no-enciende-ni-carga"><h2>No enciende / No Carga </h2></div>
                        <div className="vista-check">
-                           <input className='checkbox-style' type="checkbox"/>
+                           <input className='checkbox-style' type="checkbox" name='conector' value={resultado[0]?.conectorDeCarga} onChange={()=>setPrecioConector(resultado[0]?.conectorDeCarga)}/>
                           
                            Conector de carga -  <strong> {resultado[0]?.conectorDeCarga} Euros</strong>
                        </div>
 
-                       <div className="error-estetico"><h2>Daños estéticos / Roturas </h2></div>
+                       <div className="error-estetico"><h2>Daños estéticos / Roturas  </h2></div>
                        <div className="vista-check">
-                       <input className='checkbox-style' type="checkbox"  name ='pantalla' />
+                       <input className='checkbox-style' type="checkbox"  name ='pantalla'  value ={resultado[0]?.pantalla} onChange={()=>setPrecioPantalla(resultado[0]?.pantalla)}/>
                        Pantalla ORIGINAL -  <strong> {resultado[0]?.pantalla} Euros</strong>
 
                        </div>
@@ -384,17 +432,17 @@ const RenderSamusungModels =(props)=>{
                          <div className="tipo-averia-audio">
                            <div className="div-checkbox-and-averia">
                                
-                               <input className='checkbox-style' type="checkbox"/>
+                               <input className='checkbox-style' type="checkbox" name='microfono'onChange={()=>setPrecioMicrofono(resultado[0]?.microfono)}/>
                               <div className="altavoz">Micrófono - <strong> {resultado[0]?.microfono} Euros</strong></div>
                               </div>
 
                            <div className="div-checkbox-and-averia">
-                           <input className='checkbox-style' type="checkbox"/>
+                           <input className='checkbox-style' type="checkbox" name='auricular 'onChange={()=>setPrecioAuricular(resultado[0]?.auricular)}/>
                            <div className="speaker">Auricular speaker - <strong> {resultado[0]?.auricular} Euros</strong> </div>
                               </div>
 
                            <div className="div-checkbox-and-averia">
-                              <input className='checkbox-style' type="checkbox"/>  
+                              <input className='checkbox-style' type="checkbox" name='buzzer' onChange={()=>setPrecioBuzzer(resultado[0]?.buzz)}/>  
                               <div className="altavoz-buzzer">Altavoz buzzer - <strong> {resultado[0]?.buzz} Euros</strong></div>
                            </div>
 
@@ -405,7 +453,7 @@ const RenderSamusungModels =(props)=>{
 
                        <div className="error-de-software"><h2>Reinstalacion de softwares </h2></div>
                        <div className="vista-check">
-                           <input className='checkbox-style' type="checkbox"/> 
+                           <input className='checkbox-style' type="checkbox" name='software' onChange={()=>setPrecioSoftware(resultado[0]?.software)}/> 
                            Software -  <strong> {resultado[0]?.software} Euros</strong>
                        </div>
 
@@ -419,17 +467,26 @@ const RenderSamusungModels =(props)=>{
                        
                      <div className="calculo-del-presupuesto">
 
-                           Total precio piezas a Sustituir  : {sumaTotal} <br/><br/>
-                           Envio , Peninsula  : 8.90 Euros<br/>
+                           Total precio piezas a Sustituir  : {precioRepuestos} Euros <br/>
+                           Iva-21% : {Iva} Euros<br/>
                            
-                           <h2>Total Estimado Presupesto  :  €</h2>
+                           <h3>Total Estimado Presupesto  : {PrecioTotal} €</h3>
+                       </div>
+
+                       <div className="aceptar-o-no">
+                          
+                          <Button variant="contained" color="secondary" >
+                            Acepto El presupuesto
+                          </Button>
+                         
+                          
+                          <Button variant="contained" color="secondary"onClick={()=>cleanPresupuesto()}>
+                            Borrar Presupuesto
+                            </Button>
+                            
                        </div>
                      </div>
-
-                    
-
-
-                </div>
+              </div>
 
                      <div className="separador-presupuesto-vista-div-reparaciones"></div>
 
@@ -439,22 +496,10 @@ const RenderSamusungModels =(props)=>{
              
         
           </div>
-          <FooterDos/>
+
+          <footer className='footer-special-presupuesto'></footer>
+    
      </>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        )
            
