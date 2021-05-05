@@ -9,6 +9,8 @@ import { ADD_TO_CARRITO } from '../../Redux/Types';
 import Cart from '../../components/Cart/Cart';
 import Cesta from '../../components/Cesta/Cesta';
 import LoginRender from '../../components/Modal/Login-render';
+import SimpleCollapse from '../../components/Transition/Transition';
+import Product from '../../components/Products/Product';
 
 
 const ProductProfile = (props)=>{
@@ -16,6 +18,11 @@ const ProductProfile = (props)=>{
 
   const [arrayProducts ,setArrayProducts]=useState([]);
   const [page,setPage]= useState('carrito-hidden');
+
+
+  const accessorios = props.accessorios;
+  console.log(accessorios)
+   
 
 
   useEffect(() => {
@@ -56,8 +63,21 @@ const ProductProfile = (props)=>{
 
         setArrayProducts(arrayProducts.filter(producto => producto !== producto_a_eliminar))
         }
+
+
+        const GetProductInfo = (product) => {
+          localStorage.removeItem('productos');
+          localStorage.setItem('productos',JSON.stringify(product));
+          history.push('/product-profile')
+       
+       };
+
+
+       
   
    
+         {/* El carrito ----------------------es visible........*/}
+
 
     if(datosProducto?.name && credentials?.user.name && page ==='carrito'){
 
@@ -121,7 +141,16 @@ const ProductProfile = (props)=>{
 
                   </div>
           )}
+
+          <div className="productos-relacionados">
+
+          
+                     {accessorios.map(accessorios=> <Product key={accessorios._id}{...accessorios} nombre = 'repuesto'  onClick={()=>GetProductInfo(accessorios)}/>)}
+          
+          </div>
         </div>
+
+        
 
             {/*-----------------------Fin del div del Carrito------------------------*/}
 
@@ -234,6 +263,8 @@ const ProductProfile = (props)=>{
         </> )
   }
 
+
+                {/* Aqui el carrito esta escondido-----------------------------*/}
 
   if(datosProducto?.name && credentials?.user.name && page ==='carrito' && props.style ==='solo-carrito'){
 
@@ -416,11 +447,15 @@ const ProductProfile = (props)=>{
           </div>
 
        </div>
-
+      
        <div className="vista-description-product-profile">
-          <h2 className='h2-vista-product-profile'>Descripción</h2>
+         
+           <h2 className='h2-vista-product-profile'>Descripción</h2> 
+          
            <p className='p-vista-product-profile'>{datosProducto.description}</p>
           </div>
+        
+       
        
             </div>
         </> )
@@ -524,12 +559,14 @@ const ProductProfile = (props)=>{
           </div>
 
        </div>
-
+       <SimpleCollapse> 
        <div className="vista-description-product-profile">
-          <h2 className='h2-vista-product-profile'>Descripción</h2>
+         
+           <h2 className='h2-vista-product-profile'>Descripción</h2>
+          
            <p className='p-vista-product-profile'>{datosProducto.description}</p>
           </div>
-
+        </SimpleCollapse>
          
        
                 
@@ -543,7 +580,8 @@ const mapStateToProps =(state)=>{
   return {
       carrito : state.carritoReducer.carrito,
       user: state.userReducer.user,
-      product:state.productReducer.product
+      product:state.productReducer.product,
+      accessorios:state.accessReducer.accessorios
   }
 }
 

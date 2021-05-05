@@ -9,6 +9,7 @@
     margin: 10px;
 }
 
+
 .product-container:hover{
     display: flex;
     flex-direction: column;
@@ -18,9 +19,32 @@
     height: 460px;
     border: rgb(65, 22, 105) 1px solid;
     border-radius: 10px;
-    margin: 10px;
+  
     transition: 1s;
 }
+.product-container-en-tienda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    width: 400px;
+    height: 660px;
+    border: rgb(121, 13, 223) 1px solid;
+    border-radius: 10px;
+    margin: 10px;
+ 
+
+}
+
+.image-size-en-tienda{
+
+    margin-top: 20px;
+    background-color: rgb(104, 80, 45);
+    width: 250px;
+    height: 500px;
+
+}
+
 
 .product-container-accessorios{
     display: flex;

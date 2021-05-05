@@ -7,6 +7,7 @@ import Product from '../../components/Products/Product';
 import { useHistory } from 'react-router';
 import {connect} from 'react-redux';
 import { SMARTPHONES,ACCESSORIOS } from '../../Redux/Types';
+import Loading from '../../components/Loading/Loading';
 
 
 
@@ -17,6 +18,7 @@ const Tienda = (props)=>{
     
     const user = props.user;
     const token=props.token; 
+    const [loading, setLoading] = useState(false);
     
 
     const credentials = JSON.parse(localStorage.getItem('credentials'));
@@ -24,7 +26,7 @@ const Tienda = (props)=>{
 
     const [phones,setPhones]=useState([]);
     const [accesorios,setAccessorios]=useState([]);
-    //const [smartphones,setphones]=useState([]);
+    
    
 
     const [page,setPage]=useState('pageOne');
@@ -36,6 +38,11 @@ const Tienda = (props)=>{
         setPage(nextPage)
     }
 
+
+    const [query,setQuery]=useState('')
+
+
+
     let imgArr=[
         'https://fondosmil.com/fondo/32772.jpg',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTInnPiPu1yksTuAH79j5mkjW3IcgwcDRIY16DONrXrjJZnQaFbdTK7by4kfHdWSNHy4eM&usqp=CAU'
@@ -44,7 +51,7 @@ const Tienda = (props)=>{
     useEffect(async()=>{
 
          let response_for_phones = await axios.get('http://localhost:3002/products');
-         setPhones(response_for_phones.data);
+         setPhones(response_for_phones.data.splice(0,16));
          props.dispatch({type:SMARTPHONES,payload:response_for_phones.data});
 
          let response_for_access = await axios.get('http://localhost:3002/accessorios');
@@ -69,13 +76,20 @@ const Tienda = (props)=>{
 
      const shwichPages=(nextPage)=>{
 
+      setTimeout(()=>{
+        setLoading(false)
+      }
+      ,1000)
+        setLoading(true)
         setPage(nextPage)
        }
 
+                       {/* pageOne es donde se renderizan los smartphones*/}
 
      if(credentials?.user.name && page ==='pageOne'){
         return (
          <>
+         <Loading visible={loading}></Loading>
          <Header  style ='logged-two'/>
          <div className="vista-Container-Tienda">
              
@@ -99,6 +113,11 @@ const Tienda = (props)=>{
      
      
              </div>
+
+             <div className="input-busqueda-">
+
+               
+             </div>
      
            <div className="vista-contenedor-telefonos-repuestos-accessorio">
      
@@ -110,13 +129,9 @@ const Tienda = (props)=>{
                    
                 
                </div>
-     
-             
-                   
-            
-     
+    
                {<div className="vista-todos-los-repuestos">
-                   {phones.map(smartphones=> <Product key={phones._id}{...phones} nombre = 'repuesto' onClick={()=>GetProductInfo(phones)}/>)}
+                   {phones.map(phones=> <Product key={phones._id}{...phones} tamaño = 'en-tienda' onClick={()=>GetProductInfo(phones)}/>)}
                </div>}
      
              <div className="vista-todos-los-accessorios">
@@ -128,6 +143,9 @@ const Tienda = (props)=>{
          </div>
          </>
         )}
+
+
+        {/* accessorio es donde se renderizan los accessorios*/}
         
         
         if(credentials?.user.name && page === 'accesorios'){
@@ -135,6 +153,7 @@ const Tienda = (props)=>{
      
          return (
            <>
+           <Loading visible={loading}></Loading>
            <Header  style ='logged-two'/>
            <div className="vista-Container-Tienda">
                
@@ -142,8 +161,8 @@ const Tienda = (props)=>{
                <div className="nav-bar-container">
               
                
-                <Button variant="contained" color="secondary" onClick={()=>shwichPages('repuestos')}>
-                    Repuestos 
+                <Button variant="contained" color="secondary" onClick={()=>shwichPages('pageOne')}>
+                    Smartphones 
                 </Button>
                 <Button variant="contained" color="secondary">
                     Xiaomi
@@ -186,6 +205,9 @@ const Tienda = (props)=>{
        
            </div>
            </>)
+
+
+              {/* Aqui se renderizan los accessorios pero Sin estar el usuario logeado*/}
      
      
         }if(!credentials?.user.name && page === 'accesorios'){
@@ -193,6 +215,7 @@ const Tienda = (props)=>{
      
             return (
               <>
+              <Loading visible={loading}></Loading>
               <Header  style ='register'/>
               <div className="vista-Container-Tienda">
                   
@@ -247,15 +270,18 @@ const Tienda = (props)=>{
         
         
            }
+
+          
         
         
         else{
+
+           {/* Aqui se  renderizan los smartphones sin que el ususario este loggeado */}
+
             return(
-          
-          
-             
-                <>
+         <>
          <Header  style ='register'/>
+         <Loading visible={loading}></Loading>
          <div className="vista-Container-Tienda">
              
      
@@ -295,7 +321,7 @@ const Tienda = (props)=>{
             
      
                {<div className="vista-todos-los-repuestos">
-                   {phones.map(phones=> <Product key={phones._id}{...phones} tamaño = 'normal' onClick={()=>GetProductInfo(phones)}/>)}
+                   {phones.map(phones=> <Product key={phones._id}{...phones} tamaño='normal' onClick={()=>GetProductInfo(phones)}/>)}
                </div>}
      
              <div className="vista-todos-los-accessorios">

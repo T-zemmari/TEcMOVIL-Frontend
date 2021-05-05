@@ -48,6 +48,17 @@ const Product = (
            
        </div>
     )}
+    if(style !=='admin' && tamaño === 'en-tienda'){
+        return(
+            <div className='product-container-en-tienda'onClick ={onClick}>
+                
+               <img className='image-size-en-tienda' src={imgUrl} alt={name} />
+               <div className="name-size-en-tienda" ><h3>{name}</h3></div>
+               <div className="rate-size-en-tienda"><h4 className="h4-producto-color">{color}</h4></div>
+               <div className="price-size-en-tienda"><h4  className="h4-producto-price">{price}</h4></div>
+               
+           </div>
+        )}
 
 
     if(style !=='admin' && nombre === 'repuesto'){

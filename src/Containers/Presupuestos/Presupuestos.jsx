@@ -352,6 +352,7 @@ const RenderSamusungModels =(props)=>{
                      
              </div>
                 </div>
+                <footer className='footer-special-presupuesto'></footer>
            </div>
       </>
    )}else{
