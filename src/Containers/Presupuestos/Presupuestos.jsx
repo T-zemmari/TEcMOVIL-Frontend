@@ -350,17 +350,8 @@ const RenderSamusungModels =(props)=>{
                       
                       </div>
                      
-
-
-                 </div>
-
-                      <div className="separador-presupuesto-vista-div-reparaciones"></div>
-                      <div className = 'total-presupuesto'>  
-                          Precio Total : 
-                      
-                       </div>             
-
-               </div>
+             </div>
+                </div>
            </div>
       </>
    )}else{
