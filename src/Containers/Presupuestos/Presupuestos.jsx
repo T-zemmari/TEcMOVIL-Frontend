@@ -412,12 +412,20 @@ const RenderSamusungModels =(props)=>{
                        <div className="no-enciende-ni-carga"><h2>Contacta con nosotros si no encuentras tu averia </h2></div>
                        <div className="vista-check">
 
-                           <ContactRender>
-                               <div className="contacta-nos-style" onClick={()=> history.push('/contact')}> Contacta-Nos </div>
+                           <ContactRender onClick={()=> history.push('/contact')}>
+                               <div className="contacta-nos-style" > Contacta-Nos </div>
                           </ContactRender>
                        </div>
-                     
+                       
+                     <div className="calculo-del-presupuesto">
+
+                           Total precio piezas a Sustituir  : {sumaTotal} <br/><br/>
+                           Envio , Peninsula  : 8.90 Euros<br/>
+                           
+                           <h2>Total Estimado Presupesto  :  €</h2>
+                       </div>
                      </div>
+
                     
 
 

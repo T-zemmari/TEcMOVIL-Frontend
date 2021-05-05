@@ -8,6 +8,7 @@ import './Product-Profile.scss';
 import { ADD_TO_CARRITO } from '../../Redux/Types';
 import Cart from '../../components/Cart/Cart';
 import Cesta from '../../components/Cesta/Cesta';
+import LoginRender from '../../components/Modal/Login-render';
 
 
 const ProductProfile = (props)=>{
@@ -514,9 +515,11 @@ const ProductProfile = (props)=>{
               </div>
 
               <div className="vista-boton-comprar-product-profile" >
-                  <Button variant="contained" color="secondary"onClick={()=>addToCart()}>
+                <LoginRender onClick={()=>history.push('login')}>
+                  <Button variant="contained" color="secondary">
                       Logeate Si Quieres hacer una compra
                   </Button>
+                  </LoginRender>
               </div>
           </div>
 

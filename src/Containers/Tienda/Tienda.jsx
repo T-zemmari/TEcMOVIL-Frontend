@@ -188,7 +188,68 @@ const Tienda = (props)=>{
            </>)
      
      
-        }else{
+        }if(!credentials?.user.name && page === 'accesorios'){
+     
+     
+            return (
+              <>
+              <Header  style ='register'/>
+              <div className="vista-Container-Tienda">
+                  
+          
+                  <div className="nav-bar-container">
+                 
+                  
+                   <Button variant="contained" color="secondary" onClick={()=>shwichPages('repuestos')}>
+                       Smartphones 
+                   </Button>
+                   <Button variant="contained" color="secondary">
+                       Xiaomi
+                   </Button>
+                   <Button variant="contained" color="secondary">
+                       Samsung
+                   </Button>
+                   <Button variant="contained" color="secondary">
+                       Iphone
+                   </Button>
+          
+          
+          
+                  </div>
+          
+                <div className="vista-contenedor-telefonos-repuestos-accessorio">
+          
+                    <div className="vista-nav-bar">
+                      <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+                      <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+                        Total Productos = {accesorios.length}
+                      </Button> 
+                        
+                     
+                    </div>
+          
+                  
+                        
+                 
+          
+                    {<div className="vista-todos-los-repuestos">
+                        {accesorios.map(accesorios=> <Product key={accesorios._id}{...accesorios} nombre = 'repuesto'  onClick={()=>GetProductInfo(accesorios)}/>)}
+                    </div>}
+          
+                  <div className="vista-todos-los-accessorios">
+          
+                    </div>
+          
+                </div>
+          
+              </div>
+              </>)
+        
+        
+           }
+        
+        
+        else{
             return(
           
           
