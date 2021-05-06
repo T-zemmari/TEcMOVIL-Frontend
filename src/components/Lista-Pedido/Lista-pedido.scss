@@ -1,0 +1,48 @@
+.lista-pedidos-container{
+
+
+    width: 800px;
+    height: 600px;
+    border: 1px solid rgb(167, 161, 161);
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../img/unnamed.jpg');
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla-lista-pedidos{
+
+    width: 80%;
+    height: 80%;
+    border: blue solid 1px;
+}
+.titulo-tabla-pedido{
+
+    width: 100%;
+    height: 50px;
+    border-bottom: blue 1px solid;
+    
+}
+
+.contenedor-lista-pedidos-mas-precio-final{
+
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: blue 1px solid;
+}
+.lista-productos-eligidos{
+
+    width: 30%;
+    border-right: blue 1px solid;
+}
+
+
+
+
+
+.Validar{
+    margin-top: 15px;
+}

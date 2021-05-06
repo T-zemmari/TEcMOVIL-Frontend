@@ -15,6 +15,7 @@ import Scrolltop from './components/Scrolltop/Scrolltop';
 import Cart from './components/Cart/Cart';
 import UserData from './Containers/User-data/User-data';
 import Contact from './components/Contact/Contact';
+import ListaPedido from './components/Lista-Pedido/Lista-pedido';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
          <Route path="/cart" exact component={Cart}/>
          <Route path='/profile-user' exact component={UserData}/>
          <Route path='/contact' exact component={Contact}/>
+         <Route path='/lista-pedidos' exact component={ListaPedido}/>
         
         </Switch>
       

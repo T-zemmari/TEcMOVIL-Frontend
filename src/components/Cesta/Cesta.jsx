@@ -53,7 +53,7 @@ const Cesta =({onClick,name,imgUrl,price,removeItem})=>{
             <div className="contenedor-imagen-titulo-articulo-precio">
 
                     <div className="vista-imagen-productos">
-                       <img src={imgUrl} alt={name}/>
+                       <img  className="vista-imagen-productos"src={imgUrl} alt={name}/>
                    </div>
 
                     <div className="vista-nombre-productos">
