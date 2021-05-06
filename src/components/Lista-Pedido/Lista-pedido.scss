@@ -22,6 +22,10 @@
     width: 100%;
     height: 50px;
     border-bottom: blue 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -35,17 +39,37 @@
 }
 .lista-productos-eligidos{
 
-    width: 30%;
+    width:20%;
     border-right: blue 1px solid;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.lista-detallada-de-productos{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .nombre-del-producto{
     color: brown;
 }
 
+.precio-total-productos{
+
+    border-left:blue 1px solid ;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.datos-de-pago{
+    height: auto;
+    border-bottom:blue 1px solid ;
+}
 
 
 
