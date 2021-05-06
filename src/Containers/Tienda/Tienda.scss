@@ -16,6 +16,8 @@
     height: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     //border: 1px solid rgb(138, 134, 134);
     background-color: rgb(240, 238, 235);
 }
@@ -42,9 +44,26 @@
 
 }
 
-.vista-nav-bar{
+.vista-nav-bar-tienda{
+    
+}
+
+.input-busqueda{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 550px;
+}
+
+.input-search{
+    margin-top:15px;
+    width: 500px;
+    height: 35px;
+}
+.boton-tienda-search{
     margin-top: 15px;
-    position: absolute;
 }
 
 

@@ -48,6 +48,17 @@ const Product = (
            
        </div>
     )}
+    if(style !=='admin' && tamaño === 'accessorio reducido'){
+        return(
+            <div className='product-container-accessorio-carrousel'onClick ={onClick}>
+                
+            <img className='image-size-accessorio-carrousel' src={image1} alt={name} />
+            <div className="name-size-accessorio-carrousel" ><h3 className="name-size-accessorio-carrousel">{name}</h3></div>
+            <div className="rate-size-accessorio-carrousel"><h4 className="h4-producto-color">{modelo}</h4></div>
+            <div className="price-size-accessorio-carrousel"><h4  className="h4-producto-price">{price}</h4></div>
+            
+        </div>
+        )}
     if(style !=='admin' && tamaño === 'en-tienda'){
         return(
             <div className='product-container-en-tienda'onClick ={onClick}>

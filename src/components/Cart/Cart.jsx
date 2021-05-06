@@ -5,6 +5,9 @@ import './Cart.scss';
 import {connect} from 'react-redux';
 import { REMOVE_FROM_CARRITO } from '../../Redux/Types';
 import ProductProfile from '../../Containers/Product-Profile/Product-Profile';
+import Header from '../Header/Header';
+import Button from '@material-ui/core/Button'
+
 
 const Cart =(props)=>{
 
@@ -14,6 +17,7 @@ const Cart =(props)=>{
 
     const  carrito = props.carrito;
     const user = props.user;
+    console.log(user)
 
     const removeItem =(producto_a_eliminar)=>{
 
@@ -44,6 +48,8 @@ const Cart =(props)=>{
 
 
     return(
+      <>
+       <Header style='logged-two'/>
 
         
       
@@ -52,7 +58,17 @@ const Cart =(props)=>{
            
       
        </div>
-    
+
+       <div className="order">
+
+           <Button variant="text" color="default">
+               Total a pagar : 
+           </Button>
+           <Button variant="contained" color="secondary">
+              Hacer el pedido
+           </Button>
+       </div>
+    </>
     )
     }
 }

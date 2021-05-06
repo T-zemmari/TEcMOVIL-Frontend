@@ -8,8 +8,14 @@ import axios from 'axios';
 import Loading from '../../components/Loading/Loading';
 import AccessoriosAdmin from '../../components/AccesoriosAdmin/AccessoriosAdmin';
 import FormRender from '../../components/Modal/Form-render';
+import {connect} from 'react-redux';
+
 
 const Admin =(props)=>{
+
+
+  const accessoriosFromRedux = props.accessorios;
+  console.log(accessoriosFromRedux)
 
   const [usuario,setUsuario]=useState([]);
   const [loading,setLoading]=useState(false);
@@ -49,9 +55,11 @@ const Admin =(props)=>{
   let listaAccessorios = async()=>{
     let accessoriosData = await axios.get('http://localhost:3002/accessorios');
     setAccessorios(accessoriosData.data);
-   console.log(accessorios)
+ 
   }
-  
+    console.log(accessorios)
+
+    
 
   //-----------cambio de pantalla------------//
 
@@ -87,10 +95,17 @@ const Admin =(props)=>{
                  Lista  Accessorios
                </Button>
                </div>
+
+               <div className="boton-admin-menu-izquierdo"> 
+               <Button variant="contained" color="secondary" onClick ={()=>{listaAccessorios()}} onClick ={()=>switchPages('telefono')} >
+                 Lista  Compras realizadas
+               </Button>
+               </div>
                <div className="boton-admin-menu-izquierdo"> 
 
                <FormRender>
                <Button variant="contained" color="primary"  >
+
                  Añadir Telefonos
                </Button>
                </FormRender>
@@ -155,7 +170,7 @@ const Admin =(props)=>{
                </div>
 
                <div>
-                {products?.map(products => <ProductsAdmin key={products._id} {...products}/>)}
+                {products?.map(products => <ProductsAdmin   key={products._id} {...products}/>)}
                </div>
 
                  
@@ -246,8 +261,12 @@ const Admin =(props)=>{
                            </div>
 
 
-                           <div>
+                           {/*<div>
                             {accessorios?.map(accessorios => <AccessoriosAdmin key={accessorios._id} {...accessorios}/>)}
+                           </div>*/}
+
+                           <div>
+                            {accessoriosFromRedux?.map(accessoriosFromRedux => <AccessoriosAdmin key={accessoriosFromRedux._id} {...accessoriosFromRedux}/>)}
                            </div>
 
  
@@ -260,5 +279,12 @@ const Admin =(props)=>{
    }
 }
 
+const mapStateToProps=(state)=>{
 
-export default Admin;
+  return {
+    accessorios:state.accessReducer.accessorios
+  }
+}
+
+
+export default connect(mapStateToProps)(Admin);

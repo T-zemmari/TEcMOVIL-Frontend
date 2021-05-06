@@ -33,7 +33,10 @@
 .productos-relacionados{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: scroll;
 
 }
 .image-datainfo-and-div-garantia{

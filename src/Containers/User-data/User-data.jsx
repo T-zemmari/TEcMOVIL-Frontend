@@ -23,13 +23,14 @@ const UserData = (props) => {
 
     let history = useHistory();
     let credentials = JSON.parse(localStorage.getItem('credentials'));
+    console.log(credentials)
 
     const [user, setUser] = useState({
 
         name: "",
         lastname: "",
         phone: "",
-        address: "",
+        adress: "",
         born: "",
     
         })
@@ -78,7 +79,7 @@ const UserData = (props) => {
         name: user.name,
         lastname: user.lastname,
         phone: user.phone,
-        address: user.adress,
+        adress: user.adress,
         born: user.born,
         payment :creditcard
        
@@ -149,23 +150,23 @@ const UserData = (props) => {
 
             <div className="inputContainer twocols">
                 <Form.Item validateStatus={errors.name?.status} help={errors.name?.help}>
-                    <FormInput label="Nombre" name="name" onChange={updateUser} />
+                    <FormInput label={credentials.user?.name} name="name"   onChange={updateUser} />
                 </Form.Item>
                 <Form.Item validateStatus={errors.lastname?.status} help={errors.lastname?.help}>
-                    <FormInput label="Apellidos" name="lastname" onChange={updateUser} />
+                    <FormInput label={credentials.user?.lastname} name="lastname" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="inputContainer">
                 <Form.Item validateStatus={errors.address?.status} help={errors.address?.help}>
-                    <FormInput label="Dirección" name="address" onChange={updateUser} />
+                    <FormInput label={credentials.user?.adress} name="address" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="inputContainer twocols">
                 <Form.Item validateStatus={errors.phone?.status} help={errors.phone?.help}>
-                    <FormInput label="Telefono" name="phone" onChange={updateUser} />
+                    <FormInput label={credentials.user?.phone} name="phone" onChange={updateUser} />
                 </Form.Item>
                 <Form.Item validateStatus={errors.born?.status} help={errors.born?.help}>
-                    <FormInput label="Fecha de nacimiento" name="born" onChange={updateUser} />
+                    <FormInput label={credentials.user?.born} name="born" onChange={updateUser} />
                 </Form.Item>
             </div>
             
@@ -185,20 +186,20 @@ const UserData = (props) => {
               <div className="formulario-tarjeta">
 
                   Numero de la tarjeta
-                  <input className='input-form-tarjeta' name ='Numero_de_laTarjeta' type="text"placeholder='Escriba aqui el numero de su tarjeta' onChange={handel_creditCard}/>
+                  <input className='input-form-tarjeta' name ='Numero_de_laTarjeta' type="text"placeholder={credentials.user.payment?.Numero_de_laTarjeta} onChange={handel_creditCard}/>
 
                   Nombre
-                  <input className='input-form-tarjeta' name='nombre_tarjeta' type="text"placeholder='Escriba aqui su nombre' onChange={handel_creditCard}/>
+                  <input className='input-form-tarjeta' name='nombre_tarjeta' type="text"placeholder={credentials.user.payment?.nombre_tarjeta} onChange={handel_creditCard}/>
 
                   <div className="fecha-de-expiracion">
 
                   <div className="contendor-fecha">
                   Fecha de Expiracíon
-                  <input className='input-form-tarjeta-fecha' name='Fecha_expiracion' type="text"placeholder='20/21' onChange={handel_creditCard}/>
+                  <input className='input-form-tarjeta-fecha' name='Fecha_expiracion' type="text"placeholder={credentials.user.payment?.Fecha_expiracion} onChange={handel_creditCard}/>
                  </div>
                  <div className="contendor-CVC" >
                   CVC 
-                  <input  className='input-form-tarjeta-fecha' name='Cvc' type="text" placeholder='CVC' onChange={handel_creditCard}/>
+                  <input  className='input-form-tarjeta-fecha' name='Cvc' type="text" placeholder={credentials.user.payment?.CVC} onChange={handel_creditCard}/>
                   </div>
                   </div>
                   <Button variant="contained" color="primary" onClick={() => envioData()}>

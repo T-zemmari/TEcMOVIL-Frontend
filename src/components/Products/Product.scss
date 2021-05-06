@@ -27,8 +27,8 @@
     flex-direction: column;
     align-items: center;
    
-    width: 400px;
-    height: 660px;
+    width: 220px;
+    height: 400px;
     border: rgb(121, 13, 223) 1px solid;
     border-radius: 10px;
     margin: 10px;
@@ -40,8 +40,8 @@
 
     margin-top: 20px;
     background-color: rgb(104, 80, 45);
-    width: 250px;
-    height: 500px;
+    width: 120px;
+    height: 250px;
 
 }
 
@@ -173,7 +173,26 @@
 }
 .h4-producto-price{
     color: rgb(250, 7, 250);
-    font-size: 25px;
+    font-size: 18px;
     margin-top: -25px;
 
+}
+
+//---------product-container-accessorio-carrousel---------//
+
+.product-container-accessorio-carrousel{
+
+    margin-top: 10px;
+    width: 150px;
+    height: 200px;
+   // border:1px solid rgb(20, 14, 14);
+
+}
+.image-size-accessorio-carrousel{
+    width: 100px;
+    height: 100px;
+}
+.name-size-accessorio-carrousel{
+    font-size: 15px;
+    font-weight: 100;
 }

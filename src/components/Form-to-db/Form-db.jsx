@@ -70,7 +70,7 @@ const FormDB =(props)=>{
 
            <div className='vista-añadir-imagenes'>
             
-            <input  className='inputs-form-admin' type="file"  name='imgUrl'  placeholder='name' onChange={handeler}/>
+            <input  className='inputs-form-admin-image' type="file"  name='imgUrl'  placeholder='name' onChange={handeler}/>
             
             <input  className='inputs-form-admin' type="file"  name='image2'  placeholder='pantalla' onChange={handeler}/>
             <div className="boton-admin-form">

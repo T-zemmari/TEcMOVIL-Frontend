@@ -145,7 +145,7 @@ const ProductProfile = (props)=>{
           <div className="productos-relacionados">
 
           
-                     {accessorios.map(accessorios=> <Product key={accessorios._id}{...accessorios} nombre = 'repuesto'  onClick={()=>GetProductInfo(accessorios)}/>)}
+                     {accessorios.slice(0,10).map(accessorios=> <Product key={accessorios._id}{...accessorios} tamaño = 'accessorio reducido'  onClick={()=>GetProductInfo(accessorios)}/>)}
           
           </div>
         </div>

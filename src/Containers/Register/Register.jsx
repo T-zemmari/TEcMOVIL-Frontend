@@ -55,9 +55,9 @@ const Register = (props) => {
       phone: user.phone,
       adress: user.adress,
       born: user.born,
-      payment: 'CreditCard',
+    
     };
-    console.log(userData)
+   
 
     setLoading(true);
     setTimeout(() => {

@@ -17,7 +17,7 @@ const AccessoriosAdmin = ({name,priceWithIva,priceWithoutIva,color,rate,_id,imag
         <div className="product-data-admin product-color-admin-view">{priceWithIva}</div>
         <div className="product-data-admin product-rate-admin-view">{color}</div>
         <div className="product-data-admin product-pantalla-admin-view">{rate}</div>
-        <div className="product-data-admin product-pantalla-admin-view">{image1}</div>
+        <div className="product-data-admin product-image-admin-view">{image1}</div>
     </div>
     )
 }

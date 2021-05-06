@@ -4,7 +4,7 @@ import smartReducer from './Reducers/Smatphones-reducer';
 import accessReducer from './Reducers/Accesorios-reducer';
 import carritoReducer from './Reducers/Carrito-reducer';
 import productReducer from './Reducers/Product-reducer';
-
+import BusquedaReducer from './Reducers/Busqueda-reducer';
 
 
 const rootReducer = combineReducers({
@@ -12,7 +12,8 @@ const rootReducer = combineReducers({
     smartReducer,
     accessReducer,
     carritoReducer,
-    productReducer
+    productReducer,
+    BusquedaReducer
 
  
 });

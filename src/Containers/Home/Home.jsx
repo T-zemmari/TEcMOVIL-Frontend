@@ -123,7 +123,7 @@ const GetProductInfo = (product) => {
 
            <div className="vista-contenedor-divs-rep-smart-acces">
            <div className="vista-contenido">
-              <img className="vista-contenido" src={repuestos} alt="repuestos"/>
+              <img className="vista-contenido" src={repuestos} alt="repuestos" onClick={()=>{history.push('repuestos')}}/>
            </div>
            <p className='p-home-titulo'>Repuestos</p>
            <p className='p-home-parrafo'>Navega por nuestro catalogo, y elige el accesorio que <br/>
@@ -132,7 +132,7 @@ const GetProductInfo = (product) => {
 
            <div className="vista-contenedor-divs-rep-smart-acces">
            <div className="vista-contenido">
-              <img className="vista-contenido" src={accesorios} alt="accesorios"/>
+              <img className="vista-contenido" src={accesorios} alt="accesorios" onClick={()=>{history.push('tienda')}}/>
            </div> 
            <p className='p-home-titulo'>Accesorios</p>
            <p className='p-home-parrafo'>Navega por nuestro catalogo, y elige el accesorio que <br/>

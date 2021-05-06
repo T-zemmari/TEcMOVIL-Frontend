@@ -118,15 +118,15 @@ if(props.style === 'home' ){
                         <li className='li-not-home'>Contactenos</li>
                       
                     </div>
-                   < CartRender>
+                  
                             
-                        <div className="vista-contenedor-carrito-imagen-cantidad">
+                        <div className="vista-contenedor-carrito-imagen-cantidad" onClick={()=>history.push('/cart')}>
                                 <h5 className="h5-carrito">{carrito?.length}</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
                             </div>
-                            </CartRender>
+                           
                 </div>
                )
 }if(props.style === 'Admin' ){
@@ -159,16 +159,15 @@ if(props.style === 'logged' && credentials?.user.name){
                       
                         
                         </div>
-                        <CartRender>
+                       
                             
-                        <div className="vista-contenedor-carrito-imagen-cantidad">
+                        <div className="vista-contenedor-carrito-imagen-cantidad" onClick={()=>history.push('/cart')}>
                                 <h5 className="h5-carrito">{carrito?.length}</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
                             </div>
-                            </CartRender>
-
+                            
 
                         <div className="vista-user-logged">
                           
@@ -198,14 +197,14 @@ if(props.style === 'logged' && credentials?.user.name){
                             </div>
                            
 
-                            <CartRender>
-                            <div className="vista-contenedor-carrito-imagen-cantidad">
+                           
+                            <div className="vista-contenedor-carrito-imagen-cantidad" onClick={()=>history.push('/cart')}>
                                 <h5 className="h5-carrito">{carrito?.length}</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
                             </div>
-                            </CartRender>
+                          
 
 
                             <div className="vista-user-logged">
@@ -234,14 +233,14 @@ if(props.style === 'logged' && credentials?.user.name){
                           
                         </div>
 
-                        <CartRender>
-                        <div className="vista-contenedor-carrito-imagen-cantidad">
+                       
+                        <div className="vista-contenedor-carrito-imagen-cantidad" onClick={()=>history.push('/cart')}>
                                 <h5 className="h5-carrito">{carrito?.length}</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
                             </div>
-                            </CartRender>
+                           
                     </div>)
 }if(props.style === 'presupuestos' ){
                     return(
@@ -259,14 +258,14 @@ if(props.style === 'logged' && credentials?.user.name){
                               
                             </div>
 
-                              <CartRender>
+                              
                         <div className="vista-contenedor-carrito-imagen-cantidad">
                                 <h5 className="h5-carrito">{carrito?.length}</h5>
                                 <div className="vista-icono-carrito">
                                   <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                                 </div>
                             </div>
-                            </CartRender>
+                          
                             
                         </div>
                        )}
