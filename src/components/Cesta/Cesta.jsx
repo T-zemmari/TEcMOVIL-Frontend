@@ -36,12 +36,12 @@ const Cesta =({onClick,name,imgUrl,price,removeItem})=>{
 
     return(
 
-        <div className="vista-cart-container">
+        <div className="vista-cesta-container">
 
 
              <div className="contenedor-precio-titulo-carrito">
                   <div className="titulos-carrito">
-                      Carrito 
+                      Datos de Tu pedido 
                   </div>
 
                    <div className="precio">Precio</div>
@@ -81,9 +81,8 @@ const Cesta =({onClick,name,imgUrl,price,removeItem})=>{
            
              </div>
 
-           <div className="separador-cart"></div>
 
-           <div className="precio-total-y-cantidad-productos">Subtotal (1 producto): {price} </div>
+         
        
        
        </div>

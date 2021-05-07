@@ -68,6 +68,7 @@ const ProductProfile = (props)=>{
         const GetProductInfo = (product) => {
           localStorage.removeItem('productos');
           localStorage.setItem('productos',JSON.stringify(product));
+          
           history.push('/product-profile')
        
        };
@@ -164,8 +165,7 @@ const ProductProfile = (props)=>{
 
           <div className="image-product-profile">
            <img className='img-product-size-on-profile'tamaño ='grande' src={datosProducto.imgUrl} alt={datosProducto.name}/>
-           
-           <img className='img-product-size-on-profile-accessorio'tamaño ='grande' src={datosProducto.image1} alt={datosProducto.name}/>
+        
           </div>
 
          
@@ -361,7 +361,6 @@ const ProductProfile = (props)=>{
           <div className="image-product-profile">
            <img className='img-product-size-on-profile'tamaño ='grande' src={datosProducto.imgUrl} alt={datosProducto.name}/>
            
-           <img className='img-product-size-on-profile-accessorio'tamaño ='grande' src={datosProducto.image1} alt={datosProducto.name}/>
           </div>
 
          
@@ -449,14 +448,25 @@ const ProductProfile = (props)=>{
        </div>
       
        <div className="vista-description-product-profile">
-         
-           <h2 className='h2-vista-product-profile'>Descripción</h2> 
+           <div className="contenedor-separador-mas-h2-vista-product-profile">
+           <h2 className='h2-vista-product-profile'>Descripción</h2>
+           <div className="separador-description"></div>
+            </div>
+           
+
+           <div className="contenedor-description">
           
            <p className='p-vista-product-profile'>{datosProducto.description}</p>
+           
+           </div>
           </div>
         
        
-       
+            <footer>
+              <div className="footer-container">
+                    
+              </div>
+            </footer>
             </div>
         </> )
   }

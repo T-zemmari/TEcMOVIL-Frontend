@@ -5,62 +5,34 @@ import LoginRender from '../Modal/Login-render';
 import Loading from '../Loading/Loading';
 import axios from 'axios';
 import ShopingCart from '../../img/shopping_cart-removebg-preview.png';
-import {Avatar, Button, ClickAwayListener} from '@material-ui/core';
-import CartRender from '../Modal/Cart-render';
-import carritoReducer from '../../Redux/Reducers/Carrito-reducer';
+import {Avatar, Button} from '@material-ui/core';
 import {connect} from 'react-redux';
 
 
 
 const Header = (props)=>{
 
+    // Me traigo los datos del carro , usuario , telefonos y accessorios de redux//
+
     const  carrito = props.carrito;
-    const user = props.user;
-    const smartphones = props.smartphones;
-    const accessorios=props.accessorios;
+    let credentials = JSON.parse(localStorage.getItem('credentials'));
 
-    console.log(carrito,user,smartphones,accessorios)
+    // hooks
 
-  const [loading, setLoading] = useState(false);
-  const [selectProducts ,setSelectProducts]= useState('');
-  const [smartPhones ,setSmartphones]= useState([]);
-  const [accessorio ,setAccessorio]= useState([]);
 
-  let history = useHistory();
 
-  const goto =(go)=>{
-   history.push(go)
- 
-  }
-
+    const [loading, setLoading] = useState(false);
+    
  
 
+     let history = useHistory();
 
-  const getPhones=async()=>{
-
- if(selectProducts === 'Accesorios'){
-  let response_for_smartphones = await axios.get('http://localhost:3002/products');
-  setSmartphones(response_for_smartphones.data)
-  localStorage.setItem('phones',response_for_smartphones.data);
-}
-  }
- // getPhones();
+      const goto =(go)=>{
+        history.push(go)
  
+      }
 
- useEffect(async()=>{
-    if(selectProducts === 'Smartphones'){
-        let response_for_smartphones = await axios.get('http://localhost:3002products');
-        setSmartphones(response_for_smartphones.data)
-        localStorage.setItem('phones',response_for_smartphones.data);
-
- }},[]) 
- 
- 
   
-
-
-
-  let credentials = JSON.parse(localStorage.getItem('credentials'));
   
 
   const Logout=()=>{
@@ -148,7 +120,7 @@ if(props.style === 'logged' && credentials?.user.name){
                 
                 <div className="header-container-home-user-logged">
                     <Loading visible={loading}></Loading>
-                    <div className="vista-logo"  >TEcMovil</div>
+                    <div className="vista-logo" onClick={(go)=>goto('/myspace')} >TEcMovil</div>
                     <div className="vista-nav">
      
 

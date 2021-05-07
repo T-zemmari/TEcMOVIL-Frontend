@@ -49,13 +49,7 @@ const Tienda = (props)=>{
     ,1000)
       setLoading(true)
       setPage(nextPage)
-     }
-
-
-
-
-
-    
+  }
 
     let imgArr=[
         'https://fondosmil.com/fondo/32772.jpg',
@@ -91,39 +85,13 @@ const Tienda = (props)=>{
             return val
           }})
       
-     
-   
-    console.log(busqueda.search)
     
-    console.log(data)
     localStorage.setItem('data',JSON.stringify(data));
     let dataTorender = JSON.parse(localStorage.getItem('data'));
     console.log(dataTorender)
     
 
-   
-    
-
-    
-
-    
-
-
-      
-      
-      
-      
-    
-    
-    
-          
-
-
-         
-
-
-
-
+  
     //---------- me traigo los productos------------------//
 
     useEffect(async()=>{
@@ -140,11 +108,8 @@ const Tienda = (props)=>{
          props.dispatch({type:ACCESSORIOS,payload:response_for_access.data});
     },[])
 
-    /*const smartphonesProducts = JSON.parse(localStorage.getItem('foundModelsProducts'))
-    console.log(smartphonesProducts)*/
 
-    
-    
+
    
    // --------funcion obtener datod del producto selecionado y redirigirlo a product-profile---------//
 
@@ -155,17 +120,7 @@ const Tienda = (props)=>{
      
      };
 
-     
-
-
-            {/* pageOne es donde se renderiza los productos xiaomi*/}
-
-       if(credentials?.user.name && page ==='busqueda'){
-        return (
-         <>
-            <Search page = 'busqueda'/>
-         </>
-        )}
+    
 
                        {/* pageOne es donde se renderizan los smartphones*/}
 
@@ -223,10 +178,7 @@ const Tienda = (props)=>{
                 </div>
               </div>
                 
-              <div className="vista-todos-los-repuestos">
-
-                Resultado de las busquedas
-              </div>
+             
               
 
               {<div className="vista-todos-los-repuestos">
@@ -238,9 +190,7 @@ const Tienda = (props)=>{
                    {phones.map(phones=> <Product key={phones._id}{...phones} tamaño = 'en-tienda' onClick={()=>GetProductInfo(phones)}/>)}
                </div>}
      
-             <div className="vista-todos-los-accessorios">
-     
-               </div>
+            
      
            </div>
      

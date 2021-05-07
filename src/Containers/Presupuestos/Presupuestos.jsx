@@ -2,22 +2,16 @@ import React, { useEffect, useState } from 'react';
 import './Presupuestos.scss';
 import Header from '../../components/Header/Header';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
 import Phone from '../../img/phone.jpg';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 import ContactRender from '../../components/Modal/Contact-render';
-import { Footer } from 'antd/lib/layout/layout';
-import FooterDos from '../../Footer-dos/Footer';
 import Button from '@material-ui/core/Button'
-import { faWindows } from '@fortawesome/free-brands-svg-icons';
-import Scrolltop from '../../components/Scrolltop/Scrolltop';
+import Android from '../../img/Banner-soporte-tecnico-1024x320.jpg';
 
 
 const useStyles = makeStyles((theme)=>({
@@ -44,9 +38,8 @@ const Presupuestos = (props)=>{
 
     const [marca,setMarca]=React.useState('Samsung')
     const [modelo,setModelo]=React.useState('A10')
-    const [render,setRender]=React.useState('')
     const [repuestos,setRepuestos]= React.useState([]);
-    const [accesorios,setAccessorios]= React.useState([]);
+   
    
 
     
@@ -61,16 +54,12 @@ const Presupuestos = (props)=>{
     const[precioBuzzer , setPrecioBuzzer]=useState(0)
     const[precioMicrofono , setPrecioMicrofono]=useState(0)
     const[precioAuricular , setPrecioAuricular]=useState(0)
-    const [precioTotal,setPrecioTotal]=useState('');
+   
 
    
-        console.log(precioPantalla ,precioSoftware,precioAuricular,precioMicrofono,precioBuzzer,precioConector)
-  
+     
 
-
-    
-
-    // functions //
+    // functiones para las selecciones//
 
     const classes= useStyles();
 
@@ -101,13 +90,7 @@ const Presupuestos = (props)=>{
       
       }
 
-
-    
-     
- 
-
-
-    //suma para el presupuesto :
+    //suma para la suma de los repuestos:
 
 
       const sumaRepuestos = (a,b,c,d,e,f)=>{
@@ -120,54 +103,24 @@ const Presupuestos = (props)=>{
       const PrecioTotal = precioRepuestos + ((precioRepuestos * 21) / 100 );
       const Iva = ((precioRepuestos * 21) / 100 );
 
-      
-      
-
-  
-
-
-
-
-     
-
-      
+   // aqui me traigo a los repeustos, se hacer cada vez que se recarga la pagina
 
 
 useEffect(async()=>{
 
     let response_repuestos = await axios.get('http://localhost:3002/repuestos');
     setRepuestos(response_repuestos.data);
-    let response_accessorios = await axios.get('http://localhost:3002/accessorios');
-    setAccessorios(response_accessorios.data);
+ 
 
     },[]);
 
-    console.log(repuestos)
-    console.log(marca)
+    // filtro en los repuestos , el repuesto elejido por el usuario
+
 
     let resultado = repuestos.filter( (repuesto)=> { return repuesto.modelo === modelo; });
-    console.log(resultado)
-
-
-    // funcion sums precio total del presupuesto //
-
    
-
-
-    let renderA10 = <div className="options">
-         <FormControl className={classes.formControl}>
-             <Select labelID ='select-demo' id = 'Modelos' value ={modelo} onChange={handelModel}>
-                   <MenuItem value ='Note 9' >Note 9</MenuItem> 
-                   <MenuItem value ='Note 8'>Note 8</MenuItem> 
-                   <MenuItem value ='A3'>Mi A3</MenuItem> 
-                   <MenuItem value ='Mi Mix 3'>Mi Mix 3</MenuItem> 
-                   
-              </Select>
-          </FormControl>
-        
-    </div>
    
-   const RenderSamusungMarcas =(props)=>{
+   const RenderSamusungMarcas =()=>{
 
     return <div className="SelectInput">
 
@@ -227,14 +180,18 @@ const RenderSamusungModels =(props)=>{
    if(credentials?.user.name ){
    return (
        <>
+       <div className="header"><Header style='logged'/></div>
+
+                <div className="vista-portada-uno">
+                 <img className="vista-portada-uno" src={Android} alt="tab"/>
+                 </div>
        
-      
+     
        <div className="vista-presupuesto-container">
-       <Header style='logged-two'/>
+      
             <div className="body-container-prepusupuesto">
-                <div className="vista-imagen-promocional">
-                    <img src="" alt=""/>
-                </div>
+
+            
 
 
                 {/*.................Div seleccion de marca y modelo ---------------*/}

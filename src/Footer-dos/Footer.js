@@ -1,77 +1,49 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Row,
-  Column,
-  FooterLink,
-  Heading,
-} from "./FooterStyles";
-  
-const FooterDos = () => {
+import "./Footer.css";
+
+function Footer() {
   return (
-    <Box>
-      <h1 style={{ color: "green", 
-                   textAlign: "center", 
-                   marginTop: "-50px" }}>
-        GeeksforGeeks: A Computer Science Portal for Geeks
-      </h1>
-      <Container>
-        <Row>
-          <Column>
-            <Heading>About Us</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Services</Heading>
-            <FooterLink href="#">Writing</FooterLink>
-            <FooterLink href="#">Internships</FooterLink>
-            <FooterLink href="#">Coding</FooterLink>
-            <FooterLink href="#">Teaching</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Contact Us</Heading>
-            <FooterLink href="#">Uttar Pradesh</FooterLink>
-            <FooterLink href="#">Ahemdabad</FooterLink>
-            <FooterLink href="#">Indore</FooterLink>
-            <FooterLink href="#">Mumbai</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Social Media</Heading>
-            <FooterLink href="#">
-              <i className="fab fa-facebook-f">
-                <span style={{ marginLeft: "10px" }}>
-                  Facebook
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-instagram">
-                <span style={{ marginLeft: "10px" }}>
-                  Instagram
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-twitter">
-                <span style={{ marginLeft: "10px" }}>
-                  Twitter
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-youtube">
-                <span style={{ marginLeft: "10px" }}>
-                  Youtube
-                </span>
-              </i>
-            </FooterLink>
-          </Column>
-        </Row>
-      </Container>
-    </Box>
+    <div className="main-footer">
+      <div className="container">
+        <div className="row">
+          {/* Column1 */}
+          <div className="col">
+            <h4>THICC MEMES INC</h4>
+            <h1 className="list-unstyled">
+              <li>342-420-6969</li>
+              <li>Moscow, Russia</li>
+              <li>123 Streeet South North</li>
+            </h1>
+          </div>
+          {/* Column2 */}
+          <div className="col">
+            <h4>Stuff</h4>
+            <ui className="list-unstyled">
+              <li>DANK MEMES</li>
+              <li>OTHER STUFF</li>
+              <li>GUD STUFF</li>
+            </ui>
+          </div>
+          {/* Column3 */}
+          <div className="col">
+            <h4>WELL ANOTHER COLUMN</h4>
+            <ui className="list-unstyled">
+              <li>DANK MEMES</li>
+              <li>OTHER STUFF</li>
+              <li>GUD STUFF</li>
+            </ui>
+          </div>
+        </div>
+        <hr />
+        <div className="row">
+          <p className="col-sm">
+            &copy;{new Date().getFullYear()} THICC MEMES | All rights reserved |
+            Terms Of Service | Privacy
+          </p>
+        </div>
+      </div>
+    </div>
   );
-};
-export default FooterDos;
+}
+
+export default Footer;

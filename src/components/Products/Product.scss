@@ -1,40 +1,21 @@
-.product-container{
-    display: flex;
-    flex-direction: column;
-    margin: 15px;
-    width: 200px;
-    height: 360px;
-    border: rgb(224, 214, 219) 1px solid;
-    transition: 1s;
-    margin: 10px;
-}
 
+//--------- estilo de los divs de presentacion en tienda //
 
-.product-container:hover{
-    display: flex;
-    flex-direction: column;
-    
-    margin: 15px;
-    width: 300px;
-    height: 460px;
-    border: rgb(65, 22, 105) 1px solid;
-    border-radius: 10px;
-  
-    transition: 1s;
-}
 .product-container-en-tienda{
     display: flex;
     flex-direction: column;
     align-items: center;
    
     width: 220px;
-    height: 400px;
-    border: rgb(121, 13, 223) 1px solid;
+    height: 470px;
+    //border: rgb(48, 5, 88) 1px solid;
     border-radius: 10px;
     margin: 10px;
  
 
 }
+
+
 
 .image-size-en-tienda{
 
@@ -42,8 +23,98 @@
     background-color: rgb(104, 80, 45);
     width: 120px;
     height: 250px;
+    transition: 0.5s;
 
 }
+.image-size-en-tienda:hover{
+    
+    width: 130px;
+    height: 280px;
+   
+    transition: 0.5s;
+}
+
+.producto-price-settings-tienda{
+    margin-bottom: 15px;
+    color: rgb(233, 7, 245);
+    font-weight: 700;
+    font-size: 28px;
+}
+.producto-color-settings-tienda{
+    color: rgb(31, 18, 218);
+    font-weight: 600;
+    font-size: 23px;
+    margin-top: 10px;
+
+}
+
+
+//--------- estilo de los divs de presentacion en home //
+
+.product-container{
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    height: 400px;
+   // border: rgb(224, 214, 219) 1px solid;
+    transition: 1s;
+    margin: 10px;
+}
+
+
+.name-size-settings-home{
+    color: rgb(63, 60, 60);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+.producto-color-settings-home{
+    color: rgb(31, 18, 218);
+    font-weight: 600;
+    font-size: 23px;
+
+}
+
+.producto-price-settings-home{
+    color: rgb(233, 7, 245);
+    font-weight: 700;
+    font-size: 28px;
+
+}
+
+
+.name-size{
+    margin: 5px;
+    height:50px;
+    transition: 0.5s;
+}
+.name-size:hover{
+
+    margin:7px;
+    height:55px;
+    transition: 0.5s;
+}
+
+.image-size{
+    
+    width: 80px;
+    height: 180px;
+    margin-left: 60px;
+    margin-top: 15px;
+    transition: 0.5s;
+    
+}
+.image-size:hover{
+    
+    width: 90px;
+    height: 190px;
+   
+    transition: 0.5s;
+}
+
+
+//--------- estilo de los divs de presentacion en accessorios //
 
 
 .product-container-accessorios{
@@ -60,6 +131,11 @@
     margin: 10px;
 
 }
+
+
+//--------- estilo de los divs de presentacion en repuesto //
+
+
 .product-container-repuesto{
 
     display: flex;
@@ -116,23 +192,7 @@
 }
 
 
-.image-size{
-    
-    width: 80px;
-    height: 180px;
-    margin-left: 60px;
-    margin-top: 15px;
-    transition: 1.5s;
-    
-}
-.image-size:hover{
-    
-    width: 120px;
-    height: 280px;
-    margin-left: 100px;
-    margin-top: 15px;
-    transition: 1.5s;
-}
+
 
 .image-size-accessorio{
 
@@ -151,19 +211,17 @@
      width: 300px;
      height: 400px;
      border: 0.1px solid blueviolet;
-     
-     
+    }    
     
 
-}
-.name-size{
-    margin: 5px;
-    height: 95px;
-}
-.name-size:hover{
 
-    margin: 7.5px;
-    height:142.5px;
+.name-size-en-tienda{
+
+    width: 80%;
+    height: 100px;
+}
+.price-size{
+ height: 50px;
 }
 .h4-producto-color{
 
@@ -174,7 +232,8 @@
 .h4-producto-price{
     color: rgb(250, 7, 250);
     font-size: 18px;
-    margin-top: -25px;
+    font-weight: 700;
+    //margin-top: -10px;
 
 }
 

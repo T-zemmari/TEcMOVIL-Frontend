@@ -10,31 +10,48 @@
    overflow-y:auto;
 }
 
-.contenedor{
+.contenedor-global-cart{
 
-  width: 100%;
-  height: auto;
-  background-color: rgb(5, 11, 97);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  width: 100%;
+}
+
+.contenedor{
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 
+
+}
+.h1-style-cart{
+  position: absolute;
+  font-weight: 400;
+  font-style:inherit;
 }
 
 
 .vista-cart-container{
 
-    width: 70%;
-    height:auto;
-    display: flex;
-    flex-direction: row;
-    //border: 1px solid violet;
-    background-color: rgb(230, 222, 215);
-    display: flex;
-    flex-direction: column;
-    
-   
+  width: 90%;
+  height:auto;
+  //display: flex;
+  flex-direction: row;
+  //border: 1px solid rgb(128, 122, 128);
+  //background-color: rgb(230, 222, 215);
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-bottom: 30px;
     
 }
 
@@ -46,7 +63,149 @@
   flex-direction: row;
   justify-content: space-evenly;
   color: white;
-  
+  margin-left:-85px;
+  margin-top:15px;
 
 }
+
+.tu-carrito-final-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height:300px ;
+}
+.datos-carrito-a-pagar{
+
+  width: 45%;
+  height: 260px;
+  border: 1px solid rgb(185, 184, 184);
+  margin-right: 200px;
+}
+.titulo-tu-carrito{
+ 
+  border-bottom: 1px solid rgb(228, 223, 223);
+  background-color: #E8E8E8	;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+
+
+}
+.tu-carrito-final-titulo{
+
+  font-size:20px;
+  margin-left:10px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+}
+.icono-cesta{
+  width: 30px;
+  height: 30px;
+  
+  margin-right: 10px;
+}
+
+.carrito-dividir{
+  display:flex;
+ flex-direction: row;
+ justify-content: space-between;
+
+}
+.total-articulos{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid rgb(228, 223, 223);
+}
+.total-articulos-cart-titulo{
+  font-size: 18px;
+  font-weight: 200;
+  margin-right:30px;
+}
+.total-articulos-cart-precio{
+  font-size: 18px;
+  font-weight: 200;
+}
+.total-articulos-cart-precio-gratis{
+  color:rgb(231, 14, 14);
+  font-size: 30px;
+  margin-right:10px;
+}
+
+.ultimo-div-precio-total-a-pagar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  background-color: #E8E8E8	;
+ 
+}
+.te-ahorras-cantidad{
+  color:rgb(231, 14, 14);
+  margin-right:10px;
+}
+
+
+//--------------imaneg promocional-------------------------------// 
+
+.mas-info-de-nuestra-app{
+
+  width: 100%;
+  height:110px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.imagen-promo{
+  width:270px;
+  height: 100px;
+
+}
+
+
+@media (max-width:550px){
+  .h1-style-cart{
+    position: absolute;
+    font-size: 20px;
+    visibility: hidden;
+    
+  }
+  .tu-carrito-final-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height:auto ;
+  }
+  .datos-carrito-a-pagar{
+  
+    width: 45%;
+    height: auto;
+    border: 1px solid rgb(185, 184, 184);
+    margin-right: 260px;
+  }
+  .tu-carrito-final{
+
+    
+  }
+  .tu-carrito-final-titulo{
+
+    font-size: 15px;
+    font-weight: 100;
+  }
+
+
+
+
+
+}
+
 

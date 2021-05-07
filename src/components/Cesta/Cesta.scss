@@ -1,13 +1,24 @@
 .vista-cesta-container{
 
-    width: 800px;
+   /* width: 800px;
     height: auto;
     display: flex;
     flex-direction: row;
     border:solid 0.5px rgb(189, 183, 183);
     background-color: rgb(243, 239, 233);
     display: flex;
-    flex-direction: column;
+    flex-direction: column;*/
+    width: 90%;
+    height:auto;
+    //display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(180, 175, 180);
+    background-color: #E8E8E8;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    //margin-left: 40px;
+    margin-bottom: 30px;
     
     
 }
@@ -16,14 +27,14 @@
     margin-top: 5px;
     margin-left :10px;
     width: 95%;
-    border: rgb(202, 198, 202) solid 0.5px;
+    border-top: rgb(202, 198, 202) solid 0.5px;
 }
 .vista-imagen-productos{
     margin-top: 10px;
-    margin-left: 10px;
-    width: 50px;
-    height: 100px;
-    border:solid 0.5px rgb(189, 183, 183);
+    margin-left: 50px;
+    width: 80px;
+    height: 150px;
+   // border:solid 0.5px rgb(189, 183, 183);
 }
 .contenedor-precio-titulo-carrito{
     display: flex;
@@ -35,14 +46,14 @@
     margin-left: 20px;
     margin-top: 20px;
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 200;
     font-style: italic;
 }
 .precio{
     margin-right: 20px;
     margin-top: 20px;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 200;
     font-style: italic;
 }
 
@@ -55,18 +66,20 @@
 
 .vista-nombre-productos{
     margin-top: 10px;
-  
+    font-size: 25px;
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: space-evenly;
-    border:solid 0.5px rgb(189, 183, 183);
+    //border:solid 0.5px rgb(189, 183, 183);
     width: 60%;
-    height: 200px;
+    height: 150px;
     
 }
 .precio-unidad{
     margin-top: 10px;
     margin-right: 5px;
+    margin-bottom: 8px;
     color: rgb(34, 32, 32);
     font: italic;
     font-family: cursive;
@@ -76,8 +89,8 @@
     justify-content: center;
     align-items: center;
     width: 10%;
-    height: 200px;
-    border:solid 0.5px rgb(189, 183, 183);
+    height: 180px;
+    border-left:solid 0.5px rgb(189, 183, 183);
 }
 .precio-total-y-cantidad-productos{
     margin-top: 20px;
@@ -105,6 +118,8 @@
     font: italic;
     font-family: cursive;
     font-size: 20px;
+    margin-left:-10px;
+    height: 30px;
 }
 .disponible-eliminar{
 
@@ -148,3 +163,57 @@
         
     }
 }
+
+@media (max-width:550px){
+    .h1-style-cart{
+      position: absolute;
+
+    }
+
+    .precio{
+        margin-right: 20px;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 200;
+        font-style: italic;
+    }
+
+    .titulos-carrito{
+        margin-left: 20px;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 200;
+        font-style: italic;
+    }
+
+    .vista-nombre-productos{
+        margin-top: 10px;
+        font-size: 15px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border:solid 0.5px rgb(189, 183, 183);
+        width: 60%;
+        height: 150px;
+        
+    }
+    .precio-unidad{
+        margin-top: 10px;
+        margin-right: 5px;
+        color: rgb(34, 32, 32);
+        font: italic;
+        font-family: cursive;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        height: 200px;
+        border:solid 0.5px rgb(189, 183, 183);
+    }
+  
+  }
+  
+  

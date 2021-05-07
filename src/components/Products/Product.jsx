@@ -1,5 +1,8 @@
 import React from 'react';
 import './Product.scss';
+import Button from '@material-ui/core/Button'
+
+
 
 
 const Product = (
@@ -42,9 +45,12 @@ const Product = (
         <div className='product-container'onClick ={onClick}>
             
            <img className='image-size' src={imgUrl} alt={name} />
-           <div className="name-size" ><h3>{name}</h3></div>
-           <div className="rate-size"><h4 className="h4-producto-color">{color}</h4></div>
-           <div className="price-size"><h4  className="h4-producto-price">{price}</h4></div>
+           <div className="name-size" ><div className='name-size-settings-home'>{name}</div></div>
+           <div className="rate-size"><div className="producto-color-settings-home">{color}</div></div>
+           <div className="price-size"><div  className="producto-price-settings-home">{price}</div></div>
+           <Button variant="outlined" color="primary">
+             Lo Quiero
+           </Button>
            
        </div>
     )}
@@ -64,9 +70,15 @@ const Product = (
             <div className='product-container-en-tienda'onClick ={onClick}>
                 
                <img className='image-size-en-tienda' src={imgUrl} alt={name} />
-               <div className="name-size-en-tienda" ><h3>{name}</h3></div>
-               <div className="rate-size-en-tienda"><h4 className="h4-producto-color">{color}</h4></div>
-               <div className="price-size-en-tienda"><h4  className="h4-producto-price">{price}</h4></div>
+               <div className="name-size" ><div className='name-size-settings-home'>{name}</div></div>
+           
+               <div className="price-size-en-tienda"><div  className="producto-price-settings-tienda">{price}</div></div>
+              <Button variant="outlined" color="primary">
+                     Lo quiero
+              </Button>
+            
+                
+          
                
            </div>
         )}

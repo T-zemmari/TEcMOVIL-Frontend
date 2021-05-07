@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import {useHistory} from 'react-router-dom';
-import Android from '../../img/48369.jpg';
+import Android from '../../img/Banner-soporte-tecnico-1024x320.jpg';
 import accesorios from '../../img/accesories.png';
 import smartphoneImage from '../../img/smarts.jpeg';
 import repuestos from '../../img/flex.png';
-
+import Cabecera from '../../img/distribuidores-pc.jpg';
 import './Myspace.scss';
 import Product from '../../components/Products/Product';
 import axios from 'axios';
@@ -51,7 +51,7 @@ const MySpace =(props)=>{
       props.dispatch({ type: SMARTPHONES, payload: response.data });
       localStorage.setItem('destacados',response.data);
       console.log(response.data)
-      setDestacados(response.data);
+      setDestacados(response.data.slice(2,8));
    
 
       let response_dos= await axios.get('http://localhost:3002/accessorios');
@@ -94,7 +94,7 @@ const MySpace =(props)=>{
         <div className="vista-portada-uno">
           
           
-            <img className="vista-portada-uno" src={Android} alt="tab"/>
+            <img className="vista-portada-uno" src={Cabecera} alt="tab"/>
             
         </div>
         
@@ -161,7 +161,7 @@ const MySpace =(props)=>{
         <div className="separador"></div>
         <h2> PRODUCTOS ESTRELLA</h2>
 
-        <div className="footer"><Footer/></div>
+       
         
     </div>
    

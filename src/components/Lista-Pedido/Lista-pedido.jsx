@@ -1,23 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Lista-pedido.scss';
 import {connect} from 'react-redux';
 import Button from '@material-ui/core/Button'
-import { LensTwoTone } from '@material-ui/icons';
+import { ErrorRounded, LensTwoTone } from '@material-ui/icons';
+import axios from 'axios';
 
 
 const ListaPedidos =(props)=>{
 
   const carrito = props.carrito;
-  const user = props.user;  
-  
+  const user = props.user; 
+  console.log(carrito) 
 
+  // Estado de la peticion 
 
-  
+   const [order,setOrder]=useState({
+    
+        user_id:'',
+        userName:'',
+        precio_total:'',
+        product_info:'',
+        payment:''
 
+    
+   })
 
+   
   let  array = carrito;
+  console.log(carrito)
+  let carrito_en_string = JSON.stringify(carrito);
+  console.log(carrito_en_string)
 
   let precioTotal = array.reduce((sum, value) => ( sum + parseInt(value.price) ), 0);
+
+
+
+   let orderData = {
+
+      user_id : user._id,
+      userName : user.name,
+      precio_total : precioTotal,
+      //product_info:array,
+      //product_id:carrito._id,
+      payment:user.payment
+   }
+   console.log(carrito[0]._id)
+   console.log(orderData)
+
+   const sendOrderToDb = async ()=>{
+
+ 
+          setOrder(orderData)
+
+       let response = await axios.post('http://localhost:3002/orders',orderData);
+       console.log(response)
+    
+   }
+  
+  
+
+
+  
+
 
 
  
@@ -85,11 +129,13 @@ const ListaPedidos =(props)=>{
 
             
 
-            <div className="Validar"></div>
+            <div className="Validar">
 
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="primary" onClick={()=>sendOrderToDb()}>
                 Validar compra
             </Button>
+            
+            </div>
 
         </div>
     )
