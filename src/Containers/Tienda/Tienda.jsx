@@ -4,11 +4,12 @@ import Header from '../../components/Header/Header';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import Product from '../../components/Products/Product';
-import { Switch, useHistory } from 'react-router';
+import { useHistory } from 'react-router';
 import {connect} from 'react-redux';
-import { SMARTPHONES,ACCESSORIOS ,BUSQUEDA_SEARCH} from '../../Redux/Types';
+import { SMARTPHONES,ACCESSORIOS} from '../../Redux/Types';
 import Loading from '../../components/Loading/Loading';
-import Search from 'antd/lib/transfer/search';
+import FatherDay from '../../img/black-friday.jpg';
+
 
 
 
@@ -122,13 +123,21 @@ const Tienda = (props)=>{
 
     
 
-                       {/* pageOne es donde se renderizan los smartphones*/}
+                       {/* Aqui se renderizan los smartphones cuando el usuario  esta logeado*/}
 
      if(credentials?.user.name && page ==='pageOne'){
         return (
          <>
          <Loading visible={loading}></Loading>
-         <Header  style ='logged-two'/>
+
+
+         <div className="header"><Header style='logged'/></div>
+           <div className="vista-portada-uno">
+             <img className="vista-portada-uno" src={FatherDay} alt="tab"/>
+          </div>
+
+
+
          <div className="vista-Container-Tienda">
              
      
@@ -199,7 +208,7 @@ const Tienda = (props)=>{
         )}
 
 
-                        {/* accessorio es donde se renderizan los accessorios*/}
+                        {/* Aqui se renderizan los accessorios cuando el usuario  esta logeado*/}
         
         
         if(credentials?.user.name && page === 'accesorios'){
@@ -208,7 +217,10 @@ const Tienda = (props)=>{
          return (
            <>
            <Loading visible={loading}></Loading>
-           <Header  style ='logged-two'/>
+           <div className="header"><Header style='logged'/></div>
+           <div className="vista-portada-uno">
+             <img className="vista-portada-uno" src={FatherDay} alt="tab"/>
+          </div>
            <div className="vista-Container-Tienda">
                
        
@@ -261,7 +273,7 @@ const Tienda = (props)=>{
            </>)
 
 
-                      {/* Aqui se renderizan los accessorios pero Sin estar el usuario logeado*/}
+                      {/* Aqui se renderizan los accessorios cuando el usuario  no esta logeado*/}
      
      
         }if(!credentials?.user.name && page === 'accesorios'){
@@ -270,7 +282,10 @@ const Tienda = (props)=>{
             return (
               <>
               <Loading visible={loading}></Loading>
-              <Header  style ='register'/>
+              <div className="header"><Header style='tienda'/></div>
+                  <div className="vista-portada-uno">
+                     <img className="vista-portada-uno" src={FatherDay} alt="tab"/>
+              </div>
               <div className="vista-Container-Tienda">
                   
           
@@ -330,11 +345,14 @@ const Tienda = (props)=>{
         
         else{
 
-                             {/* Aqui se  renderizan los smartphones sin que el ususario este loggeado */}
+                             {/* Aqui se  renderizan los smartphones cuando el usuario  no esta logeado */}
 
             return(
          <>
-         <Header  style ='register'/>
+         <div className="header"><Header style='tienda'/></div>
+                  <div className="vista-portada-uno">
+                     <img className="vista-portada-uno" src={FatherDay} alt="tab"/>
+              </div>
          <Loading visible={loading}></Loading>
          <div className="vista-Container-Tienda">
              

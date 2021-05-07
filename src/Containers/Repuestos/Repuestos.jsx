@@ -5,6 +5,7 @@ import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router';
 import Product from '../../components/Products/Product';
+import Portada from '../../img/portada-moviles.jpg';
 
 
 const Repuestos =()=>{
@@ -46,7 +47,10 @@ const Repuestos =()=>{
    if(credentials?.user.name && page === 'repuestos'){
    return (
     <>
-    <Header  style ='logged-two'/>
+    <div className="header"><Header style='tienda'/></div>
+                  <div className="vista-portada-uno">
+                     <img className="vista-portada-uno" src={Portada} alt="tab"/>
+              </div>
     <div className="vista-Container-Tienda">
         
 
@@ -105,7 +109,10 @@ const Repuestos =()=>{
 
     return (
       <>
-      <Header  style ='logged-two'/>
+      <div className="header"><Header style='tienda'/></div>
+                  <div className="vista-portada-uno">
+                     <img className="vista-portada-uno" src={Portada} alt="tab"/>
+              </div>
       <div className="vista-Container-Tienda">
           
   
@@ -161,7 +168,10 @@ const Repuestos =()=>{
    }if( page === 'repuestos'){
     return (
      <>
-     <Header  style ='register'/>
+     <div className="header"><Header style='tienda'/></div>
+                  <div className="vista-portada-uno">
+                     <img className="vista-portada-uno" src={Portada} alt="tab"/>
+              </div>
      <div className="vista-Container-Tienda">
          
  
@@ -220,7 +230,10 @@ const Repuestos =()=>{
  
      return (
        <>
-       <Header  style ='register'/>
+       <div className="header"><Header style='tienda'/></div>
+                  <div className="vista-portada-uno">
+                     <img className="vista-portada-uno" src={Portada} alt="tab"/>
+              </div>
        <div className="vista-Container-Tienda">
            
    

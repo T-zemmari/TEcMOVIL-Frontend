@@ -316,14 +316,15 @@ const RenderSamusungModels =(props)=>{
        return(
 
 <>
+      <div className="header"><Header style='tienda'/></div>
+                   <div className="vista-portada-uno">
+                      <img className="vista-portada-uno" src={Android} alt="tab"/>
+                   </div>
 
       <div className="vista-presupuesto-container">
-      <Header style='register'/>
+      
            <div className="body-container-prepusupuesto">
-               <div className="vista-imagen-promocional">
-                   <img src="" alt=""/>
-               </div>
-
+               
 
                {/*.................Div seleccion de marca y modelo ---------------*/}
 

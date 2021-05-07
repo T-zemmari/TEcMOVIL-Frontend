@@ -101,7 +101,37 @@ if(props.style === 'home' ){
                            
                 </div>
                )
-}if(props.style === 'Admin' ){
+}if(props.style === 'tienda' ){
+    return(
+
+
+        <div className="header-container-tienda">
+            <Loading visible={loading}></Loading>
+            <div className="vista-logo" onClick={(go)=>goto('/')}>TEcMovil</div>
+            <div className="vista-nav">
+                
+                <li className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
+                <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
+                <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
+                <li className='li-not-home'>Contactenos</li>
+              
+            </div>
+          
+                    
+                <div className="vista-contenedor-carrito-imagen-cantidad" onClick={()=>history.push('/cart')}>
+                        <h5 className="h5-carrito">{carrito?.length}</h5>
+                        <div className="vista-icono-carrito">
+                          <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
+                        </div>
+                    </div>
+                   
+        </div>
+       )
+}
+
+
+
+if(props.style === 'Admin' ){
     return(
 
 
