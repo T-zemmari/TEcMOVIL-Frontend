@@ -35,7 +35,7 @@
 }
 
 .producto-price-settings-tienda{
-    margin-bottom: 15px;
+    margin-top: 20px;
     color: rgb(233, 7, 245);
     font-weight: 700;
     font-size: 28px;
@@ -70,6 +70,7 @@
 
 
 .producto-color-settings-home{
+    margin-top: 20px;
     color: rgb(31, 18, 218);
     font-weight: 600;
     font-size: 23px;
@@ -144,11 +145,11 @@
     align-items: center;
     margin-top: 10px;
     margin: 15px;
-    width:200px;
-    height: 350px;
+    width:320px;
+    height: 450px;
     border-radius: 10px;
     border: rgb(224, 214, 219) 1px solid;
-    background-color: rgb(8, 30, 51);
+    background-color: rgb(212, 214, 205);
     //background-color: rgb(253, 253, 253);
     margin: 10px;
 
@@ -158,14 +159,14 @@
 
     margin-top: 20px;
     border-radius: 10px;
-    width: 150px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
     transition: 0.5s;
 
 }
 .image-size-repuesto:hover{
     margin-top: 20px;
-    width: 180px;
+    width: 300px;
     height: 300px;
     transition: 0.5s;
 

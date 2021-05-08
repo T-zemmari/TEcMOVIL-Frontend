@@ -35,7 +35,7 @@ let history = useHistory();
    let response_uno = await axios.get('http://localhost:3002/products');
    localStorage.setItem('destacados',JSON.stringify(response_uno.data));
    
-   let primeraPagina = response_uno.data.slice(3,9);
+   let primeraPagina = response_uno.data.slice(3,11);
    setDestacados(primeraPagina);
 
    props.dispatch({type: PRODUCT ,payload:response_uno.data})
