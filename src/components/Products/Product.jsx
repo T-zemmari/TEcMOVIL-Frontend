@@ -42,9 +42,9 @@ const Product = (
 
    if(style !=='admin' && tamaño === 'normal'){
     return(
-        <div className='product-container'onClick ={onClick}>
+        <div className='product-container'>
             
-           <img className='image-size' src={imgUrl} alt={name} />
+           <img className='image-size' src={imgUrl} alt={name} onClick ={onClick} />
            <div className="name-size" ><div className='name-size-settings-home'>{name}</div></div>
            <div className="rate-size"><div className="producto-color-settings-home">{color}</div></div>
            <div className="price-size"><div  className="producto-price-settings-home">{price}</div></div>
@@ -56,9 +56,9 @@ const Product = (
     )}
     if(style !=='admin' && tamaño === 'accessorio reducido'){
         return(
-            <div className='product-container-accessorio-carrousel'onClick ={onClick}>
+            <div className='product-container-accessorio-carrousel'>
                 
-            <img className='image-size-accessorio-carrousel' src={image1} alt={name} />
+            <img className='image-size-accessorio-carrousel' src={image1} alt={name} onClick ={onClick} />
             <div className="name-size-accessorio-carrousel" ><h3 className="name-size-accessorio-carrousel">{name}</h3></div>
             <div className="rate-size-accessorio-carrousel"><h4 className="h4-producto-color">{modelo}</h4></div>
             <div className="price-size-accessorio-carrousel"><h4  className="h4-producto-price">{price}</h4></div>
@@ -67,9 +67,9 @@ const Product = (
         )}
     if(style !=='admin' && tamaño === 'en-tienda'){
         return(
-            <div className='product-container-en-tienda'onClick ={onClick}>
+            <div className='product-container-en-tienda'>
                 
-               <img className='image-size-en-tienda' src={imgUrl} alt={name} />
+               <img className='image-size-en-tienda' src={imgUrl} alt={name} onClick ={onClick} />
                <div className="name-size" ><div className='name-size-settings-home'>{name}</div></div>
            
                <div className="price-size-en-tienda"><div  className="producto-price-settings-tienda">{price}</div></div>
@@ -86,9 +86,9 @@ const Product = (
 
     if(style !=='admin' && nombre === 'repuesto'){
         return(
-            <div className='product-container-repuesto'onClick ={onClick}>
+            <div className='product-container-repuesto'>
                 
-               <img className='image-size-repuesto' src={image1} alt={name} />
+               <img className='image-size-repuesto' src={image1} alt={name}onClick ={onClick} />
                <div className="name-size" ><h3>{marca}</h3></div>
                <div className="rate-size"><h4 className="h4-producto-color">{modelo}</h4></div>
                <div className="price-size"><h4  className="h4-producto-price">{price}</h4></div>
@@ -132,9 +132,9 @@ const Product = (
      
     }if(style !=='admin'  && label === 'accessorios-destacados'){
     return(
-        <div className='product-container-accessorios'onClick ={onClick}>
+        <div className='product-container-accessorios'>
             
-           <img className='image-size-accessorio' src={image1} alt={name} />
+           <img className='image-size-accessorio' src={image1} alt={name} onClick ={onClick} />
            <div className="name-size" ><h3>{name}</h3></div>
            
            

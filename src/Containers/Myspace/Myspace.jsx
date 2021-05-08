@@ -24,10 +24,10 @@ const MySpace =(props)=>{
    //------------credenciales del usuario logueado.............//
 
    let credentiales = JSON.parse(localStorage.getItem('credentials'));
-   console.log(credentiales.user?.name)
+  
   
    let datosDelUsuario = props.user;
-    console.log(datosDelUsuario)
+ 
 
     
     const [destacados,setDestacados] = useState([]);

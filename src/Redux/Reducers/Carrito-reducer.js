@@ -1,10 +1,13 @@
 
 
-import {ADD_TO_CARRITO,REMOVE_FROM_CARRITO,CLEAN_CARRITO} from '../Types'
+import {ADD_TO_CARRITO,REMOVE_FROM_CARRITO,CLEAN_CARRITO} from '../Types';
+
+   
 
 const initialState = {
 
-      carrito:[]
+      carrito:[],
+      currentItem: null,
 }
 
 const carritoReducer =(state = initialState,action)=>{
@@ -41,5 +44,7 @@ const carritoReducer =(state = initialState,action)=>{
         }
     }
 }
+
+
 
 export default carritoReducer;

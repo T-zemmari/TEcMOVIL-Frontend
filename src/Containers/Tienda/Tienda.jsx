@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 import { SMARTPHONES,ACCESSORIOS} from '../../Redux/Types';
 import Loading from '../../components/Loading/Loading';
 import FatherDay from '../../img/black-friday.jpg';
+import FooterCust from '../../components/Footer-Custumized/Footer-cust';
 
 
 
@@ -204,6 +205,7 @@ const Tienda = (props)=>{
            </div>
      
          </div>
+         <FooterCust/>
          </>
         )}
 
@@ -270,6 +272,8 @@ const Tienda = (props)=>{
              </div>
        
            </div>
+           <FooterCust/>
+           
            </>)
 
 
@@ -335,6 +339,7 @@ const Tienda = (props)=>{
                 </div>
           
               </div>
+              <FooterCust/>
               </>)
         
         
@@ -403,6 +408,7 @@ const Tienda = (props)=>{
            </div>
      
          </div>
+         <FooterCust/>
          </>
                     
              

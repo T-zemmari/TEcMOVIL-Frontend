@@ -117,7 +117,7 @@ useEffect(async()=>{
     // filtro en los repuestos , el repuesto elejido por el usuario
 
 
-    let resultado = repuestos.filter( (repuesto)=> { return repuesto.modelo === modelo; });
+    let resultado = repuestos.filter( (repuesto)=> { return repuesto.modelo === modelo});
    
    
    const RenderSamusungMarcas =()=>{

@@ -18,6 +18,7 @@ const ProductProfile = (props)=>{
 
   const [arrayProducts ,setArrayProducts]=useState([]);
   const [page,setPage]= useState('carrito-hidden');
+  const [contador,setContador]=useState('')
 
 
   const accessorios = props.accessorios;
@@ -53,12 +54,28 @@ const ProductProfile = (props)=>{
 
         const addToCart =()=>{
         
-        let product = props.product
-        setArrayProducts([...arrayProducts,{...product}])
-        props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
-        setPage('carrito')
+        let product = props.product;
+        const cartItems = arrayProducts.slice();
+        let enCarrito = false;
+        cartItems.forEach((item)=>{
+          if(item._id === product._id){
+            item.contador++;
+            enCarrito = true;
+          }
+          if(!enCarrito){
+             cartItems.push({...product,count:1})
+            /*setArrayProducts([...arrayProducts,{...product}])
+            setContador(1)*/
+            props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
+            setPage('carrito')
+          }
+        })
+
+        
 
       }
+
+      console.log(arrayProducts,contador)
         const removeItem =(producto_a_eliminar)=>{
 
         setArrayProducts(arrayProducts.filter(producto => producto !== producto_a_eliminar))

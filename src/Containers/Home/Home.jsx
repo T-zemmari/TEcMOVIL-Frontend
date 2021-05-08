@@ -2,8 +2,6 @@ import React ,{useState,useEffect} from 'react';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Product from '../../components/Products/Product';
-import ProductProfileRender from '../../components/Modal/Profile-product-render';
-import Carousel from '../../components/Carousel/carousel'
 import {useHistory} from 'react-router-dom';
 import Android from '../../img/MovAcc.jpg';
 import accesorios from '../../img/accesories.png';
@@ -12,6 +10,7 @@ import repuestos from '../../img/flex.png';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import './Home.scss';
+import { PRODUCT } from '../../Redux/Types';
 
 
 
@@ -34,22 +33,24 @@ let history = useHistory();
 
       
    let response_uno = await axios.get('http://localhost:3002/products');
-   localStorage.setItem('destacados',response_uno.data);
-   console.log(response_uno.data.slice(0,18))
+   localStorage.setItem('destacados',JSON.stringify(response_uno.data));
+   
    let primeraPagina = response_uno.data.slice(3,9);
    setDestacados(primeraPagina);
+
+   props.dispatch({type: PRODUCT ,payload:response_uno.data})
    
-   console.log(destacados);
+   
 
 
 
    let response_dos= await axios.get('http://localhost:3002/accessorios');
-   localStorage.setItem('accesoriosDestacados',response_dos.data)
+   localStorage.setItem('accesoriosDestacados',JSON.stringify(response_dos.data))
    
    let primeraPaginaAccessorios = response_dos.data.slice(0,3)
    setAccessoriosDestacados(primeraPaginaAccessorios);
 
-   console.log(accessorios_destacados);
+   
 
 
 
@@ -93,7 +94,7 @@ const GetProductInfo = (product) => {
         
            <div className="destacados-z-index-superior-home">
              
-               {destacados?.map(destacados => <Product tamaño ='normal' key={destacados._id}  {...destacados}  onClick={()=>GetProductInfo(destacados) } />)}
+               {destacados?.map(destacados => <Product tamaño ='normal' key={destacados._id}  {...destacados}  onClick={()=>GetProductInfo(destacados)  } />)}
               
            </div>
       
