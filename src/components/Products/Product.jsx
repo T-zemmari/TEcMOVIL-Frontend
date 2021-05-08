@@ -92,13 +92,14 @@ const Product = (
             <div className='product-container-repuesto'>
                 
                <img className='image-size-repuesto' src={image1} alt={name}onClick ={onClick} />
-               <div className="name-size" ><h3>{marca}</h3></div>
-               <div className="rate-size"><h4 className="h4-producto-color">{modelo}</h4></div>
-               <div className="price-size"><h4  className="h4-producto-price">{price}</h4></div>
-               <Button variant="outlined" color="primary" onClick={onClick}>
+               <div className="name-size" ><div className="h4-producto-color">{marca}</div></div>
+               <div className="rate-size"><div className="h4-producto-color">{modelo}</div></div>
+               
+               <div className ='lo-quiero-repuesto'>
+               <Button variant="contained" color="secondary" onClick={onClick}>
                      Lo quiero
               </Button>
-               
+               </div>
            </div>
         )}
 

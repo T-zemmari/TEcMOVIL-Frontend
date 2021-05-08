@@ -10,6 +10,7 @@ import { SMARTPHONES,ACCESSORIOS} from '../../Redux/Types';
 import Loading from '../../components/Loading/Loading';
 import FatherDay from '../../img/black-friday.jpg';
 import calidad from '../../img/Quality.jpg';
+import BasicPagination from '../../components/Paginacion/Paginacion';
 
 
 
@@ -199,11 +200,12 @@ const Tienda = (props)=>{
                    {phones.map(phones=> <Product key={phones._id}{...phones} tamaño = 'en-tienda' onClick={()=>GetProductInfo(phones)}/>)}
                </div>}
      
-            
+            <BasicPagination />
      
            </div>
-     
+                  
          </div>
+         
          {<footer className='footer-special-presupuesto'>
                             <div className="footer-container">
                                  <div className="vista-sobre-nosotros">
