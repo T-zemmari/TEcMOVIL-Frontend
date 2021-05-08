@@ -45,11 +45,15 @@ const FormDB =(props)=>{
 
         let response = await axios.post('http://localhost:3002/products',Data)
 
-        console.log(response.data)
+        console.log(response)
+        if(response){
+
+        alert('Los datos han sido recibidos en la base de datos.')
+    }
 
 
     }
-
+    
 
 
 
@@ -59,20 +63,20 @@ const FormDB =(props)=>{
 
             <div className='vista-añadir-info-texto'>
             
-              <input  className='inputs-form-admin' type="text"  name='name'  placeholder='name' onChange={handeler}/>
-              <input  className='inputs-form-admin' type="text"  name='pantalla'  placeholder='pantalla' onChange={handeler}/>
-              <input  className='inputs-form-admin' type="text"  name='color'  placeholder='color' onChange={handeler}/>
-              <input  className='inputs-form-admin' type="text"  name='price'  placeholder='price' onChange={handeler}/>
-              <input  className='inputs-form-admin' type="text"  name='rate'  placeholder='rate' onChange={handeler}/>
-              <input  className='inputs-form-admin description-form' type="text"  name='description'  placeholder='description' onChange={handeler}/>
+              <input  className='inputs-form-admin' type="text"  name='name'  placeholder='Name' onChange={handeler}/>
+              <input  className='inputs-form-admin' type="text"  name='pantalla'  placeholder='Pantalla' onChange={handeler}/>
+              <input  className='inputs-form-admin' type="text"  name='color'  placeholder='Color' onChange={handeler}/>
+              <input  className='inputs-form-admin' type="text"  name='price'  placeholder='Price' onChange={handeler}/>
+              <input  className='inputs-form-admin' type="text"  name='rate'  placeholder='Rate' onChange={handeler}/>
+              <input  className='inputs-form-admin description-form' type="text"  name='description'  placeholder='Description' onChange={handeler}/>
 
            </div>
 
            <div className='vista-añadir-imagenes'>
             
-            <input  className='inputs-form-admin-image' type="file"  name='imgUrl'  placeholder='name' onChange={handeler}/>
+            <input  className='inputs-form-admin-image' type="file"  name='imgUrl'  placeholder='imgURl' onChange={handeler}/>
             
-            <input  className='inputs-form-admin' type="file"  name='image2'  placeholder='pantalla' onChange={handeler}/>
+            <input  className='inputs-form-admin' type="file"  name='image2'  placeholder='Image2' onChange={handeler}/>
             <div className="boton-admin-form">
             <Button variant="contained" color="secondary" onClick={()=>sendData()}>
              Registrar Los Datos

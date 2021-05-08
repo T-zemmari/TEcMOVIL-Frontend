@@ -7,7 +7,7 @@ import ProductProfile from '../../Containers/Product-Profile/Product-Profile';
 import Cart from '../Cart/Cart';
 
 
-const Cesta =({onClick,name,imgUrl,price,removeItem})=>{
+const Cesta =({onClick,name,imgUrl,price,removeItem,style})=>{
 
 
     let history = useHistory();
@@ -31,7 +31,9 @@ const Cesta =({onClick,name,imgUrl,price,removeItem})=>{
      
         history.push('/')  
         window.location.reload()
-    }else{
+    }
+    
+    if(credentials?.user.name && style ==='mis-compras'){
 
 
     return(
@@ -58,21 +60,6 @@ const Cesta =({onClick,name,imgUrl,price,removeItem})=>{
 
                     <div className="vista-nombre-productos">
                         {name} 
-                        
-
-                        <div className="disponible-eliminar">
-                        <div className="Disponible">
-                        <Button variant="text" color="default">
-                            Disponible  
-                            </Button></div>
-                        <div className='vista-añadir-cantidades-eliminar'>
-                           
-                            <Button variant="text" color="secondary" onClick={(product)=>removeItem(product)} >
-                              Eliminar de la cesta
-                            </Button>
-                        </div>
-                        </div>
-
                     </div>
 
                     <div className="precio-unidad">
@@ -87,6 +74,63 @@ const Cesta =({onClick,name,imgUrl,price,removeItem})=>{
        
        </div>
     )
+    }if(credentials?.user.name){
+
+        return(
+
+            <div className="vista-cesta-container">
+    
+    
+                 <div className="contenedor-precio-titulo-carrito">
+                      <div className="titulos-carrito">
+                          Datos de Tu pedido 
+                      </div>
+    
+                       <div className="precio">Precio</div>
+                 </div>
+    
+    
+                <div className="separador-cart"></div>
+    
+                <div className="contenedor-imagen-titulo-articulo-precio">
+    
+                        <div className="vista-imagen-productos">
+                           <img  className="vista-imagen-productos"src={imgUrl} alt={name}/>
+                       </div>
+    
+                        <div className="vista-nombre-productos">
+                            {name} 
+                            
+    
+                            <div className="disponible-eliminar">
+                            <div className="Disponible">
+                            <Button variant="text" color="default">
+                                Disponible  
+                                </Button></div>
+                            <div className='vista-añadir-cantidades-eliminar'>
+                               
+                                <Button variant="text" color="secondary" onClick={(product)=>removeItem(product)} >
+                                  Eliminar de la cesta
+                                </Button>
+                            </div>
+                            </div>
+    
+                        </div>
+    
+                        <div className="precio-unidad">
+                            {price} 
+                        </div>
+               
+                 </div>
+    
+    
+             
+           
+           
+           </div>
+        )
+
+
     }
 }
 

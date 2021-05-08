@@ -11,14 +11,13 @@ import Cesta from '../../components/Cesta/Cesta';
 import LoginRender from '../../components/Modal/Login-render';
 import SimpleCollapse from '../../components/Transition/Transition';
 import Product from '../../components/Products/Product';
-
+import calidad from '../../img/Quality.jpg';
 
 const ProductProfile = (props)=>{
 
 
   const [arrayProducts ,setArrayProducts]=useState([]);
   const [page,setPage]= useState('carrito-hidden');
-  const [contador,setContador]=useState('')
 
 
   const accessorios = props.accessorios;
@@ -54,28 +53,12 @@ const ProductProfile = (props)=>{
 
         const addToCart =()=>{
         
-        let product = props.product;
-        const cartItems = arrayProducts.slice();
-        let enCarrito = false;
-        cartItems.forEach((item)=>{
-          if(item._id === product._id){
-            item.contador++;
-            enCarrito = true;
-          }
-          if(!enCarrito){
-             cartItems.push({...product,count:1})
-            /*setArrayProducts([...arrayProducts,{...product}])
-            setContador(1)*/
-            props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
-            setPage('carrito')
-          }
-        })
-
-        
+        let product = props.product
+        setArrayProducts([...arrayProducts,{...product}])
+        props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
+        //setPage('carrito')
 
       }
-
-      console.log(arrayProducts,contador)
         const removeItem =(producto_a_eliminar)=>{
 
         setArrayProducts(arrayProducts.filter(producto => producto !== producto_a_eliminar))
@@ -139,9 +122,7 @@ const ProductProfile = (props)=>{
                                  </Button></div>
                           <div className='vista-añadir-cantidades-eliminar'>
               
-                                 <Button variant="text" color="secondary"  onClick={()=>removeItem(arrayProducts)} >
-                                     Eliminar de la cesta
-                                 </Button>
+                           
                            </div>
                        </div>
 
@@ -262,9 +243,7 @@ const ProductProfile = (props)=>{
                   <Button variant="contained" color="secondary"  onClick={()=>addToCart()}>
                       Añadir Al carrito
                   </Button>
-                  <Button variant="contained" color="secondary" onClick={()=> switchPages('carrito-hidden')}>
-                      Cerrar Carrito
-                  </Button>
+                  
                   
     </div>
           </div>
@@ -325,9 +304,7 @@ const ProductProfile = (props)=>{
                                  </Button></div>
                           <div className='vista-añadir-cantidades-eliminar'>
               
-                                 <Button variant="text" color="secondary"  onClick={()=>removeItem(arrayProducts)} >
-                                     Eliminar de la cesta
-                                 </Button>
+                             
                            </div>
                        </div>
 
@@ -456,9 +433,7 @@ const ProductProfile = (props)=>{
              <Button variant="contained" color="secondary" onClick={()=> switchPages('carrito')} onClick={()=>addToCart()}>
                       Añadir Al carrito
                   </Button>
-                  <Button variant="contained" color="secondary" onClick={()=> switchPages('carrito-hidden')} onClick={()=>addToCart()}>
-                      Cerrar Carrito
-                  </Button>
+
     </div>
           </div>
 
@@ -479,12 +454,36 @@ const ProductProfile = (props)=>{
           </div>
         
        
-            <footer>
-              <div className="footer-container">
-                    
-              </div>
-            </footer>
+            
             </div>
+            {<footer className='footer-special-presupuesto'>
+                            <div className="footer-container">
+                                 <div className="vista-sobre-nosotros">
+                                         Enlaces de interes
+                                         <div>Envios</div>
+                                         <div>Repuestos</div>
+                                         <div>Accesorios</div>
+                                         <div>Telefonos nuevos y de segunda mano</div>
+                                         <div>Copyright TEcMovil</div>
+        
+                                  </div>
+                             <div className="vista-sobre-nosotros">
+                                           Sobre Nosotros
+                                    <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                     <div></div>
+                                     <div></div>
+                                    </div>
+
+                              <div className="vista-sobre-nosotros">
+                                          
+                                    <div className='calidad'>
+                                        <img  className='calidad' src={calidad}/>
+                                    </div>
+            
+                             </div>
+
+                            </div>
+                  </footer>}
         </> )
   }
   
@@ -598,6 +597,35 @@ const ProductProfile = (props)=>{
        
                 
             </div>
+            {<footer className='footer-special-presupuesto'>
+                            <div className="footer-container">
+                                 <div className="vista-sobre-nosotros">
+                                         Enlaces de interes
+                                         <div>Envios</div>
+                                         <div>Repuestos</div>
+                                         <div>Accesorios</div>
+                                         <div>Telefonos nuevos y de segunda mano</div>
+                                         <div>Copyright TEcMovil</div>
+        
+                                  </div>
+                             <div className="vista-sobre-nosotros">
+                                           Sobre Nosotros
+                                    <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                     <div></div>
+                                     <div></div>
+                                    </div>
+
+                              <div className="vista-sobre-nosotros">
+                                          
+                                    <div className='calidad'>
+                                        <img  className='calidad' src={calidad}/>
+                                    </div>
+            
+                             </div>
+
+                            </div>
+                  </footer>}
+
         </> )
     }
 }

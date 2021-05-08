@@ -48,7 +48,7 @@ const Product = (
            <div className="name-size" ><div className='name-size-settings-home'>{name}</div></div>
            <div className="rate-size"><div className="producto-color-settings-home">{color}</div></div>
            <div className="price-size"><div  className="producto-price-settings-home">{price}</div></div>
-           <Button variant="outlined" color="primary">
+           <Button variant="outlined" color="primary" onClick={onClick}>
              Lo Quiero
            </Button>
            
@@ -62,6 +62,9 @@ const Product = (
             <div className="name-size-accessorio-carrousel" ><h3 className="name-size-accessorio-carrousel">{name}</h3></div>
             <div className="rate-size-accessorio-carrousel"><h4 className="h4-producto-color">{modelo}</h4></div>
             <div className="price-size-accessorio-carrousel"><h4  className="h4-producto-price">{price}</h4></div>
+            <Button variant="outlined" color="primary" onClick={onClick}>
+                     Lo quiero
+              </Button>
             
         </div>
         )}
@@ -73,7 +76,7 @@ const Product = (
                <div className="name-size" ><div className='name-size-settings-home'>{name}</div></div>
            
                <div className="price-size-en-tienda"><div  className="producto-price-settings-tienda">{price}</div></div>
-              <Button variant="outlined" color="primary">
+              <Button variant="outlined" color="primary" onClick={onClick}>
                      Lo quiero
               </Button>
             
@@ -92,6 +95,9 @@ const Product = (
                <div className="name-size" ><h3>{marca}</h3></div>
                <div className="rate-size"><h4 className="h4-producto-color">{modelo}</h4></div>
                <div className="price-size"><h4  className="h4-producto-price">{price}</h4></div>
+               <Button variant="outlined" color="primary" onClick={onClick}>
+                     Lo quiero
+              </Button>
                
            </div>
         )}

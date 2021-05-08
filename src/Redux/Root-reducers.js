@@ -5,6 +5,7 @@ import accessReducer from './Reducers/Accesorios-reducer';
 import carritoReducer from './Reducers/Carrito-reducer';
 import productReducer from './Reducers/Product-reducer';
 import BusquedaReducer from './Reducers/Busqueda-reducer';
+import cartItem from '../components/Accion/reducers/reducer';
 
 
 const rootReducer = combineReducers({
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
     accessReducer,
     carritoReducer,
     productReducer,
-    BusquedaReducer
+    BusquedaReducer,
+    cartItem
 
  
 });

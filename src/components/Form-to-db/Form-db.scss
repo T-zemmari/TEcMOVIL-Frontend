@@ -21,13 +21,18 @@
 .vista-añadir-info-imagenes{
 
     width: 150px;
-    height: 400px;
+    height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
+    //margin-top: 200px;
 }
+::placeholder {
+    color: rgb(5, 5, 66);
+    
+    padding-left: 10px;
+  }
 .inputs-form-admin{
 
     all: unset;
@@ -36,6 +41,7 @@
     border: 1px solid violet;
     background-color: white;
     margin: 15px;
+    border-radius: 20px;
 }
 .description-form{
 
@@ -49,5 +55,5 @@
     height: 30px;
     border: 1px solid violet;
     background-color: white;
-    margin: 50px;
+   
 }

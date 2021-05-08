@@ -16,6 +16,7 @@ import Cart from './components/Cart/Cart';
 import UserData from './Containers/User-data/User-data';
 import Contact from './components/Contact/Contact';
 import ListaPedido from './components/Lista-Pedido/Lista-pedido';
+import ListaMisCompras from './Containers/Lista-Mis-Compras/Lista-Mis-Compras';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
          <Route path='/profile-user' exact component={UserData}/>
          <Route path='/contact' exact component={Contact}/>
          <Route path='/lista-pedidos' exact component={ListaPedido}/>
+         <Route path='/mis-compras' exact component={ListaMisCompras}/>
         
         </Switch>
       

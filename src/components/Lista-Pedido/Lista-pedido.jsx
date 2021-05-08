@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import './Lista-pedido.scss';
 import {connect} from 'react-redux';
 import Button from '@material-ui/core/Button'
-import { ErrorRounded, LensTwoTone } from '@material-ui/icons';
+import calidad from '../../img/Quality.jpg';
+import FatherDay from '../../img/black-friday.jpg';
 import axios from 'axios';
-
+import Header from '../../components/Header/Header';
+import { CLEAN_CARRITO } from '../../Redux/Types';
 
 const ListaPedidos =(props)=>{
 
@@ -27,9 +29,9 @@ const ListaPedidos =(props)=>{
 
    
   let  array = carrito;
-  console.log(carrito)
+  console.log(array[0])
   let carrito_en_string = JSON.stringify(carrito);
-  console.log(carrito_en_string)
+  
 
   let precioTotal = array.reduce((sum, value) => ( sum + parseInt(value.price) ), 0);
 
@@ -38,24 +40,34 @@ const ListaPedidos =(props)=>{
    let orderData = {
 
       user_id : user._id,
-      userName : user.name,
       precio_total : precioTotal,
       //product_info:array,
-      //product_id:carrito._id,
+      product:carrito[0],
+    
       payment:user.payment
    }
-   console.log(carrito[0]._id)
    console.log(orderData)
+
+    const cleanCart =()=>{
+
+    props.dispatch({type:CLEAN_CARRITO,payload:{}})
+   }
+  
 
    const sendOrderToDb = async ()=>{
 
- 
-          setOrder(orderData)
+     
+          
 
        let response = await axios.post('http://localhost:3002/orders',orderData);
        console.log(response)
+
+          cleanCart()
+
+        
     
    }
+
   
   
 
@@ -66,6 +78,10 @@ const ListaPedidos =(props)=>{
 
  
     return (
+   <>
+    
+           <Header style='register'/>
+          
 
         <div className="lista-pedidos-container">
 
@@ -138,6 +154,7 @@ const ListaPedidos =(props)=>{
             </div>
 
         </div>
+        </>
     )
 }
 

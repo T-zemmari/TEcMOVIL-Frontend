@@ -50,6 +50,14 @@ const Header = (props)=>{
     }
       
   }
+
+  const takeMeTo=()=>{
+
+    if(credentials?.user.name){
+        history.push('/mis-compras')
+    }
+    else(alert('Tienes Que Logearte Para Poder Ver Tus Productos'))
+  }
   
 if(props.style === 'home' ){
    return(
@@ -62,7 +70,7 @@ if(props.style === 'home' ){
            
             <li className='li-home' onClick={()=>history.push('/tienda')}>Tienda</li>
             <li className='li-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
-            <li className='li-home'>Contactenos</li>
+            <li className='li-home'>Repuestos</li>
             <LoginRender>
                 
                 <Button variant="contained" color="primary">
@@ -87,7 +95,7 @@ if(props.style === 'home' ){
                         <li className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
                         <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                         <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
-                        <li className='li-not-home'>Contactenos</li>
+                        <li className='li-not-home' onClick={()=>takeMeTo()}>Mis Compras</li>
                       
                     </div>
                   
@@ -113,7 +121,7 @@ if(props.style === 'home' ){
                 <li className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
                 <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                 <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
-                <li className='li-not-home'>Contactenos</li>
+                <li className='li-not-home' onClick={()=>takeMeTo()}>Mis Compras</li>
               
             </div>
           
@@ -124,6 +132,29 @@ if(props.style === 'home' ){
                           <img className="vista-icono-carrito" src={ShopingCart} alt="Cart"/>
                         </div>
                     </div>
+                   
+        </div>
+       )
+}
+
+if(props.style === 'tienda-not-logged' ){
+    return(
+
+
+        <div className="header-container-tienda">
+            <Loading visible={loading}></Loading>
+            <div className="vista-logo" onClick={(go)=>goto('/')}>TEcMovil</div>
+            <div className="vista-nav">
+                
+                <li className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
+                <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
+                <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
+                <li className='li-not-home'>Contactenos</li>
+              
+            </div>
+          
+                    
+               
                    
         </div>
        )

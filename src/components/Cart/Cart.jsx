@@ -13,6 +13,7 @@ import imagenDos from '../../img/garantia.jpg';
 import imagenTres from '../../img/devolucion.jpg';
 import imagenCuatro from '../../img/financia.jpg';
 import imgCarrito from '../../img/shopping_cart-removebg-preview.png';
+import { ColorLensOutlined } from '@material-ui/icons';
 
 const Cart =(props)=>{
 
@@ -42,8 +43,19 @@ const Cart =(props)=>{
     let productsData = localStorage.getItem('productsData');
 
 
-    let precioTotal = 'adefinir';
-    let precioAhorro ='tambien a definir';
+    let array =[] ;
+    let suma=0;
+    carrito.map(elemento => array.push(elemento.price))
+    console.log(array)
+
+    let precioTotal = array.forEach((numero)=>{
+    suma += parseInt(numero)
+    });
+
+    
+
+   
+    let precioAhorro =(suma*10/100);
 
     console.log(productsData);
     
@@ -89,7 +101,7 @@ const Cart =(props)=>{
          <div className="total-articulos">
              <div className="carrito-dividir">
                  <div className="total-articulos-cart-titulo"> Total de articulos (canon inlcuido)</div>
-                 <div className="total-articulos-cart-titulo">{precioTotal} €</div>
+                 <div className="total-articulos-cart-titulo"><strong>{suma} €</strong></div>
             </div>
              <div className="carrito-dividir">
                  <div className="total-articulos-cart-precio"> Gastos de envio</div>
@@ -101,8 +113,8 @@ const Cart =(props)=>{
                  <div className="total-articulos-cart-precio"><strong>Total</strong>  (IVA incluido)</div>
              </div>
              <div className="segundo-carrito-dividir">
-                 <div className="total-articulos-cart-precio"> {precioTotal} €</div>
-                 <div className="te-ahorras-cantidad">
+                 <div className="total-articulos-cart-precio"> <strong>{suma} €</strong></div>
+                 <div className="te-ahorras-cantidad"> Te has ahorrado -- 
                  {precioAhorro} €
                  </div>
              </div>
@@ -117,11 +129,11 @@ const Cart =(props)=>{
 
 
        <div className="order">
-           <ListaPedidodRender>
-           <Button variant="contained" color="secondary">
+          
+           <Button variant="contained" color="secondary" onClick = {()=>history.push('/lista-pedidos')}>
               Hacer el pedido
            </Button>
-           </ListaPedidodRender>
+          
        </div>
 
        <div className="mas-info-de-nuestra-app">

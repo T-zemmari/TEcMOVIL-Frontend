@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router';
 import Product from '../../components/Products/Product';
 import Portada from '../../img/portada-moviles.jpg';
-
+import calidad from '../../img/Quality.jpg';
 
 const Repuestos =()=>{
 
@@ -100,6 +100,35 @@ const Repuestos =()=>{
       </div>
 
     </div>
+
+    {<footer className='footer-special-presupuesto'>
+                            <div className="footer-container">
+                                 <div className="vista-sobre-nosotros">
+                                         Enlaces de interes
+                                         <div>Envios</div>
+                                         <div>Repuestos</div>
+                                         <div>Accesorios</div>
+                                         <div>Telefonos nuevos y de segunda mano</div>
+                                         <div>Copyright TEcMovil</div>
+        
+                                  </div>
+                             <div className="vista-sobre-nosotros">
+                                           Sobre Nosotros
+                                    <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                     <div></div>
+                                     <div></div>
+                                    </div>
+
+                              <div className="vista-sobre-nosotros">
+                                          
+                                    <div className='calidad'>
+                                        <img  className='calidad' src={calidad}/>
+                                    </div>
+            
+                             </div>
+
+                            </div>
+                  </footer>}
     </>
    )}
    
@@ -219,6 +248,34 @@ const Repuestos =()=>{
            </div>
  
        </div>
+       {<footer className='footer-special-presupuesto'>
+                            <div className="footer-container">
+                                 <div className="vista-sobre-nosotros">
+                                         Enlaces de interes
+                                         <div>Envios</div>
+                                         <div>Repuestos</div>
+                                         <div>Accesorios</div>
+                                         <div>Telefonos nuevos y de segunda mano</div>
+                                         <div>Copyright TEcMovil</div>
+        
+                                  </div>
+                             <div className="vista-sobre-nosotros">
+                                           Sobre Nosotros
+                                    <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                     <div></div>
+                                     <div></div>
+                                    </div>
+
+                              <div className="vista-sobre-nosotros">
+                                          
+                                    <div className='calidad'>
+                                        <img  className='calidad' src={calidad}/>
+                                    </div>
+            
+                             </div>
+
+                            </div>
+                  </footer>}
  
      </div>
      </>

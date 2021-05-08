@@ -9,8 +9,7 @@ import {connect} from 'react-redux';
 import { SMARTPHONES,ACCESSORIOS} from '../../Redux/Types';
 import Loading from '../../components/Loading/Loading';
 import FatherDay from '../../img/black-friday.jpg';
-import FooterCust from '../../components/Footer-Custumized/Footer-cust';
-
+import calidad from '../../img/Quality.jpg';
 
 
 
@@ -205,7 +204,34 @@ const Tienda = (props)=>{
            </div>
      
          </div>
-         <FooterCust/>
+         {<footer className='footer-special-presupuesto'>
+                            <div className="footer-container">
+                                 <div className="vista-sobre-nosotros">
+                                         Enlaces de interes
+                                         <div>Envios</div>
+                                         <div>Repuestos</div>
+                                         <div>Accesorios</div>
+                                         <div>Telefonos nuevos y de segunda mano</div>
+                                         <div>Copyright TEcMovil</div>
+        
+                                  </div>
+                             <div className="vista-sobre-nosotros">
+                                           Sobre Nosotros
+                                    <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                     <div></div>
+                                     <div></div>
+                                    </div>
+
+                              <div className="vista-sobre-nosotros">
+                                          
+                                    <div className='calidad'>
+                                        <img  className='calidad' src={calidad}/>
+                                    </div>
+            
+                             </div>
+
+                            </div>
+                  </footer>}
          </>
         )}
 
@@ -245,10 +271,7 @@ const Tienda = (props)=>{
        
        
                </div>
-       
-             <div className="vista-contenedor-telefonos-repuestos-accessorio">
-       
-                 <div className="vista-nav-bar">
+               <div className="vista-nav-bar">
                    <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
                    <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
                      Total Productos = {accesorios.length}
@@ -256,6 +279,10 @@ const Tienda = (props)=>{
                      
                   
                  </div>
+       
+             <div className="vista-contenedor-telefonos-repuestos-accessorio">
+       
+                 
        
                
                      
@@ -272,7 +299,34 @@ const Tienda = (props)=>{
              </div>
        
            </div>
-           <FooterCust/>
+           {<footer className='footer-special-presupuesto'>
+                            <div className="footer-container">
+                                 <div className="vista-sobre-nosotros">
+                                         Enlaces de interes
+                                         <div>Envios</div>
+                                         <div>Repuestos</div>
+                                         <div>Accesorios</div>
+                                         <div>Telefonos nuevos y de segunda mano</div>
+                                         <div>Copyright TEcMovil</div>
+        
+                                  </div>
+                             <div className="vista-sobre-nosotros">
+                                           Sobre Nosotros
+                                    <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                     <div></div>
+                                     <div></div>
+                                    </div>
+
+                              <div className="vista-sobre-nosotros">
+                                          
+                                    <div className='calidad'>
+                                        <img  className='calidad' src={calidad}/>
+                                    </div>
+            
+                             </div>
+
+                            </div>
+                  </footer>}
            
            </>)
 
@@ -286,7 +340,7 @@ const Tienda = (props)=>{
             return (
               <>
               <Loading visible={loading}></Loading>
-              <div className="header"><Header style='tienda'/></div>
+              <div className="header"><Header style='tienda-not-logged'/></div>
                   <div className="vista-portada-uno">
                      <img className="vista-portada-uno" src={FatherDay} alt="tab"/>
               </div>
@@ -339,7 +393,34 @@ const Tienda = (props)=>{
                 </div>
           
               </div>
-              <FooterCust/>
+              {<footer className='footer-special-presupuesto'>
+                            <div className="footer-container">
+                                 <div className="vista-sobre-nosotros">
+                                         Enlaces de interes
+                                         <div>Envios</div>
+                                         <div>Repuestos</div>
+                                         <div>Accesorios</div>
+                                         <div>Telefonos nuevos y de segunda mano</div>
+                                         <div>Copyright TEcMovil</div>
+        
+                                  </div>
+                             <div className="vista-sobre-nosotros">
+                                           Sobre Nosotros
+                                    <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                     <div></div>
+                                     <div></div>
+                                    </div>
+
+                              <div className="vista-sobre-nosotros">
+                                          
+                                    <div className='calidad'>
+                                        <img  className='calidad' src={calidad}/>
+                                    </div>
+            
+                             </div>
+
+                            </div>
+                  </footer>}
               </>)
         
         
@@ -354,7 +435,7 @@ const Tienda = (props)=>{
 
             return(
          <>
-         <div className="header"><Header style='tienda'/></div>
+         <div className="header"><Header style='tienda-not-logged'/></div>
                   <div className="vista-portada-uno">
                      <img className="vista-portada-uno" src={FatherDay} alt="tab"/>
               </div>
@@ -408,7 +489,34 @@ const Tienda = (props)=>{
            </div>
      
          </div>
-         <FooterCust/>
+         {<footer className='footer-special-presupuesto'>
+                            <div className="footer-container">
+                                 <div className="vista-sobre-nosotros">
+                                         Enlaces de interes
+                                         <div>Envios</div>
+                                         <div>Repuestos</div>
+                                         <div>Accesorios</div>
+                                         <div>Telefonos nuevos y de segunda mano</div>
+                                         <div>Copyright TEcMovil</div>
+        
+                                  </div>
+                             <div className="vista-sobre-nosotros">
+                                           Sobre Nosotros
+                                    <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                     <div></div>
+                                     <div></div>
+                                    </div>
+
+                              <div className="vista-sobre-nosotros">
+                                          
+                                    <div className='calidad'>
+                                        <img  className='calidad' src={calidad}/>
+                                    </div>
+            
+                             </div>
+
+                            </div>
+                  </footer>}
          </>
                     
              
