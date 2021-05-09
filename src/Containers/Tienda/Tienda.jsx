@@ -148,14 +148,14 @@ const Tienda = (props)=>{
               <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
                   Accesorios 
               </Button>
-              <Button variant="contained" color="secondary">
-                  Xiaomi
+              <Button variant="contained" color="secondary" onClick={()=>history.push('Repuestos')}>
+                  Repuestos
               </Button>
               <Button variant="contained" color="secondary">
-                  Samsung
+                  Baterias
               </Button>
               <Button variant="contained" color="secondary">
-                  Iphone
+                  Outlel
               </Button>
      
      
@@ -260,20 +260,20 @@ const Tienda = (props)=>{
                 <Button variant="contained" color="secondary" onClick={()=>shwichPages('pageOne')}>
                     Smartphones 
                 </Button>
-                <Button variant="contained" color="secondary">
-                    Xiaomi
+                <Button variant="contained" color="secondary" onClick={()=>history.push('Repuestos')}>
+                    Repuestos
                 </Button>
                 <Button variant="contained" color="secondary">
-                    Samsung
+                    Baterias
                 </Button>
                 <Button variant="contained" color="secondary">
-                    Iphone
+                    Outlet
                 </Button>
        
        
        
                </div>
-               <div className="vista-nav-bar">
+               <div className="vista-nav-bar-tienda">
                    <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
                    <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
                      Total Productos = {accesorios.length}
@@ -355,14 +355,14 @@ const Tienda = (props)=>{
                    <Button variant="contained" color="secondary" onClick={()=>shwichPages('repuestos')}>
                        Smartphones 
                    </Button>
-                   <Button variant="contained" color="secondary">
-                       Xiaomi
+                   <Button variant="contained" color="secondary"onClick={()=>history.push('Repuestos')}>
+                       Repuestos
                    </Button>
                    <Button variant="contained" color="secondary">
-                       Samsung
+                       Baterias
                    </Button>
                    <Button variant="contained" color="secondary">
-                       Iphone
+                       Outlet
                    </Button>
           
           
@@ -451,14 +451,14 @@ const Tienda = (props)=>{
               <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
                   Accesorios 
               </Button>
-              <Button variant="contained" color="secondary">
-                  Xiaomi
+              <Button variant="contained" color="secondary" onClick={()=>history.push('Repuestos')}>
+                  Repuestos
               </Button>
               <Button variant="contained" color="secondary">
-                  Samsung
+                  Baterias
               </Button>
               <Button variant="contained" color="secondary">
-                  Iphone
+                  Outlet
               </Button>
      
      

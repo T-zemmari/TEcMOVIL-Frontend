@@ -116,7 +116,9 @@ const Presupuestos = (props)=>{
 
         if(precioRepuestos === 0){
           alert('Lo siento, no sabemos cual es su averia')
-        }else alert('Se ha generado un informe de los detalles de su prepuesto, Se le notificara mediante email los pasos a seguir')
+        }else {alert('Se ha generado un informe de los detalles de su prepuesto, Se le notificara mediante email los pasos a seguir')
+
+        window.location.reload()}
       }
 
 

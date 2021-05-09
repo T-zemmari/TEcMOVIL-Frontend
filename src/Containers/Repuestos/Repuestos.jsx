@@ -7,6 +7,7 @@ import { useHistory } from 'react-router';
 import Product from '../../components/Products/Product';
 import Portada from '../../img/portada-moviles.jpg';
 import calidad from '../../img/Quality.jpg';
+import { HistorySharp } from '@material-ui/icons';
 
 const Repuestos =()=>{
 
@@ -60,14 +61,14 @@ const Repuestos =()=>{
          <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
              Accesorios 
          </Button>
-         <Button variant="contained" color="secondary">
-             Xiaomi
+         <Button variant="contained" color="secondary" onClick={()=>history.push('/tienda')}>
+             Smartphones
          </Button>
          <Button variant="contained" color="secondary">
-             Samsung
+             Baterias
          </Button>
          <Button variant="contained" color="secondary">
-             Iphone
+             outlet
          </Button>
 
 
@@ -151,14 +152,14 @@ const Repuestos =()=>{
            <Button variant="contained" color="secondary" onClick={()=>shwichPages('repuestos')}>
                Repuestos 
            </Button>
-           <Button variant="contained" color="secondary">
-               Xiaomi
+           <Button variant="contained" color="secondary" onClick={()=>history.push('/tienda')}>
+               Smartphones
            </Button>
            <Button variant="contained" color="secondary">
-               Samsung
+               Baterias
            </Button>
            <Button variant="contained" color="secondary">
-               Iphone
+               Outlet
            </Button>
   
   
@@ -210,14 +211,14 @@ const Repuestos =()=>{
           <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
               Accesorios 
           </Button>
-          <Button variant="contained" color="secondary">
-              Xiaomi
+          <Button variant="contained" color="secondary" onClick={()=>history.push('/tienda')}>
+              Smartphones
           </Button>
           <Button variant="contained" color="secondary">
-              Samsung
+              Baterias
           </Button>
           <Button variant="contained" color="secondary">
-              Iphone
+              Outlet
           </Button>
  
  
@@ -300,14 +301,14 @@ const Repuestos =()=>{
             <Button variant="contained" color="secondary" onClick={()=>shwichPages('repuestos')}>
                 Repuestos 
             </Button>
-            <Button variant="contained" color="secondary">
-                Xiaomi
+            <Button variant="contained" color="secondary" onClick={()=>history.push('/tienda')}>
+                Smartphones
             </Button>
             <Button variant="contained" color="secondary">
-                Samsung
+                Baterias
             </Button>
             <Button variant="contained" color="secondary">
-                Iphone
+                Outlet
             </Button>
    
    

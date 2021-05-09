@@ -70,7 +70,7 @@ if(props.style === 'home' ){
            
             <li className='li-home' onClick={()=>history.push('/tienda')}>Tienda</li>
             <li className='li-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
-            <li className='li-home'>Repuestos</li>
+            <li className='li-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
             <LoginRender>
                 
                 <Button variant="contained" color="primary">
