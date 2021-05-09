@@ -11,6 +11,7 @@ import Loading from '../../components/Loading/Loading';
 import FatherDay from '../../img/black-friday.jpg';
 import calidad from '../../img/Quality.jpg';
 import BasicPagination from '../../components/Paginacion/Paginacion';
+import Bateria from '../../components/Bateria/Bateria';
 
 
 
@@ -31,6 +32,7 @@ const Tienda = (props)=>{
     const [loading, setLoading] = useState(false);
     const [phones,setPhones]=useState([]);
     const [accesorios,setAccessorios]=useState([]);
+    const [baterias,setBaterias]=useState([]);
     const [page,setPage]=useState('pageOne');
     const [query,setQuery]=useState({
       search : ''
@@ -102,13 +104,21 @@ const Tienda = (props)=>{
          setPhones(response_for_phones.data.splice(0,16));
          
          props.dispatch({type:SMARTPHONES,payload:response_for_phones.data});
-         localStorage.setItem('foundModelsProducts',JSON.stringify(response_for_phones.data))
+         localStorage.setItem('foundModelsProducts',JSON.stringify(response_for_phones.data));
          
 
          let response_for_access = await axios.get('http://localhost:3002/accessorios');
          setAccessorios(response_for_access.data);
          props.dispatch({type:ACCESSORIOS,payload:response_for_access.data});
+
+
+         let response_for_bat = await axios.get('http://localhost:3002/baterias');
+         setBaterias(response_for_bat.data)
+         localStorage.setItem('baterias',response_for_bat.data);
+        
     },[])
+
+    console.log(baterias)
 
 
 
@@ -151,10 +161,10 @@ const Tienda = (props)=>{
               <Button variant="contained" color="secondary" onClick={()=>history.push('Repuestos')}>
                   Repuestos
               </Button>
-              <Button variant="contained" color="secondary">
+              <Button variant="contained" color="secondary" onClick={()=>shwichPages('baterias')}>
                   Baterias
               </Button>
-              <Button variant="contained" color="secondary">
+              <Button variant="contained" color="secondary" onClick={()=>history.push('tienda')}>
                   Outlel
               </Button>
      
@@ -238,6 +248,162 @@ const Tienda = (props)=>{
         )}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             {/* Aqui se renderizan las Baterias cuando el usuario  esta logeado*/}
+
+     if(credentials?.user.name && page ==='baterias'){
+      return (
+       <>
+       <Loading visible={loading}></Loading>
+
+
+       <div className="header"><Header style='logged'/></div>
+         <div className="vista-portada-uno">
+           <img className="vista-portada-uno" src={FatherDay} alt="tab"/>
+        </div>
+
+
+
+       <div className="vista-Container-Tienda">
+           
+   
+           <div className="nav-bar-container">
+          
+           
+            <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
+                Accesorios 
+            </Button>
+            <Button variant="contained" color="secondary" onClick={()=>history.push('Repuestos')}>
+                Repuestos
+            </Button>
+            <Button variant="contained" color="secondary" onClick={()=>shwichPages('baterias')}>
+                Baterias
+            </Button>
+            <Button variant="contained" color="secondary" onClick={()=>shwichPages('/tienda')}>
+                Outlel
+            </Button>
+   
+   
+   
+           </div>
+
+          
+         <div className="vista-contenedor-telefonos-repuestos-accessorio">
+
+         
+
+   
+             <div className="vista-nav-bar-tienda">
+               <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+               <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+                 Total Productos = {phones.length}
+               </Button> 
+                 
+              
+             </div>
+
+             <div className="input-busqueda">
+
+           <input className='input-search' type="text" name='search' onChange={handler}/>
+           <div className='boton-tienda-search' >
+
+              <Button  variant="outlined" color="secondary" onClick={()=>busquedaPorQuery()}>
+                 Search
+              </Button>
+              </div>
+            </div>
+              
+           
+            
+
+            {<div className="vista-todos-los-repuestos">
+                 {dataTorender.map(dataTorender=> <Product key={dataTorender._id}{...dataTorender} tamaño = 'en-tienda' onClick={()=>GetProductInfo(dataTorender)}/>)}
+             </div>}
+           
+  
+             {<div className="vista-todos-los-repuestos">
+                 {phones.map(phones=> <Product key={phones._id}{...phones} tamaño = 'en-tienda' onClick={()=>GetProductInfo(phones)}/>)}
+             </div>}
+   
+          <BasicPagination />
+   
+         </div>
+                
+       </div>
+       
+       {<footer className='footer-special-presupuesto'>
+                          <div className="footer-container">
+                               <div className="vista-sobre-nosotros">
+                                       Enlaces de interes
+                                       <div>Envios</div>
+                                       <div>Repuestos</div>
+                                       <div>Accesorios</div>
+                                       <div>Telefonos nuevos y de segunda mano</div>
+                                       <div>Copyright TEcMovil</div>
+      
+                                </div>
+                           <div className="vista-sobre-nosotros">
+                                         Sobre Nosotros
+                                  <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                   <div></div>
+                                   <div></div>
+                                  </div>
+
+                            <div className="vista-sobre-nosotros">
+                                        
+                                  <div className='calidad'>
+                                      <img  className='calidad' src={calidad}/>
+                                  </div>
+          
+                           </div>
+
+                          </div>
+                </footer>}
+       </>
+      )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         {/* Aqui se renderizan los accessorios cuando el usuario  esta logeado*/}
         
         
@@ -263,13 +429,12 @@ const Tienda = (props)=>{
                 <Button variant="contained" color="secondary" onClick={()=>history.push('Repuestos')}>
                     Repuestos
                 </Button>
-                <Button variant="contained" color="secondary">
-                    Baterias
+                <Button variant="contained" color="secondary" onClick={()=>shwichPages('baterias')}>
+                  Baterias
                 </Button>
-                <Button variant="contained" color="secondary">
-                    Outlet
+                <Button variant="contained" color="secondary" onClick={()=>history.push('tienda')}>
+                  Outlel
                 </Button>
-       
        
        
                </div>
@@ -358,12 +523,12 @@ const Tienda = (props)=>{
                    <Button variant="contained" color="secondary"onClick={()=>history.push('Repuestos')}>
                        Repuestos
                    </Button>
-                   <Button variant="contained" color="secondary">
-                       Baterias
+                   <Button variant="contained" color="secondary" onClick={()=>shwichPages('baterias')}>
+                      Baterias
                    </Button>
-                   <Button variant="contained" color="secondary">
-                       Outlet
-                   </Button>
+                  <Button variant="contained" color="secondary" onClick={()=>history.push('tienda')}>
+                      Outlel
+                  </Button>
           
           
           
@@ -433,7 +598,7 @@ const Tienda = (props)=>{
         
         else{
 
-                             {/* Aqui se  renderizan los smartphones cuando el usuario  no esta logeado */}
+                             {/* Aqui se  renderizan los Baterias cuando el usuario  no esta logeado */}
 
             return(
          <>
@@ -454,11 +619,11 @@ const Tienda = (props)=>{
               <Button variant="contained" color="secondary" onClick={()=>history.push('Repuestos')}>
                   Repuestos
               </Button>
-              <Button variant="contained" color="secondary">
+              <Button variant="contained" color="secondary" onClick={()=>shwichPages('baterias')}>
                   Baterias
               </Button>
-              <Button variant="contained" color="secondary">
-                  Outlet
+              <Button variant="contained" color="secondary" onClick={()=>history.push('tienda')}>
+                  Outlel
               </Button>
      
      
@@ -470,19 +635,21 @@ const Tienda = (props)=>{
                <div className="vista-nav-bar">
                  <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
                  <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
-                   Total Productos = {phones.length}
+                   Total Productos = {baterias.length}
                  </Button> 
                    
                 
                </div>
      
              
-                   
+                    {<div className="vista-todos-los-repuestos">
+                   {baterias.map(baterias=> <Bateria key={baterias._id}{...baterias} tamaño='normal' onClick={()=>GetProductInfo(baterias)}/>)}
+            </div>}
             
      
-               {<div className="vista-todos-los-repuestos">
+               {/*{<div className="vista-todos-los-repuestos">
                    {phones.map(phones=> <Product key={phones._id}{...phones} tamaño='normal' onClick={()=>GetProductInfo(phones)}/>)}
-               </div>}
+            </div>}*/}
      
              <div className="vista-todos-los-accessorios">
      
