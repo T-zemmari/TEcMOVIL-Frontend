@@ -64,9 +64,9 @@ const Repuestos =()=>{
          <Button variant="contained" color="secondary" onClick={()=>history.push('/tienda')}>
              Smartphones
          </Button>
-         <Button variant="contained" color="secondary">
-             Baterias
-         </Button>
+         <Button variant="contained" color="secondary"  onClick={()=>history.push('/tienda')}>
+              Tienda
+          </Button>
          <Button variant="contained" color="secondary">
              outlet
          </Button>
@@ -132,6 +132,94 @@ const Repuestos =()=>{
                   </footer>}
     </>
    )}
+
+
+
+
+   if(credentials?.user.name && page === 'bateria'){
+    return (
+     <>
+     <div className="header"><Header style='tienda'/></div>
+                   <div className="vista-portada-uno">
+                      <img className="vista-portada-uno" src={Portada} alt="tab"/>
+               </div>
+     <div className="vista-Container-Tienda">
+         
+ 
+         <div className="nav-bar-container">
+        
+         
+          <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
+              Accesorios 
+          </Button>
+          <Button variant="contained" color="secondary" onClick={()=>history.push('/tienda')}>
+              Smartphones
+          </Button>
+          <Button variant="contained" color="secondary"  onClick={()=>history.push('/tienda')}>
+              Tienda
+          </Button>
+          <Button variant="contained" color="secondary">
+              outlet
+          </Button>
+ 
+ 
+ 
+         </div>
+ 
+       <div className="vista-contenedor-telefonos-repuestos-accessorio">
+ 
+           <div className="vista-nav-bar">
+             <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+             <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+               Total Productos = {repuestos.length}
+             </Button> 
+               
+            
+           </div>
+ 
+         
+               
+        
+ 
+ 
+         <div className="vista-todos-los-accessorios">
+ 
+           </div>
+ 
+       </div>
+ 
+     </div>
+ 
+     {<footer className='footer-special-presupuesto'>
+                             <div className="footer-container">
+                                  <div className="vista-sobre-nosotros">
+                                          Enlaces de interes
+                                          <div>Envios</div>
+                                          <div>Repuestos</div>
+                                          <div>Accesorios</div>
+                                          <div>Telefonos nuevos y de segunda mano</div>
+                                          <div>Copyright TEcMovil</div>
+         
+                                   </div>
+                              <div className="vista-sobre-nosotros">
+                                            Sobre Nosotros
+                                     <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                      <div></div>
+                                      <div></div>
+                                     </div>
+ 
+                               <div className="vista-sobre-nosotros">
+                                           
+                                     <div className='calidad'>
+                                         <img  className='calidad' src={calidad}/>
+                                     </div>
+             
+                              </div>
+ 
+                             </div>
+                   </footer>}
+     </>
+    )}
    
    
    if(credentials?.user.name && page === 'accesorios'){
@@ -155,9 +243,9 @@ const Repuestos =()=>{
            <Button variant="contained" color="secondary" onClick={()=>history.push('/tienda')}>
                Smartphones
            </Button>
-           <Button variant="contained" color="secondary">
-               Baterias
-           </Button>
+           <Button variant="contained" color="secondary"  onClick={()=>history.push('/tienda')}>
+              Tienda
+          </Button>
            <Button variant="contained" color="secondary">
                Outlet
            </Button>
@@ -211,11 +299,11 @@ const Repuestos =()=>{
           <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
               Accesorios 
           </Button>
-          <Button variant="contained" color="secondary" onClick={()=>history.push('/tienda')}>
+          <Button variant="contained" color="secondary" onClick={()=>history.push('/')}>
               Smartphones
           </Button>
-          <Button variant="contained" color="secondary">
-              Baterias
+          <Button variant="contained" color="secondary"  onClick={()=>history.push('/tienda')}>
+              Tienda
           </Button>
           <Button variant="contained" color="secondary">
               Outlet
@@ -304,9 +392,9 @@ const Repuestos =()=>{
             <Button variant="contained" color="secondary" onClick={()=>history.push('/tienda')}>
                 Smartphones
             </Button>
-            <Button variant="contained" color="secondary">
-                Baterias
-            </Button>
+            <Button variant="contained" color="secondary"  onClick={()=>history.push('/tienda')}>
+              Tienda
+          </Button>
             <Button variant="contained" color="secondary">
                 Outlet
             </Button>

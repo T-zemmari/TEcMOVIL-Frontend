@@ -248,7 +248,121 @@ const Tienda = (props)=>{
         )}
 
 
+        {/*---------------aqui se renderizan los smartphones ------------cuando el usuario-----------no este----------logeado------------*/}
 
+
+
+{/* Aqui se renderizan los smartphones cuando el usuario  esta logeado*/}
+
+if(!credentials?.user.name && page ==='usuario-no-logeado-smartphones'){
+  return (
+   <>
+   <Loading visible={loading}></Loading>
+
+
+   <div className="header"><Header style='tienda-not-logged'/></div>
+                  <div className="vista-portada-uno">
+                     <img className="vista-portada-uno" src={FatherDay} alt="tab"/>
+              </div>
+
+
+   <div className="vista-Container-Tienda">
+       
+
+       <div className="nav-bar-container">
+      
+       
+        <Button variant="contained" color="secondary" onClick={()=>shwichPages('accesorios')}>
+            Accesorios 
+        </Button>
+        <Button variant="contained" color="secondary" onClick={()=>history.push('Repuestos')}>
+            Repuestos
+        </Button>
+        <Button variant="contained" color="secondary" onClick={()=>shwichPages('baterias')}>
+            Baterias
+        </Button>
+        <Button variant="contained" color="secondary" onClick={()=>history.push('tienda')}>
+            Outlel
+        </Button>
+
+
+
+       </div>
+
+      
+     <div className="vista-contenedor-telefonos-repuestos-accessorio">
+
+     
+
+
+         <div className="vista-nav-bar-tienda">
+           <Button variant="text" color="default" onClick={()=>history.push('/')}>Home</Button>\
+           <Button variant="text" color="default" onClick={()=>history.push('/tienda')}> Moviles</Button> \  <Button variant="text" color="default">
+             Total Productos = {phones.length}
+           </Button> 
+             
+          
+         </div>
+
+         <div className="input-busqueda">
+
+       <input className='input-search' type="text" name='search' onChange={handler}/>
+       <div className='boton-tienda-search' >
+
+          <Button  variant="outlined" color="secondary" onClick={()=>busquedaPorQuery()}>
+             Search
+          </Button>
+          </div>
+        </div>
+          
+       
+        
+
+        {<div className="vista-todos-los-repuestos">
+             {dataTorender.map(dataTorender=> <Product key={dataTorender._id}{...dataTorender} tamaño = 'en-tienda' onClick={()=>GetProductInfo(dataTorender)}/>)}
+         </div>}
+       
+
+         {<div className="vista-todos-los-repuestos">
+             {phones.map(phones=> <Product key={phones._id}{...phones} tamaño = 'en-tienda' onClick={()=>GetProductInfo(phones)}/>)}
+         </div>}
+
+      <BasicPagination />
+
+     </div>
+            
+   </div>
+   
+   {<footer className='footer-special-presupuesto'>
+                      <div className="footer-container">
+                           <div className="vista-sobre-nosotros">
+                                   Enlaces de interes
+                                   <div>Envios</div>
+                                   <div>Repuestos</div>
+                                   <div>Accesorios</div>
+                                   <div>Telefonos nuevos y de segunda mano</div>
+                                   <div>Copyright TEcMovil</div>
+  
+                            </div>
+                       <div className="vista-sobre-nosotros">
+                                     Sobre Nosotros
+                              <div>Calle los leones 28 bajo 46022 Valencia</div>
+                               <div></div>
+                               <div></div>
+                              </div>
+
+                        <div className="vista-sobre-nosotros">
+                                    
+                              <div className='calidad'>
+                                  <img  className='calidad' src={calidad}/>
+                              </div>
+      
+                       </div>
+
+                      </div>
+            </footer>}
+   </>
+  )}
 
 
 
@@ -337,7 +451,7 @@ const Tienda = (props)=>{
            
   
              {<div className="vista-todos-los-repuestos">
-                 {phones.map(phones=> <Product key={phones._id}{...phones} tamaño = 'en-tienda' onClick={()=>GetProductInfo(phones)}/>)}
+                 {baterias.map(baterias=> <Bateria key={baterias._id}{...baterias} tamaño = 'en-tienda' onClick={()=>GetProductInfo(baterias)}/>)}
              </div>}
    
           <BasicPagination />
@@ -517,7 +631,7 @@ const Tienda = (props)=>{
                   <div className="nav-bar-container">
                  
                   
-                   <Button variant="contained" color="secondary" onClick={()=>shwichPages('repuestos')}>
+                   <Button variant="contained" color="secondary" onClick={()=>shwichPages('usuario-no-logeado-smartphones')}>
                        Smartphones 
                    </Button>
                    <Button variant="contained" color="secondary"onClick={()=>history.push('Repuestos')}>
@@ -640,6 +754,13 @@ const Tienda = (props)=>{
                    
                 
                </div>
+
+
+               <div className="titulo">
+
+               <h3>Baterías para teléfonos móviles y smartphones</h3>
+                 Hazte con una de estas baterías para móviles y devuelve tu smartphone a la vida. Baterías originales de Samsung, Huawei, LG y todas las marcas conocidas de teléfonos móviles. Envíos rápidos, desde 24 horas.
+               </div>
      
              
                     {<div className="vista-todos-los-repuestos">
@@ -650,6 +771,29 @@ const Tienda = (props)=>{
                {/*{<div className="vista-todos-los-repuestos">
                    {phones.map(phones=> <Product key={phones._id}{...phones} tamaño='normal' onClick={()=>GetProductInfo(phones)}/>)}
             </div>}*/}
+
+            <div className="parrafo-baterias">
+
+                     <h3 className='h3-vista-bateria'>Encuentra una batería para tu móvil</h3> 
+                     <p className="parrafo-style-vista-bateria">Muchas veces creemos que nuestro viejo smartphone ya está para el arrastre. Pero con una batería nueva, todo cambia. Tengas el modelo que tengas.
+
+                 
+                     En  TEcMovil, puedes encontrar baterías para móviles a los mejores precios y con envío rápido. Cada teléfono necesita un tipo de batería concreto, y por eso tienes que fijarte bien en que sean compatibles.</p> 
+
+                     <p className="parrafo-style-vista-bateria">
+                        No es una cuestión de capacidad y de mAh, sino de diseño. Atrás quedan los viejos modelos Nokia en los que varios móviles compartían la misma clase de batería. Si quieres revitalizar a tu smartphone o darle una última oportunidad, las baterías de móviles son una apuesta segura.
+                        </p>    
+
+                      <h3 className='h3-vista-bateria'>Una batería para tu móvil Samsung</h3>  
+                        <p className="parrafo-style-vista-bateria">
+                  
+                ¿Tu Galaxy se queda tirado cada día? Puede ponerle remedio comprando una batería de móvil Samsung. Original y en perfecto estado, para que tu smartphone recupere su esplendor de antaño.</p>
+
+                  <h3 className='h3-vista-bateria'>Baterías para móviles chinos</h3>
+
+                  <p className="parrafo-style-vista-bateria">
+                   La autonomía es uno de los aspectos que más se castiga con el paso del tiempo. Si estás buscando baterías para móviles chinos, en TEcMovil puedes hacerte con este tipo de repuesto al mejor precio.</p>
+             </div>
      
              <div className="vista-todos-los-accessorios">
      

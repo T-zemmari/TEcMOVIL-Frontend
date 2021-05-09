@@ -72,6 +72,31 @@ flex-direction: row;
     margin-top: 15px;
 }
 
+.parrafo-baterias{
+
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+.h3-vista-bateria{
+
+    color: rgb(177, 27, 119);
+    font-size: 30px;
+    margin-left:50px;
+}
+
+.parrafo-style-vista-bateria{
+    color: rgb(8, 8, 39);
+    font-size: 25px;
+    display: flex;
+   // justify-content: flex-start;
+    text-align: start;
+    background-color: rgb(197, 202, 192);
+    margin-left:50px;
+    margin-right:50px;
+
+}
 
 
 

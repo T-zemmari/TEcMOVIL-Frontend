@@ -7,6 +7,7 @@ import axios from 'axios';
 import ShopingCart from '../../img/shopping_cart-removebg-preview.png';
 import {Avatar, Button} from '@material-ui/core';
 import {connect} from 'react-redux';
+import ContactRender from '../Modal/Contact-render';
 
 
 
@@ -149,7 +150,11 @@ if(props.style === 'tienda-not-logged' ){
                 <li className='li-not-home' value="Tienda"onClick={(go)=>goto('/tienda')}>Tienda</li>
                 <li className='li-not-home' onClick={(go)=>goto('/repuestos')}>Repuestos</li>
                 <li className='li-not-home' onClick={(go)=>goto('/presupuestos')}>Presupuestos</li>
-                <li className='li-not-home'>Contactenos</li>
+
+                <ContactRender onClick={()=> history.push('/contact')}>
+                      <li className='li-not-home'>Contactenos</li>        
+                          </ContactRender>
+                
               
             </div>
           
