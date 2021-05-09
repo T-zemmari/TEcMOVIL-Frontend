@@ -9,6 +9,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [![Hackathon](https://img.shields.io/badge/hackathon-name-orange.svg)](http://hackathon.url.com) [![Status](https://img.shields.io/badge/status-active-success.svg)]() [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues) [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
+
+## 📝 Table of Contents
+
+- [Built With](#built)
+- [A Small Deploy](#A-Small-Deploy)
+- [Start Project](#start-project)
+- [Author](#author)
+
 ## ⛏️ Built With <a name = "built"></a>
 <p align="left"> 
 <a href="https://www.w3schools.com/css/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> 
@@ -27,7 +35,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 
-####The project can be downloaded from <a href="https://github.com/T-zemmari/ProjectF/archive/refs/heads/main.zip">this link</a>. You're welcome to borrow the code.
+#### The project can be downloaded from <a href="https://github.com/T-zemmari/ProjectF/archive/refs/heads/main.zip">this link</a>. You're welcome to borrow the code.
 
 
 ### Available Scripts <a name="prerequisites"></a>
@@ -41,14 +49,19 @@ In the project directory, you can run:
 ### `npm start`
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Una Pequeña Visita <a name="Pequeña-Visita"></a>
+
+
+## :zap: Deploy <a name="A-Small-Deploy"></a>
 
 ![Visita Por TEcMovil](https://user-images.githubusercontent.com/76817211/117570386-28d71a00-b0ca-11eb-845c-2f27348139e8.gif)
 
-#### Vista Admin
+####  Admin-View
 ![Admin-y-presupuesto](https://user-images.githubusercontent.com/76817211/117570378-21177580-b0ca-11eb-9a0f-c287680e10c6.gif)
 
 
 ## ✍️ Author <a name = "author"></a>
 - [@T-zemmari](https://github.com/T-zemmari)
 
+## ✍️ Author <a name = "Features"></a>
+
+#### The application will have a forum for inquiries about the different faults that mobile devices usually have,and their possible solutions.
