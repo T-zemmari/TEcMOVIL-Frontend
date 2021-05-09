@@ -95,6 +95,7 @@ const Presupuestos = (props)=>{
       
       }
 
+      
     //suma para la suma de los repuestos:
 
 
@@ -107,6 +108,17 @@ const Presupuestos = (props)=>{
 
       const PrecioTotal = precioRepuestos + ((precioRepuestos * 21) / 100 );
       const Iva = ((precioRepuestos * 21) / 100 );
+
+
+      //Funcion acepto el preupuesto
+
+      const aceptoPrepupuesto=()=>{
+
+        if(precioRepuestos === 0){
+          alert('Lo siento, no sabemos cual es su averia')
+        }else alert('Se ha generado un informe de los detalles de su prepuesto, Se le notificara mediante email los pasos a seguir')
+      }
+
 
    // aqui me traigo a los repeustos, se hacer cada vez que se recarga la pagina
 
@@ -297,7 +309,7 @@ const RenderSamusungModels =(props)=>{
 
                        <div className="aceptar-o-no">
                           
-                          <Button variant="contained" color="secondary" >
+                          <Button variant="contained" color="secondary" onClick={()=>aceptoPrepupuesto()} >
                             Acepto El presupuesto
                           </Button>
                          
@@ -457,7 +469,7 @@ const RenderSamusungModels =(props)=>{
 
                        <div className="aceptar-o-no">
                           
-                          <Button variant="contained" color="secondary" >
+                          <Button variant="contained" color="secondary" onClick={()=>aceptoPrepupuesto()}>
                             Acepto El presupuesto
                           </Button>
                          

@@ -6,13 +6,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: blanchedalmond;
+    background-color: rgb(230, 222, 212);
+    justify-content: space-evenly;
+    border-radius: 5px;
 }
 
 .input-style-contact-form{
     all:unset;
     width: 90%;
     height: 40px;
-    border:1px solid rgb(116, 9, 9)
-
+    border:1px solid rgb(116, 9, 9);
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.input-style-contact-form:hover{
+    all:unset;
+    width: 91%;
+    height: 40px;
+    border:1px solid rgb(20, 58, 139);
+  
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.Titulo-contact-form{
+    margin-top:10px;
+    font-size: 25px;
+    color: rgb(139, 20, 133);
+   
 }
