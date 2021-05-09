@@ -56,7 +56,7 @@ const MySpace =(props)=>{
       props.dispatch({ type: SMARTPHONES, payload: response.data });
       localStorage.setItem('destacados',response.data);
       console.log(response.data)
-      setDestacados(response.data.slice(2,8));
+      setDestacados(response.data.slice(3,11));
    
 
       let response_dos= await axios.get('http://localhost:3002/accessorios');
