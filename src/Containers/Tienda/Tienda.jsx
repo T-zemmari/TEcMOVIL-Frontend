@@ -12,7 +12,7 @@ import FatherDay from '../../img/black-friday.jpg';
 import calidad from '../../img/Quality.jpg';
 import BasicPagination from '../../components/Paginacion/Paginacion';
 import Bateria from '../../components/Bateria/Bateria';
-
+import promo from '../../img/mejores-precios.jpg';
 
 
 
@@ -199,7 +199,7 @@ const Tienda = (props)=>{
               </div>
                 
              
-              
+              <h3 className='h3-vista-bateria'> Teléfonos móviles con un precio de !!!chollo!!!</h3>
 
               {<div className="vista-todos-los-repuestos">
                    {dataTorender.map(dataTorender=> <Product key={dataTorender._id}{...dataTorender} tamaño = 'en-tienda' onClick={()=>GetProductInfo(dataTorender)}/>)}
@@ -316,7 +316,8 @@ if(!credentials?.user.name && page ==='usuario-no-logeado-smartphones'){
         </div>
           
        
-        
+        <h3 className='h3-vista-bateria'> Teléfonos móviles con un precio de !!!chollo!!!</h3>
+
 
         {<div className="vista-todos-los-repuestos">
              {dataTorender.map(dataTorender=> <Product key={dataTorender._id}{...dataTorender} tamaño = 'en-tienda' onClick={()=>GetProductInfo(dataTorender)}/>)}
@@ -441,18 +442,60 @@ if(!credentials?.user.name && page ==='usuario-no-logeado-smartphones'){
               </Button>
               </div>
             </div>
-              
-           
+
+            
+          
             
 
             {<div className="vista-todos-los-repuestos">
                  {dataTorender.map(dataTorender=> <Product key={dataTorender._id}{...dataTorender} tamaño = 'en-tienda' onClick={()=>GetProductInfo(dataTorender)}/>)}
              </div>}
+
+
+             <div className="imagen-vista-baterias">
+              <img className="imagen-vista-baterias" src={promo}  />
+            </div>
+              
            
   
-             {<div className="vista-todos-los-repuestos">
-                 {baterias.map(baterias=> <Bateria key={baterias._id}{...baterias} tamaño = 'en-tienda' onClick={()=>GetProductInfo(baterias)}/>)}
-             </div>}
+             <div className="titulo">
+
+               <h3>Baterías para teléfonos móviles y smartphones</h3> 
+                Hazte con una de estas baterías para móviles y devuelve tu smartphone a la vida. Baterías originales de Samsung, Huawei, LG y todas las marcas conocidas de teléfonos móviles. Envíos rápidos, desde 24 horas.
+           </div>
+     
+             
+                    {<div className="vista-todos-los-repuestos">
+                   {baterias.map(baterias=> <Bateria key={baterias._id}{...baterias} tamaño='normal' onClick={()=>GetProductInfo(baterias)}/>)}
+            </div>}
+            
+     
+               {/*{<div className="vista-todos-los-repuestos">
+                   {phones.map(phones=> <Product key={phones._id}{...phones} tamaño='normal' onClick={()=>GetProductInfo(phones)}/>)}
+            </div>}*/}
+
+            <div className="parrafo-baterias">
+
+                     <h3 className='h3-vista-bateria'>Encuentra una batería para tu móvil</h3> 
+                     <p className="parrafo-style-vista-bateria">Muchas veces creemos que nuestro viejo smartphone ya está para el arrastre. Pero con una batería nueva, todo cambia. Tengas el modelo que tengas.
+
+                 
+                     En  TEcMovil, puedes encontrar baterías para móviles a los mejores precios y con envío rápido. Cada teléfono necesita un tipo de batería concreto, y por eso tienes que fijarte bien en que sean compatibles.</p> 
+
+                     <p className="parrafo-style-vista-bateria">
+                        No es una cuestión de capacidad y de mAh, sino de diseño. Atrás quedan los viejos modelos Nokia en los que varios móviles compartían la misma clase de batería. Si quieres revitalizar a tu smartphone o darle una última oportunidad, las baterías de móviles son una apuesta segura.
+                        </p>    
+
+                      <h3 className='h3-vista-bateria'>Una batería para tu móvil Samsung</h3>  
+                        <p className="parrafo-style-vista-bateria">
+                  
+                ¿Tu Galaxy se queda tirado cada día? Puede ponerle remedio comprando una batería de móvil Samsung. Original y en perfecto estado, para que tu smartphone recupere su esplendor de antaño.</p>
+
+                  <h3 className='h3-vista-bateria'>Baterías para móviles chinos</h3>
+
+                  <p className="parrafo-style-vista-bateria">
+                   La autonomía es uno de los aspectos que más se castiga con el paso del tiempo. Si estás buscando baterías para móviles chinos, en TEcMovil puedes hacerte con este tipo de repuesto al mejor precio.</p>
+             </div>
    
           <BasicPagination />
    
@@ -490,31 +533,6 @@ if(!credentials?.user.name && page ==='usuario-no-logeado-smartphones'){
                 </footer>}
        </>
       )}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -564,14 +582,32 @@ if(!credentials?.user.name && page ==='usuario-no-logeado-smartphones'){
              <div className="vista-contenedor-telefonos-repuestos-accessorio">
        
                  
-       
-               
+             <h3 className='h3-vista-bateria'> Ofertas en accesorios para todas las marcas!!!</h3>
+             Si buscas accesorios para teléfonos móviles, aquí podrás adquirir todos los complementos que tu smartphone o tablet necesita: fundas, auriculares, baterías y cables entre otras muchas opciones. ¡Descúbrelas!
+
+                
+          <div className="imagen-vista-baterias">
+              <img className="imagen-vista-baterias" src={promo}  />
+            </div>
                      
               
        
                  {<div className="vista-todos-los-repuestos">
                      {accesorios.map(accesorios=> <Product key={accesorios._id}{...accesorios} nombre = 'repuesto'  onClick={()=>GetProductInfo(accesorios)}/>)}
                  </div>}
+
+
+
+
+                 <h3 className='h3-vista-bateria'>Accesorios para móviles</h3>    
+                 <p className="parrafo-style-vista-bateria" >Un teléfono móvil no está completo sin sus accesorios. En TEcMovil puedes comprar accesorios de móviles online compatibles con un gran número de modelos. Tengas el smartphone que tengas, nosotros tenemos accesorios para tu móvil. Samsung, iPhone, móviles chinos... ¡Busca y encontrarás!
+
+                     Si quieres proteger tu móvil ante posibles golpes, echa un vistazo a las secciones de fundas para móviles y protectores de cristal templado. También puedes conseguir más memoria interna para tu teléfono con una tarjeta Micro SD, así podrás grabar todos los vídeos que quieras sin tener que borrar nada.</p>
+
+                     <p className="parrafo-style-vista-bateria" >Otros accesorios para móvil que puedes encontrar en esta web son los repuestos. Se trata de aquellas piezas o componentes que ya incluía tu smartphone pero quieres reponer. Por ejemplo, cables de datos, punteros o baterías de móviles.
+
+                     TEcMovil, tu tienda de accesorios móviles
+                     Realizamos envíos rápidos y con gastos de envío gratis en pedidos superiores a 28€ euros (Península y Baleares). Puedes aprovechar y repasar las categorías de nuestra tienda online de accesorios móviles para que el envío te salga gratuito. ¡Seguro que encuentras algo que te gusta! </p>
        
                <div className="vista-todos-los-accessorios">
        
@@ -658,14 +694,33 @@ if(!credentials?.user.name && page ==='usuario-no-logeado-smartphones'){
                         
                      
                     </div>
+
+
+                     
+          <div className="imagen-vista-baterias">
+              <img className="imagen-vista-baterias" src={promo}  />
+            </div>
           
                   
-                        
+                    <h3 className='h3-vista-bateria'> Ofertas en accesorios para todas las marcas!!!</h3>
                  
           
                     {<div className="vista-todos-los-repuestos">
                         {accesorios.map(accesorios=> <Product key={accesorios._id}{...accesorios} nombre = 'repuesto'  onClick={()=>GetProductInfo(accesorios)}/>)}
                     </div>}
+
+                   <h3 className='h3-vista-bateria'>Accesorios para móviles</h3>    
+                 <p className="parrafo-style-vista-bateria" >Un teléfono móvil no está completo sin sus accesorios. En TEcMovil puedes comprar accesorios de móviles online compatibles con un gran número de modelos. Tengas el smartphone que tengas, nosotros tenemos accesorios para tu móvil. Samsung, iPhone, móviles chinos... ¡Busca y encontrarás!
+
+                     Si quieres proteger tu móvil ante posibles golpes, echa un vistazo a las secciones de fundas para móviles y protectores de cristal templado. También puedes conseguir más memoria interna para tu teléfono con una tarjeta Micro SD, así podrás grabar todos los vídeos que quieras sin tener que borrar nada.</p>
+
+                     <p className="parrafo-style-vista-bateria" >Otros accesorios para móvil que puedes encontrar en esta web son los repuestos. Se trata de aquellas piezas o componentes que ya incluía tu smartphone pero quieres reponer. Por ejemplo, cables de datos, punteros o baterías de móviles.
+
+                     TEcMovil, tu tienda de accesorios móviles
+                     Realizamos envíos rápidos y con gastos de envío gratis en pedidos superiores a 28€ euros (Península y Baleares). Puedes aprovechar y repasar las categorías de nuestra tienda online de accesorios móviles para que el envío te salga gratuito. ¡Seguro que encuentras algo que te gusta! </p>
+       
+
+                    
           
                   <div className="vista-todos-los-accessorios">
           
@@ -754,13 +809,17 @@ if(!credentials?.user.name && page ==='usuario-no-logeado-smartphones'){
                    
                 
                </div>
-
+               <div className="imagen-vista-baterias">
+                  <img className="imagen-vista-baterias" src={promo}  />
+               </div>
 
                <div className="titulo">
 
                <h3>Baterías para teléfonos móviles y smartphones</h3>
                  Hazte con una de estas baterías para móviles y devuelve tu smartphone a la vida. Baterías originales de Samsung, Huawei, LG y todas las marcas conocidas de teléfonos móviles. Envíos rápidos, desde 24 horas.
                </div>
+
+              
      
              
                     {<div className="vista-todos-los-repuestos">

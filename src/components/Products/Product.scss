@@ -148,9 +148,11 @@
     width:320px;
     height: 410px;
     border-radius: 10px;
-    border: rgb(224, 214, 219) 1px solid;
-    background-color: rgb(212, 214, 205);
+    border-right: rgb(224, 214, 219) 0.5px solid;
+    border-bottom: rgb(224, 214, 219) 0.5px solid;
+    //background-color: rgb(212, 214, 205);
     //background-color: rgb(253, 253, 253);
+    background-color: rgb(255, 255, 255);
     margin: 10px;
 
 }

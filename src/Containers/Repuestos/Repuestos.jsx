@@ -7,7 +7,7 @@ import { useHistory } from 'react-router';
 import Product from '../../components/Products/Product';
 import Portada from '../../img/portada-moviles.jpg';
 import calidad from '../../img/Quality.jpg';
-import { HistorySharp } from '@material-ui/icons';
+import promo from '../../img/mejores-precios.jpg';
 
 const Repuestos =()=>{
 
@@ -87,6 +87,9 @@ const Repuestos =()=>{
           </div>
 
         
+          <div className="imagen-vista-baterias">
+              <img className="imagen-vista-baterias" src={promo}  />
+            </div>
               
        
 
@@ -176,7 +179,7 @@ const Repuestos =()=>{
                
             
            </div>
- 
+           
          
                
         
@@ -266,6 +269,9 @@ const Repuestos =()=>{
             </div>
   
           
+            <div className="imagen-vista-baterias">
+              <img className="imagen-vista-baterias" src={promo}  />
+            </div>
                 
          
   
@@ -325,6 +331,9 @@ const Repuestos =()=>{
            </div>
  
          
+           <div className="imagen-vista-baterias">
+              <img className="imagen-vista-baterias" src={promo}  />
+            </div>
                
         
  
@@ -416,6 +425,9 @@ const Repuestos =()=>{
    
            
                  
+          <div className="imagen-vista-baterias">
+              <img className="imagen-vista-baterias" src={promo}  />
+            </div>
           
    
              {<div className="vista-todos-los-repuestos">

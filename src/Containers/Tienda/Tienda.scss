@@ -19,8 +19,9 @@
     align-items: center;
     flex-direction: column;
     //border: 1px solid rgb(138, 134, 134);
-    background-color: rgb(240, 238, 235);
-}
+    //background-color: rgb(240, 238, 235);
+    background-color: rgb(255, 253, 253);
+} 
 .nav-bar-container{
   
     display: flex;
@@ -96,6 +97,11 @@ flex-direction: row;
     margin-left:50px;
     margin-right:50px;
 
+}
+.imagen-vista-baterias{
+
+    width: 95%;
+    height: 300px;
 }
 
 
