@@ -1,5 +1,4 @@
 import React ,{useEffect, useState} from 'react';
-import './Header.scss';
 import {useHistory} from 'react-router-dom';
 import LoginRender from '../Modal/Login-render';
 import Loading from '../Loading/Loading';
@@ -8,7 +7,7 @@ import ShopingCart from '../../img/shopping_cart-removebg-preview.png';
 import {Avatar, Button} from '@material-ui/core';
 import {connect} from 'react-redux';
 import ContactRender from '../Modal/Contact-render';
-
+import './Header.scss';
 
 
 const Header = (props)=>{

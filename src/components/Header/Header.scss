@@ -204,12 +204,20 @@
 
 //-------------------responsive---------------------//
 
+@media (max-width:700px){
 
-@media (max-width:767px){
 
-    /*.header-container-repuestos-Presupuesto-user-logged{
+
+
+    
+}
+
+
+@media (max-width:500px){
+
+    .header-container-repuestos-Presupuesto-user-logged{
         width: auto;
-        display: flex;
+        display: none;
         flex-direction: row;
         align-items: center;
         justify-content: start;
@@ -220,7 +228,7 @@
     }
     .header-container-not-home{
         
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -232,16 +240,16 @@
     }
 
 .vista-nav{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     visibility: hidden;
-}*/
+}
 
 
 
 .header-container{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -303,11 +311,11 @@
 
 //-----------------Media Queries----------------//
 
-@media (max-width : 600px){
+@media (max-width : 500px){
 
     .header-container-home-user-logged{
         width: 100%;
-        display: flex;
+        display: none;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
@@ -320,7 +328,7 @@
 
 .vista-nav{
    
-    display: flex;
+    display: none;
     flex-direction: row;
     margin-right: 20px;
     justify-content: space-evenly;

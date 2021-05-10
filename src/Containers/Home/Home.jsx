@@ -11,7 +11,7 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import './Home.scss';
 import { PRODUCT } from '../../Redux/Types';
-import calidad from '../../img/Quality.jpg';
+
 
 
 
@@ -59,7 +59,7 @@ let history = useHistory();
 },[]);
 
 const GetProductInfo = (product) => {
-
+   localStorage.removeItem('productos');
    localStorage.setItem('productos',JSON.stringify(product));
    history.push('/product-profile')
 
@@ -160,35 +160,9 @@ const GetProductInfo = (product) => {
        
         </div>
         <div className="separador-home"></div>
-        {<footer className='footer-special-presupuesto'>
-                           <div className="footer-container">
-                                <div className="vista-sobre-nosotros">
-                                   Enlaces de interes
-                                <div>Envios</div>
-                                <div>Repuestos</div>
-                                 <div>Accesorios</div>
-                           <div>Telefonos nuevos y de segunda mano</div>
-                           <div>Copyright TEcMovil</div>
-        
-                                 </div>
-                             <div className="vista-sobre-nosotros">
-                                   Sobre Nosotros
-                             <div>Calle los leones 28 bajo 46022 Valencia</div>
-                                    <div></div>
-                                    <div></div>
-                              </div>
+        <h2> PRODUCTOS ESTRELLA</h2>
 
-                           <div className="vista-sobre-nosotros">
-                                   
-                              <div className='calidad'>
-                                   <img  className='calidad' src={calidad}/>
-                             </div>
-            
-                             </div>
-
-                           </div>
-                       </footer>}
-    
+        <div className="footer"><Footer/></div>
         
     </div>
     </>
