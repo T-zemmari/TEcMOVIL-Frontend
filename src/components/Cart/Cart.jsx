@@ -25,9 +25,9 @@ const Cart =(props)=>{
     const user = props.user;
  
 
-    const removeItem =(producto_a_eliminar)=>{
+    const removeItem =(index)=>{
 
-        props.dispatch({type:REMOVE_FROM_CARRITO ,payload :carrito.filter(producto => producto !== producto_a_eliminar)})
+        props.dispatch({type:REMOVE_FROM_CARRITO ,payload :index})
         }
 
         const cleanCart=()=>{
@@ -85,7 +85,7 @@ const Cart =(props)=>{
 
         {/*<h1 className='h1-style-cart'>TU CARRITO</h1>*/}
         <div className="vista-cart-container">
-        {carrito.map(carrito => <Cesta key={carrito._id} {...carrito} removeItem ={removeItem}/>)}
+        {carrito.map((carrito,index) => <Cesta key={carrito._id} {...carrito} removeItem ={()=>removeItem(index)}/>)}
            
       
        </div>

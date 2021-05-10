@@ -59,7 +59,7 @@ let history = useHistory();
 },[]);
 
 const GetProductInfo = (product) => {
-   localStorage.removeItem('productos');
+
    localStorage.setItem('productos',JSON.stringify(product));
    history.push('/product-profile')
 

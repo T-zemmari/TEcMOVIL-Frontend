@@ -19,25 +19,28 @@ const carritoReducer =(state = initialState,action)=>{
             return {
 
                 ...state,
-                carrito:action.payload
+                carrito:[...state.carrito, action.payload]
             }
             
         }
         break;
 
-        case REMOVE_FROM_CARRITO :{
-
-            return {
-                ...state ,
-                carrito :action.payload
-            }
-        }
-        break;
+        
 
         case CLEAN_CARRITO : {
 
             return initialState
         }
+
+        case REMOVE_FROM_CARRITO:
+            const numIndex = parseInt(action.payload)
+            return {
+                ...state,
+                carrito: [
+                    ...state.carrito.slice(0, numIndex),
+                    ...state.carrito.slice(numIndex + 1)
+                ]
+            }
 
         default : {
             return state

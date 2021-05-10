@@ -32,7 +32,8 @@ useEffect(() => {
 
      //---------Datos del producto escogido---------//
 
-
+     const producto = JSON.parse(localStorage.getItem('productos'));
+     console.log(producto)
      const product = props.product;
      console.log('Soy product y vengo de los props ', product)
 
@@ -49,7 +50,7 @@ useEffect(() => {
         
         let product = props.product
         setArrayProducts([...arrayProducts,{...product}])
-        props.dispatch({type:ADD_TO_CARRITO,payload:arrayProducts})
+        props.dispatch({type:ADD_TO_CARRITO,payload:producto})
         //setPage('carrito')
 
       }
@@ -66,6 +67,8 @@ useEffect(() => {
           history.push('/product-profile')
        
        };
+
+
 
 
   
