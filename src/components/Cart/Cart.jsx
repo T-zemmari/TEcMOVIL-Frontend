@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import Cesta from '../Cesta/Cesta';
 import './Cart.scss';
 import {connect} from 'react-redux';
-import { REMOVE_FROM_CARRITO } from '../../Redux/Types';
+import { CLEAN_CARRITO, REMOVE_FROM_CARRITO } from '../../Redux/Types';
 import ProductProfile from '../../Containers/Product-Profile/Product-Profile';
 import Header from '../Header/Header';
 import Button from '@material-ui/core/Button'
@@ -23,13 +23,19 @@ const Cart =(props)=>{
 
     const  carrito = props.carrito;
     const user = props.user;
-    console.log(user)
+ 
 
     const removeItem =(producto_a_eliminar)=>{
 
         props.dispatch({type:REMOVE_FROM_CARRITO ,payload :carrito.filter(producto => producto !== producto_a_eliminar)})
         }
-  
+
+        const cleanCart=()=>{
+
+            props.dispatch({type:CLEAN_CARRITO ,payload :[]})
+            }
+         
+      
 
  
 
@@ -110,7 +116,7 @@ const Cart =(props)=>{
          </div>
          <div className="ultimo-div-precio-total-a-pagar">
          <div className="carrito-dividir">
-                 <div className="total-articulos-cart-precio"><strong>Total</strong>  (IVA incluido)</div>
+                 <div className="total-articulos-cart-precio"><strong>Total</strong> {precioTotal} (IVA incluido)</div>
              </div>
              <div className="segundo-carrito-dividir">
                  <div className="total-articulos-cart-precio"> <strong>{suma} €</strong></div>
@@ -132,6 +138,9 @@ const Cart =(props)=>{
           
            <Button variant="contained" color="secondary" onClick = {()=>history.push('/lista-pedidos')}>
               Hacer el pedido
+           </Button>
+           <Button variant="contained" color="secondary" onClick = {()=>cleanCart()}>
+              Vaciar Carrito
            </Button>
           
        </div>

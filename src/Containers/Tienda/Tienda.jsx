@@ -201,6 +201,11 @@ const Tienda = (props)=>{
              
               <h3 className='h3-vista-bateria'> Teléfonos móviles con un precio de !!!chollo!!!</h3>
 
+
+              <div className="imagen-vista-baterias">
+              <img className="imagen-vista-baterias" src={promo}  />
+            </div>
+
               {<div className="vista-todos-los-repuestos">
                    {dataTorender.map(dataTorender=> <Product key={dataTorender._id}{...dataTorender} tamaño = 'en-tienda' onClick={()=>GetProductInfo(dataTorender)}/>)}
                </div>}
@@ -317,6 +322,11 @@ if(!credentials?.user.name && page ==='usuario-no-logeado-smartphones'){
           
        
         <h3 className='h3-vista-bateria'> Teléfonos móviles con un precio de !!!chollo!!!</h3>
+
+
+        <div className="imagen-vista-baterias">
+              <img className="imagen-vista-baterias" src={promo}  />
+            </div>
 
 
         {<div className="vista-todos-los-repuestos">

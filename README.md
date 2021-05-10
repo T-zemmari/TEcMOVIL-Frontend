@@ -62,6 +62,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## ✍️ Author <a name = "author"></a>
 - [@T-zemmari](https://github.com/T-zemmari)
 
-## ✍️ Author <a name = "Features"></a>
+## ✍️ Features <a name = "Features"></a>
 
 #### The application will have a forum for inquiries about the different faults that mobile devices usually have,and their possible solutions.

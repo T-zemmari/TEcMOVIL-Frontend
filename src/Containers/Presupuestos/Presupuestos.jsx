@@ -493,7 +493,7 @@ const RenderSamusungModels =(props)=>{
         
           </div>
 
-                     <footer className='footer-special-presupuesto'>
+                     {<footer className='footer-special-presupuesto'>
                            <div className="footer-container">
                                 <div className="vista-sobre-nosotros">
                                    Enlaces de interes
@@ -520,7 +520,7 @@ const RenderSamusungModels =(props)=>{
                              </div>
 
                            </div>
-                       </footer>
+                       </footer>}
     
      </>
 
