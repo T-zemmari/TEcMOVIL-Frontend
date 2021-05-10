@@ -12,7 +12,7 @@ const Message = (props)=>{
     const [message, setMessage] = useState();
     
     useEffect(()=>{
-        if (props.text != message) {
+        if (props.text !== message) {
             setClasses('message');
             setMessage(props.text);
             setClasses('message visible');

@@ -1,13 +1,12 @@
 import React from 'react';
 import './Bateria.scss';
 import Button from '@material-ui/core/Button'
-import { useHistory } from 'react-router';
+
 
 
 const Bateria =({imgUrl,image2,price,onClick,Model})=>{
 
-      let histior = useHistory();
-
+    
 
     return(
 

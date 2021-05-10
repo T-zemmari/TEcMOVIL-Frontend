@@ -21,9 +21,9 @@ const Tienda = (props)=>{
 
 
     const credentials = JSON.parse(localStorage.getItem('credentials'));
-    const user = props.user;
-    const token=props.token; 
-    const smartphones = props.smartphones;
+    //const user = props.user;
+    //const token=props.token; 
+    //const smartphones = props.smartphones;
     let history = useHistory();
 
   /// hooks //
@@ -39,7 +39,7 @@ const Tienda = (props)=>{
     });
     const [busqueda,setBusqueda]=useState('');
     const [arrayDondeBuscar,setArrayDondeBuscar]=useState('');
-    const [respuestaDeLaBusqueda,setRespuestaDelaBusqueda]=([]);
+    //const [respuestaDeLaBusqueda,setRespuestaDelaBusqueda]=([]);
    
   //-------- funcion para cambiar de pagina para que se pueda renderize otra vista-----------------------------------//
     
@@ -55,10 +55,7 @@ const Tienda = (props)=>{
       setPage(nextPage)
   }
 
-    let imgArr=[
-        'https://fondosmil.com/fondo/32772.jpg',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTInnPiPu1yksTuAH79j5mkjW3IcgwcDRIY16DONrXrjJZnQaFbdTK7by4kfHdWSNHy4eM&usqp=CAU'
-    ]
+   
     
 
     //funcion para la busqueda por nombre marca o modelo  del producto---------//
@@ -82,7 +79,7 @@ const Tienda = (props)=>{
       }
 
       const data= Object.values(arrayDondeBuscar).filter((val)=>{
-        if(busqueda.search ==''){
+        if(busqueda.search === ''){
           return val
         }else if(
           val.name.includes(busqueda.search)){
@@ -145,7 +142,15 @@ const Tienda = (props)=>{
          <div className="header"><Header style='logged'/></div>
            <div className="vista-portada-uno">
              <img className="vista-portada-uno" src={FatherDay} alt="tab"/>
+             
           </div>
+          <nav classNAme='navbar-escondido'>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Tienda</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/presupuestos')}> Presupuesto</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Mi espacio</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/contacto')}>Contact</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/login')}>Entrar</li>
+        </nav>
 
 
 

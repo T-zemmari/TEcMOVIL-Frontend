@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
 import './Cesta.scss';
 import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux';
-import ProductProfile from '../../Containers/Product-Profile/Product-Profile';
-import Cart from '../Cart/Cart';
+
 
 
 const Cesta =({onClick,name,imgUrl,price,removeItem,style})=>{

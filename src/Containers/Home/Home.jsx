@@ -11,7 +11,7 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import './Home.scss';
 import { PRODUCT } from '../../Redux/Types';
-
+import calidad from '../../img/Quality.jpg';
 
 
 
@@ -78,7 +78,13 @@ const GetProductInfo = (product) => {
         </div>
         
 
-
+        <nav classNAme='navbar-escondido'>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Tienda</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/presupuestos')}> Presupuesto</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Mi espacio</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/contacto')}>Contact</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/login')}>Entrar</li>
+        </nav>
 
         
 
@@ -87,7 +93,7 @@ const GetProductInfo = (product) => {
 
         <div className='separador-home'></div>
 
-        
+       
 
            <h2 className='h2-vista-product-home'>
               Productos destacados</h2> 
@@ -162,7 +168,35 @@ const GetProductInfo = (product) => {
         <div className="separador-home"></div>
         <h2> PRODUCTOS ESTRELLA</h2>
 
-        <div className="footer"><Footer/></div>
+        
+        {<footer className='footer-special-presupuesto'>
+                            <div className="footer-container">
+                                 <div className="vista-sobre-nosotros">
+                                         Enlaces de interes
+                                         <div>Envios</div>
+                                         <div>Repuestos</div>
+                                         <div>Accesorios</div>
+                                         <div>Telefonos nuevos y de segunda mano</div>
+                                         <div>Copyright TEcMovil</div>
+        
+                                  </div>
+                             <div className="vista-sobre-nosotros">
+                                           Sobre Nosotros
+                                    <div>Calle los leones 28 bajo 46022 Valencia</div>
+                                     <div></div>
+                                     <div></div>
+                                    </div>
+
+                              <div className="vista-sobre-nosotros">
+                                          
+                                    <div className='calidad'>
+                                        <img  className='calidad' src={calidad}/>
+                                    </div>
+            
+                             </div>
+
+                            </div>
+                  </footer>}
         
     </div>
     </>

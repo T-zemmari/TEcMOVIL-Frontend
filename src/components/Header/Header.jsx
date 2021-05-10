@@ -1,8 +1,7 @@
-import React ,{useEffect, useState} from 'react';
+import React ,{useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import LoginRender from '../Modal/Login-render';
 import Loading from '../Loading/Loading';
-import axios from 'axios';
 import ShopingCart from '../../img/shopping_cart-removebg-preview.png';
 import {Avatar, Button} from '@material-ui/core';
 import {connect} from 'react-redux';

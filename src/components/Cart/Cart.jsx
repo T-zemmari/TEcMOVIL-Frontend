@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
 import Cesta from '../Cesta/Cesta';
 import './Cart.scss';
 import {connect} from 'react-redux';
 import { CLEAN_CARRITO, REMOVE_FROM_CARRITO } from '../../Redux/Types';
-import ProductProfile from '../../Containers/Product-Profile/Product-Profile';
 import Header from '../Header/Header';
 import Button from '@material-ui/core/Button'
-import ListaPedidodRender from '../../components/Modal/Lista-pedido-render';
 import imagenUno from '../../img/recogida-en-una-hora.jpg';
 import imagenDos from '../../img/garantia.jpg';
 import imagenTres from '../../img/devolucion.jpg';
 import imagenCuatro from '../../img/financia.jpg';
 import imgCarrito from '../../img/shopping_cart-removebg-preview.png';
-import { ColorLensOutlined } from '@material-ui/icons';
+
 
 const Cart =(props)=>{
 
@@ -22,7 +20,7 @@ const Cart =(props)=>{
     
 
     const  carrito = props.carrito;
-    const user = props.user;
+   
  
 
     const removeItem =(index)=>{
@@ -36,34 +34,23 @@ const Cart =(props)=>{
             }
          
       
-
- 
-
-    
-
-    console.log('Los datos de user con props en Cart son : ',user);
-
-    console.log('Los datos de carrito con props en Cart son : ',carrito);
-
     let credentials = JSON.parse(localStorage.getItem('credentials'));
-    let productsData = localStorage.getItem('productsData');
+  
 
 
     let array =[] ;
     let suma=0;
     carrito.map(elemento => array.push(elemento.price))
-    console.log(array)
+  
 
     let precioTotal = array.forEach((numero)=>{
     suma += parseInt(numero)
     });
 
-    
 
-   
     let precioAhorro =(suma*10/100);
 
-    console.log(productsData);
+  
     
     if(!credentials?.user.name){
      
@@ -98,7 +85,7 @@ const Cart =(props)=>{
          <div className="titulo-tu-carrito">
              <h2 className="tu-carrito-final-titulo">
                  <div className="icono-cesta">
-                     <img className="icono-cesta" src={imgCarrito} />
+                     <img className="icono-cesta" src={imgCarrito} alt='img'/>
                  </div>
                  TU CARRITO
              </h2>
@@ -148,19 +135,19 @@ const Cart =(props)=>{
        <div className="mas-info-de-nuestra-app">
 
               <div className="imagen-promo">
-                 <img className="imagen-promo" src={imagenUno} />
+                 <img className="imagen-promo" src={imagenUno} alt='img' />
               </div>
 
               <div className="imagen-promo">
-                 <img  className="imagen-promo" src={imagenDos}   />
+                 <img  className="imagen-promo" src={imagenDos}  alt='img' />
               </div>
 
               <div className="imagen-promo">
-                 <img className="imagen-promo" src={imagenTres}  />
+                 <img className="imagen-promo" src={imagenTres} alt='img' />
               </div>
 
               <div className="imagen-promo">
-                 <img className="imagen-promo" src={imagenCuatro}   />
+                 <img className="imagen-promo" src={imagenCuatro}  alt='img' />
               </div>
        </div>
 

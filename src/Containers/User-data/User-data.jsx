@@ -1,22 +1,17 @@
 
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
-import checkError from '../../tools/My-tools';
 import { connect } from 'react-redux';
-import {UPDATE_USER} from '../../Redux/Types';
 import Header from '../../components/Header/Header';
 import './User-data.scss';
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import validate from "../../tools/validate";
-import CTAButton from "../../components/CTAButton/CTAButton";
 import FormInput from "../../components/FormInput/FormInput";
 import { Form } from 'antd';
 import Loading from "../../components/Loading/Loading";
-import Message from "../../components/Message/Message";
-import visa from '../../img/visa.jpg';
 import Button from '@material-ui/core/Button'
 import { Footer } from 'antd/lib/layout/layout';
-import { RestorePageOutlined } from '@material-ui/icons';
+
 
 
 const UserData = (props) => {
@@ -46,7 +41,7 @@ const UserData = (props) => {
 
 
 
-  const [message, setMessage] = useState([]);
+  const [message,setMessage]=useState('');
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -84,7 +79,7 @@ const UserData = (props) => {
         payment :creditcard
        
     };
-    console.log(userData)
+  
 
    
 

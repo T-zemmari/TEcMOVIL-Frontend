@@ -7,7 +7,6 @@ import './Product-Profile.scss';
 import { ADD_TO_CARRITO } from '../../Redux/Types';
 import LoginRender from '../../components/Modal/Login-render';
 import SimpleCollapse from '../../components/Transition/Transition';
-import Product from '../../components/Products/Product';
 import calidad from '../../img/Quality.jpg';
 
 const ProductProfile = (props)=>{
@@ -17,7 +16,7 @@ const ProductProfile = (props)=>{
   const [page,setPage]= useState('carrito-hidden');
 
 
-  const accessorios = props.accessorios;
+
 
 useEffect(() => {
     window.scrollTo(0, 0)
@@ -54,24 +53,7 @@ useEffect(() => {
         //setPage('carrito')
 
       }
-        const removeItem =(producto_a_eliminar)=>{
-
-        setArrayProducts(arrayProducts.filter(producto => producto !== producto_a_eliminar))
-        }
-
-
-        const GetProductInfo = (product) => {
-          localStorage.removeItem('productos');
-          localStorage.setItem('productos',JSON.stringify(product));
-          
-          history.push('/product-profile')
-       
-       };
-
-
-
-
-  
+        
            
        {/*----------Renderizar------------Smarphoone-------------Usuario--------Logeado------*/}
   
@@ -81,7 +63,18 @@ useEffect(() => {
     return (
     <>
        <Header style ='logged-two'></Header>
+
+       
+
+     
       <div className="vista-product-profile-container">
+      <nav classNAme='navbar-escondido'>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Tienda</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/presupuestos')}> Presupuesto</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Mi espacio</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/contacto')}>Contact</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/login')}>Entrar</li>
+        </nav>
 
        <div className="image-datainfo-and-div-garantia">
 

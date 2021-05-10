@@ -18,6 +18,14 @@
     position: absolute;
     //width: 100vw;
 }
+.navbar-escondido{
+    visibility: hidden;
+   
+    
+}
+.li-nav-hidden{
+display: none;
+}
 .vista-portada-uno-home{
     
      width: 100%;
@@ -83,6 +91,7 @@
     flex-wrap: wrap;
     justify-content:center;
 }
+
 
 .vista-contenedor-divs-rep-smart-acces{
 
@@ -184,4 +193,23 @@
        // border: 0.5px solid rgb(131, 126, 126);
         border-radius: 5px;
     }
+}
+
+
+@media (max-width:500px){
+
+.li-nav-hidden{
+
+    display: flex;
+    color:rgb(66, 7, 7)
+}
+
+.navbar-escondido{
+    display:flex;
+    flex-direction: column;
+    color:rgb(68, 6, 6);
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+}
 }

@@ -61,7 +61,7 @@ if(props.tamaño ==='product-profile'){
         <div className="vista-sobre-nosotros">
                                           
            <div className='calidad'>
-                 <img  className='calidad' src={calidad}/>
+                 <img  className='calidad' src={calidad} alt='img'/>
             </div>
                   
          </div>
