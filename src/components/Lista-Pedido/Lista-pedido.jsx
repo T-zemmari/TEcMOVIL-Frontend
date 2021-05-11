@@ -5,12 +5,13 @@ import axios from 'axios';
 import Header from '../../components/Header/Header';
 import { CLEAN_CARRITO } from '../../Redux/Types';
 import Button from '@material-ui/core/Button'
+import { useHistory } from 'react-router';
 
 const ListaPedidos =(props)=>{
 
   const carrito = props.carrito;
   const user = props.user; 
-  
+  let history = useHistory();
 
   // Estado de la peticion 
 
@@ -20,24 +21,30 @@ const ListaPedidos =(props)=>{
 
   let orderData = {
 
-      user_id : user._id,
+      userId : user._id,
       precio_total : precioTotal,
-      product:carrito[0],
+      product:carrito,
       payment:user.payment
    }
   
-
-    const cleanCart =()=>{
-
-    props.dispatch({type:CLEAN_CARRITO,payload:[]})
-   }
+   
   
 
    const sendOrderToDb = async ()=>{
 
-    await axios.post('http://localhost:3002/orders',orderData);
-    cleanCart()
+    let response = await axios.post('http://localhost:3002/orders',orderData);
+    if(response.status === 200){
+        alert('Tu compra se ha relizado con exito,Revisala En  Mis compras');
+        history.push('/mis-compras')
+        console.log(response.data)
+    }else{
+        alert('no se ha podido realizar la compra, porfavor intentalomas tarde');
+        history.push('/tienda')
+    }
+
    }
+
+
 
   
     return (
