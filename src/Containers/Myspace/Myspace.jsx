@@ -103,6 +103,16 @@ const MySpace =(props)=>{
             <img className="vista-portada-uno" src={Cabecera} alt="tab"/>
             
         </div>
+
+
+        <nav classNAme='navbar-escondido'>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Tienda</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/presupuestos')}> Presupuesto</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Mi espacio</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/contact')}>Contact</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/login')}>Entrar</li>
+        </nav>
+
         
 
        

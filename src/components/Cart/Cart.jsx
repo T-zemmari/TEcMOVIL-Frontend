@@ -20,7 +20,7 @@ const Cart =(props)=>{
     
 
     const  carrito = props.carrito;
-   
+   console.log(carrito)
  
 
     const removeItem =(index)=>{

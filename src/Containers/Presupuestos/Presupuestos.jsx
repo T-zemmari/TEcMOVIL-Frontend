@@ -204,6 +204,15 @@ const RenderSamusungModels =(props)=>{
                 <div className="vista-portada-uno">
                  <img className="vista-portada-uno" src={Android} alt="tab"/>
                  </div>
+
+                 <nav classNAme='navbar-escondido'>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Tienda</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/presupuestos')}> Presupuesto</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Mi espacio</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/contact')}>Contact</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/login')}>Entrar</li>
+        </nav>
+
        
      
        <div className="vista-presupuesto-container">
@@ -366,6 +375,15 @@ const RenderSamusungModels =(props)=>{
                    <div className="vista-portada-uno">
                       <img className="vista-portada-uno" src={Android} alt="tab"/>
                    </div>
+
+                   <nav classNAme='navbar-escondido'>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Tienda</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/presupuestos')}> Presupuesto</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/tienda')}>Mi espacio</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/contact')}>Contact</li>
+           <li className='li-nav-hidden' onClick={()=>history.push('/login')}>Entrar</li>
+        </nav>
+
 
       <div className="vista-presupuesto-container">
       
