@@ -89,7 +89,7 @@ const Tienda = (props)=>{
     
     localStorage.setItem('data',JSON.stringify(data));
     let dataTorender = JSON.parse(localStorage.getItem('data'));
-    console.log(dataTorender)
+    
     
 
   
@@ -98,7 +98,7 @@ const Tienda = (props)=>{
     useEffect(async()=>{
 
          let response_for_phones = await axios.get('http://localhost:3002/products');
-         setPhones(response_for_phones.data.splice(0,16));
+         setPhones(response_for_phones.data);
          
          props.dispatch({type:SMARTPHONES,payload:response_for_phones.data});
          localStorage.setItem('foundModelsProducts',JSON.stringify(response_for_phones.data));
@@ -115,8 +115,7 @@ const Tienda = (props)=>{
         
     },[])
 
-    console.log(baterias)
-
+   
 
 
    
