@@ -9,7 +9,9 @@ import { Form } from 'antd';
 import "./Register.scss";
 import Loading from "../../components/Loading/Loading";
 import Message from "../../components/Message/Message";
-
+import Switch from '@material-ui/core/Switch';
+import { QUEUE_MESSAGE } from "../../Redux/Types";
+import {connect} from 'react-redux';
 
 const Register = (props) => {
   let history = useHistory();
@@ -30,6 +32,11 @@ const Register = (props) => {
   const [message, setMessage] = useState([]);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [selector,setSelector] = useState({
+    checkedA: true,
+   
+  });
+ 
 
   // Manejar el estado
 
@@ -37,6 +44,11 @@ const Register = (props) => {
     setUser({ ...user, [key]: value });
     if (Object.keys(errors).length > 0) setErrors(validate({ ...user, [key]: value }, "register"));
   };
+
+  const handleChange = (event) => {
+    setSelector({ ...selector, [event.target.name]: event.target.checked });
+  };
+  
 
   // Envio de datos del registro
 
@@ -47,6 +59,7 @@ const Register = (props) => {
     if (Object.keys(errs).length > 0) return;
 
     let userData = {
+      admin:selector.checkedA,
       name: user.name,
       lastname: user.lastname,
       email: user.email,
@@ -70,22 +83,31 @@ const Register = (props) => {
     }, 500);
   };
 
-  const handleResponse = (response) => {
-    if (response) {
-      localStorage.setItem('userData',response.data);
-      //props.dispatch({type:QUEUE_MESSAGE, payload:{text:"Registrado exitosamente. Ya puede iniciar sesión.",type:'success'}});
-      history.push("/");
-    } else {
-      setLoading(false);
-      newMessage(response.data.message);
-      setMessage('');
-    }
-  };
-
   const newMessage = (msg) => {
     const key = ~(Math.random() * 99999);
     setMessage([...message, <Message key={key} text={msg}></Message>]);
   };
+
+
+  const handleResponse = (response) => {
+    if (response) {
+      props.dispatch({type:QUEUE_MESSAGE, payload:{text:"Registrado exitosamente. Ya puede iniciar sesión.",type:'success'}});
+      
+      setTimeout(() => {
+        setLoading(false);
+        history.push("/");
+      }, 1000);
+      setTimeout(() => {
+        setLoading(true);
+        alert("Registrado exitosamente. Ya puede iniciar sesión.")
+      }, 500);
+    } else {
+      setLoading(false);
+      newMessage(response.data.message);
+    }
+  };
+
+ 
 
   useEffect(() => {
     const listener = event => {
@@ -147,6 +169,17 @@ const Register = (props) => {
                     <FormInput type="Password" label="Repita la Contraseña" name="passwordValidation" onChange={updateUser} />
                 </Form.Item>
             </div>
+            <di className="swithes">
+              Role : Admin  
+                <div>
+                   <Switch
+                      checked={selector.checkedA}
+                      onChange={handleChange}
+                      name="checkedA"
+                      inputProps={{ 'aria-label': 'secondary checkbox' }}
+                   />
+               </div>
+            </di>
             <div className="buttonContainer">
                 <CTAButton text="Enviar" onClick={() => sendData()}/>
             </div>
@@ -156,4 +189,4 @@ const Register = (props) => {
   );
 };
 
-export default Register;
+export default connect()(Register);

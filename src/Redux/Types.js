@@ -27,3 +27,8 @@ export const CLEAN_CARRITO ='cleancarrito';
 //Search models
 
 export const BUSQUEDA_SEARCH = 'busqueda';
+
+//messages;
+
+export const QUEUE_MESSAGE = 'QUEUE_MESSAGE';
+export const DELETE_MESSAGE ='DELETE_MESSAGE';

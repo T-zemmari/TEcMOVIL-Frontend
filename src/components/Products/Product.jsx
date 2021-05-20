@@ -34,7 +34,7 @@ const Product = (
     )=>{
 
     
-
+    console.log(imgUrl?.slice(20))
    
     let ProductOnProfile = 
     <img className='image-size-grande' src={imgUrl} alt={name}/>

@@ -6,7 +6,7 @@ import carritoReducer from './Reducers/Carrito-reducer';
 import productReducer from './Reducers/Product-reducer';
 import BusquedaReducer from './Reducers/Busqueda-reducer';
 import cartItem from '../components/Accion/reducers/reducer';
-
+import messageReducer from '../Redux/Reducers/Message-reducer';
 
 const rootReducer = combineReducers({
     userReducer,
@@ -15,6 +15,7 @@ const rootReducer = combineReducers({
     carritoReducer,
     productReducer,
     BusquedaReducer,
+    messageReducer,
     cartItem
 
  
