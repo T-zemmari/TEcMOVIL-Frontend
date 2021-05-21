@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const CTAButton = (props) => {
 
@@ -16,7 +16,7 @@ const CTAButton = (props) => {
     let onClick = () => route();
     if (props.onClick) onClick = props.onClick;
 
-    return(
+    return (
         <button onClick={onClick} className={styling}>
             {props.text}
         </button>

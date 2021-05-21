@@ -13,31 +13,31 @@ const FormInput = (props) => {
         CInput = Input[props.type];
     }
 
-    let onChange = ()=>{};
-    if(props.onChange) onChange = props.onChange;
-    
+    let onChange = () => { };
+    if (props.onChange) onChange = props.onChange;
+
     const [isActive, setIsActive] = useState(false);
 
-    const handleTextChange = (key,value) => {
-      
+    const handleTextChange = (key, value) => {
+
         if (value !== '') {
-          setIsActive(true);
+            setIsActive(true);
         } else {
-          setIsActive(false);
+            setIsActive(false);
         }
 
-        onChange(key,value);
+        onChange(key, value);
 
     }
 
-    useState(()=>{
+    useState(() => {
         if (props.value) setIsActive(true);
-    },[])
-    
-    return(
+    }, [])
+
+    return (
         <div className="formInput">
-            <CInput value={props.value} name={props.name} onChange={(e) => handleTextChange(e.target.name,e.target.value)} maxLength={props.maxLength}/>
-            <label htmlFor={props.name} className={ isActive ? "Active" : ""}>
+            <CInput value={props.value} name={props.name} onChange={(e) => handleTextChange(e.target.name, e.target.value)} maxLength={props.maxLength} />
+            <label htmlFor={props.name} className={isActive ? "Active" : ""}>
                 {props.label}
             </label>
         </div>

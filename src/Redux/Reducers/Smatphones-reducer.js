@@ -1,26 +1,26 @@
-import {SMARTPHONES} from '../Types'
+import { SMARTPHONES } from '../Types'
 
 const initialState = {
 
-      smartphones:[]
+    smartphones: []
 }
 
-const smartReducer =(state = initialState,action)=>{
+const smartReducer = (state = initialState, action) => {
 
-    switch(action.type){
+    switch (action.type) {
 
-        case SMARTPHONES : {
+        case SMARTPHONES: {
 
             return {
 
                 ...state,
-                smartphones:action.payload
+                smartphones: action.payload
             }
-            
-        }
-        
 
-        default : {
+        }
+
+
+        default: {
             return state
         }
     }

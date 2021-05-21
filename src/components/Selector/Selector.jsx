@@ -4,7 +4,7 @@ import Switch from '@material-ui/core/Switch';
 export default function Switches() {
   const [state, setState] = React.useState({
     checkedA: true,
-   
+
   });
   console.log(state)
 
@@ -20,6 +20,6 @@ export default function Switches() {
         name="checkedA"
         inputProps={{ 'aria-label': 'secondary checkbox' }}
       />
-     </div>
+    </div>
   );
 }

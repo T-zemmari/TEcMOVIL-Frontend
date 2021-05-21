@@ -1,27 +1,27 @@
 
-import {ACCESSORIOS} from '../Types'
+import { ACCESSORIOS } from '../Types'
 
 const initialState = {
 
-      accessorios:[]
+    accessorios: []
 }
 
-const accessReducer =(state = initialState,action)=>{
+const accessReducer = (state = initialState, action) => {
 
-    switch(action.type){
+    switch (action.type) {
 
-        case ACCESSORIOS : {
+        case ACCESSORIOS: {
 
             return {
 
                 ...state,
-                accessorios:action.payload
+                accessorios: action.payload
             }
-            
-        }
-        
 
-        default : {
+        }
+
+
+        default: {
             return state
         }
     }

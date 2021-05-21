@@ -1,33 +1,33 @@
 
 
-import {ADD_TO_CARRITO,REMOVE_FROM_CARRITO,CLEAN_CARRITO} from '../Types';
+import { ADD_TO_CARRITO, REMOVE_FROM_CARRITO, CLEAN_CARRITO } from '../Types';
 
-   
+
 
 const initialState = {
 
-      carrito:[],
-      currentItem: null,
+    carrito: [],
+    currentItem: null,
 }
 
-const carritoReducer =(state = initialState,action)=>{
+const carritoReducer = (state = initialState, action) => {
 
-    switch(action.type){
+    switch (action.type) {
 
-        case ADD_TO_CARRITO : {
+        case ADD_TO_CARRITO: {
 
             return {
 
                 ...state,
-                carrito:[...state.carrito, action.payload]
+                carrito: [...state.carrito, action.payload]
             }
-            
+
         }
-        break;
+            break;
 
-        
 
-        case CLEAN_CARRITO : {
+
+        case CLEAN_CARRITO: {
 
             return initialState
         }
@@ -42,7 +42,7 @@ const carritoReducer =(state = initialState,action)=>{
                 ]
             }
 
-        default : {
+        default: {
             return state
         }
     }

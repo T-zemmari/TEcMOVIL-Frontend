@@ -1,26 +1,26 @@
-import {BUSQUEDA_SEARCH} from '../Types'
+import { BUSQUEDA_SEARCH } from '../Types'
 
 const initialState = {
 
-      busqueda:[]
+    busqueda: []
 }
 
-const BusquedaReducer =(state = initialState,action)=>{
+const BusquedaReducer = (state = initialState, action) => {
 
-    switch(action.type){
+    switch (action.type) {
 
-        case BUSQUEDA_SEARCH : {
+        case BUSQUEDA_SEARCH: {
 
             return {
 
                 ...state,
-                busqueda:action.payload
+                busqueda: action.payload
             }
-            
-        }
-        
 
-        default : {
+        }
+
+
+        default: {
             return state
         }
     }

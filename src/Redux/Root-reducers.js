@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import userReducer from './Reducers/User-reducer';
 import smartReducer from './Reducers/Smatphones-reducer';
 import accessReducer from './Reducers/Accesorios-reducer';
@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
     messageReducer,
     cartItem
 
- 
+
 });
 
 export default rootReducer;

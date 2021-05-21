@@ -1,27 +1,27 @@
-import {PRODUCT} from '../Types';
+import { PRODUCT } from '../Types';
 
 
 const initialState = {
 
-    product : {}
+    product: {}
 }
 
-const productReducer = (state =initialState ,action)=>{
+const productReducer = (state = initialState, action) => {
 
 
 
-    switch(action.type){
+    switch (action.type) {
 
-        case PRODUCT :
+        case PRODUCT:
 
-        {
-            return {
-                ...state,
-                product:action.payload
+            {
+                return {
+                    ...state,
+                    product: action.payload
+                }
             }
-        }
-        break;
-        default : {
+            break;
+        default: {
             return state
         }
     }
